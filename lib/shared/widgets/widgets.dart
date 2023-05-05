@@ -9,4 +9,3 @@ export 'product_card.dart';
 export 'second_app_bar.dart';
 export 'second_card.dart';
 export 'touchable_scale.dart';
-export 'maps.dart';

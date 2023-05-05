@@ -42,24 +42,13 @@ class ApiRepository {
     }
   }
 
-  Future<Product> getProductByBarcode(int barcode) async {
-    try {
-      final response = await apiProvider.get('/product/barcode/$barcode')
-          as Map<String, dynamic>;
-      print(response);
-      return Product.fromJson(response);
-    } on Exception {
-      rethrow;
-    }
-  }
+  // Future<List<Product>> getProduct(String route) async {
+  //   try {
+  //     final response = await apiProvider.get(route);
 
-  Future<List<Product>> getProduct(String route) async {
-    try {
-      final response = await apiProvider.get(route);
-
-      return (response as List).map((e) => Product.fromJson(e)).toList();
-    } on Exception {
-      rethrow;
-    }
-  }
+  //     return (response as List).map((e) => Product.fromJson(e)).toList();
+  //   } on Exception {
+  //     rethrow;
+  //   }
+  // }
 }
