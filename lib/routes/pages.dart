@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import '../modules/modules.dart';
+import '../modules/test/view/test.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -14,13 +15,13 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
+      page: () => const TestView(),
       binding: HomeBinding(),
     ),
 
     GetPage(
       name: _Paths.SPLASH,
-      page: () => const SplashView(),
+      page: () => const TestView(),
       binding: SplashBinding(),
     ),
     // GetPage(

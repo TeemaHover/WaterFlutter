@@ -11,18 +11,19 @@ class HomeView extends StatelessWidget {
   final controller = Get.put<HomeController>(HomeController());
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomeController>(
-      init: HomeController(),
-      builder: (controller) => controller.obx(
-        onLoading: const TestView(),
-        onError: (error) => const TestView(),
-        (user) {
-          return Scaffold(
-              body:
-                  Obx(() => controller.getView(controller.currentIndex.value)),
-              bottomNavigationBar: const MainNavigationBar());
-        },
-      ),
-    );
+    return const TestView();
+    // return GetBuilder<HomeController>(
+    //   init: HomeController(),
+    //   builder: (controller) => controller.obx(
+    //     onLoading: const TestView(),
+    //     onError: (error) => const TestView(),
+    //     (user) {
+    //       return Scaffold(
+    //           body:
+    //               Obx(() => controller.getView(controller.currentIndex.value)),
+    //           bottomNavigationBar: const MainNavigationBar());
+    //     },
+    //   ),
+    // );
   }
 }

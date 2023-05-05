@@ -36,7 +36,8 @@ class SplashController extends GetxController {
           ),
         );
       } else {
-        _checkAuthStatus();
+        //_checkAuthStatus();
+        Get.offAllNamed(Routes.HOME);
       }
     } on Exception catch (e) {
       print(e);
