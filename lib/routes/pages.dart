@@ -6,7 +6,8 @@ import '../modules/modules.dart';
 
 part 'routes.dart';
 
-class AppPages {
+class 
+AppPages {
   AppPages._();
 
   static const INITIAL = Routes.SPLASH;

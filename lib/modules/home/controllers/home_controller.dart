@@ -11,8 +11,6 @@ import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../modules.dart';
-
 class HomeController extends GetxController
     with StateMixin<User>, WidgetsBindingObserver {
   final ApiRepository _apiRepository = Get.find();
@@ -23,7 +21,7 @@ class HomeController extends GetxController
   final rxUser = Rxn<User?>();
   final scannedBarcode = ''.obs;
   final apiRepository = Get.find<ApiRepository>();
-  final authController = Get.put(AuthController(apiRepository: Get.find()));
+
   User? get user => rxUser.value;
   set user(value) => rxUser.value = value;
 
