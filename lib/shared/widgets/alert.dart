@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 showAlertDialog(BuildContext context) {
   // Create button
   Widget okButton = TextButton(
-    child: Text("OK"),
+    child: const Text("OK"),
     onPressed: () {
       Navigator.of(context).pop();
     },
@@ -11,8 +11,8 @@ showAlertDialog(BuildContext context) {
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Simple Alert"),
-    content: Text("This is an alert message."),
+    title: const Text("Simple Alert"),
+    content: const Text("This is an alert message."),
     actions: [
       okButton,
     ],

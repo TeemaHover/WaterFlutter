@@ -35,7 +35,7 @@ class TrackedMapWidgetState extends State<TrackedMapWidget> {
         .asUint8List();
   }
 
-  Future<void> _addMarker(tmp_lat, tmp_lng, markerIdVal) async {
+  Future<void> _addMarker(tmpLat, tmpLng, markerIdVal) async {
     final MarkerId markerId = MarkerId(markerIdVal);
     final Uint8List markerIcon =
         await getBytesFromAsset('assets/images/logo.png', 100);
@@ -44,7 +44,7 @@ class TrackedMapWidgetState extends State<TrackedMapWidget> {
     final Marker marker = Marker(
       icon: BitmapDescriptor.fromBytes(markerIcon),
       markerId: markerId,
-      position: LatLng(tmp_lat, tmp_lng),
+      position: LatLng(tmpLat, tmpLng),
       infoWindow: InfoWindow(title: markerIdVal, snippet: 'asdfsadf'),
     );
 
@@ -77,8 +77,9 @@ class TrackedMapWidgetState extends State<TrackedMapWidget> {
         PointLatLng(sourceLocation.latitude, sourceLocation.longitude),
         PointLatLng(destination.latitude, destination.longitude));
     if (result.points.isNotEmpty) {
-      result.points.forEach((PointLatLng point) =>
-          polylineCoordinates.add(LatLng(point.latitude, point.longitude)));
+      for (var point in result.points) {
+        polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+      }
     }
     _addMarker(47.926229, 106.983157, 'exp1');
     _addMarker(47.913632, 106.985131, 'exp2');
@@ -97,7 +98,7 @@ class TrackedMapWidgetState extends State<TrackedMapWidget> {
 
     return Scaffold(
       body: currentLocation == null
-          ? Center(
+          ? const Center(
               child: Text('loading'),
             )
           : GoogleMap(
@@ -115,7 +116,7 @@ class TrackedMapWidgetState extends State<TrackedMapWidget> {
               // },
               markers: {
                 Marker(
-                  markerId: MarkerId("currentLocation"),
+                  markerId: const MarkerId("currentLocation"),
                   position: LatLng(
                       currentLocation!.latitude!, currentLocation!.longitude!),
                 ),

@@ -19,7 +19,7 @@ class MainCardWidget extends StatelessWidget {
             fit: BoxFit.contain,
           ),
           Text(product.productName ?? ''),
-          Text('${oCcy.format(product.price ?? 0)}'),
+          Text(oCcy.format(product.price ?? 0)),
         ],
       ),
     );
