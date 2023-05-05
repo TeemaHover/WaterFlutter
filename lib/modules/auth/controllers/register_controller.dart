@@ -33,11 +33,6 @@ class RegisterController extends GetxController {
     isVisible.value = !isVisible.value;
   }
 
-  @override
-  onInit() {
-    super.onInit();
-  }
-
   register(BuildContext context) async {
     AppFocus.unfocus(context);
 

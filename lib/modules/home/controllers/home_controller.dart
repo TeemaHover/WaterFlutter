@@ -1,4 +1,5 @@
 import 'package:app/data/data.dart';
+import 'package:app/modules/test/view/test.dart';
 import 'package:app/providers/api_repository.dart';
 import 'package:app/shared/index.dart';
 import 'package:dio/dio.dart';
@@ -26,26 +27,12 @@ class HomeController extends GetxController
   User? get user => rxUser.value;
   set user(value) => rxUser.value = value;
 
-  Future<Widget> getView(int index) async {
+  Widget getView(int index) {
     switch (index) {
       case 0:
-        return const PrimeView();
-      case 1:
-        if (user?.type == 'carrier') {
-          return const TrackedMapWidget();
-        } else {
-          return const DeliverView();
-        }
-      case 2:
-        final Product product = await scanBarcodeNormal();
+        return const TestView();
 
-        return ProductDetailView(
-          product: product,
-        );
-      case 3:
-        return const BookmarkView();
       case 4:
-        authController.logout();
         return const SizedBox();
       default:
         return const Center(child: Text('Something went wrong'));
@@ -85,7 +72,7 @@ class HomeController extends GetxController
       change(user, status: RxStatus.success());
 
       isLoading.value = false;
-    } on DioError catch (e) {
+    } on DioError {
       isLoading.value = false;
       Get.find<SharedPreferences>().remove(StorageKeys.token.name);
       update();
@@ -94,22 +81,7 @@ class HomeController extends GetxController
 
   @override
   void onInit() async {
-    await setupApp();
+    //await setupApp();
     super.onInit();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  @override
-  onReady() {
-    super.onReady();
   }
 }

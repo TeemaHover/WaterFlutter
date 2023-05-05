@@ -24,7 +24,7 @@ class LoginView extends StatelessWidget {
                   children: [
                     Container(
                       alignment: Alignment.center,
-                      margin: EdgeInsets.only(top: 16),
+                      margin: const EdgeInsets.only(top: 16),
                       child: Image.asset(
                         imageLogo,
                         width: MediaQuery.of(context).size.width > 400

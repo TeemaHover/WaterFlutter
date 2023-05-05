@@ -18,7 +18,7 @@ class RegisterUserInfo extends StatelessWidget {
                 return Row(
                   children: [
                     Text(u['infoValue']!),
-                    Container(
+                    SizedBox(
                       width: 200,
                       child: TextField(
                         onChanged: (text) =>
@@ -38,7 +38,7 @@ class RegisterUserInfo extends StatelessWidget {
             left: 0,
             right: 0,
             child: MainButton(
-              child: Text('цааш'),
+              child: const Text('цааш'),
               onPressed: () {
                 controller.currentIndex.value =
                     controller.currentIndex.value + 1;

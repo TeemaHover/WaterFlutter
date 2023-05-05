@@ -1,4 +1,3 @@
-import 'package:app/routes/pages.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../routes/pages.dart';
 import '../../../shared/index.dart';
 
 class SplashController extends GetxController {
@@ -83,11 +83,12 @@ class SplashController extends GetxController {
     worker = ever<String?>(
       token,
       (tkn) {
-        if (tkn != null) {
-          Get.offAllNamed(Routes.HOME);
-        } else {
-          Get.offAllNamed(Routes.AUTH);
-        }
+        Get.offAllNamed(Routes.HOME);
+        // if (tkn != null) {
+        //   Get.offAllNamed(Routes.HOME);
+        // } else {
+        //   Get.offAllNamed(Routes.AUTH);
+        // }
       },
     );
     token.value = storage.getString(StorageKeys.token.name);

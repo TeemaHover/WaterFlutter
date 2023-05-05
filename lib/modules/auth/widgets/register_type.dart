@@ -15,11 +15,11 @@ class RegisterUserTypeWidget extends StatelessWidget {
           children: userTypes
               .map((e) => ElevatedButton(
                     child: Text(
-                      e['value']! as String,
-                      style: TextStyle(color: Colors.white),
+                      e['value']!,
+                      style: const TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
-                      controller.user.value?.type = e['id']! as String?;
+                      controller.user.value?.type = e['id']!;
                       controller.currentIndex.value =
                           controller.currentIndex.value + 1;
                     },

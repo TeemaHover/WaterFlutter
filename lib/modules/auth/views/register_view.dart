@@ -11,7 +11,11 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(RegisterController());
-    List<Widget> widgets = [RegisterUserTypeWidget(), RegisterUserInfo(), RegisterUserPasswordWidget()];
+    List<Widget> widgets = [
+      const RegisterUserTypeWidget(),
+      const RegisterUserInfo(),
+      const RegisterUserPasswordWidget()
+    ];
     return Scaffold(
       body: Container(
           padding: EdgeInsets.symmetric(

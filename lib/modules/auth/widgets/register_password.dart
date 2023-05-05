@@ -31,7 +31,7 @@ class RegisterUserPasswordWidget extends StatelessWidget {
             left: 0,
             right: 0,
             child: MainButton(
-              child: Text('Илгээх'),
+              child: const Text('Илгээх'),
               onPressed: () {
                 controller.register(context);
               },
