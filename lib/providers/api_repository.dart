@@ -9,23 +9,22 @@ class ApiRepository {
   Future<LoginResponse> login(String phone, String password) async {
     final data = {"phone": phone, "password": password};
     final res = await apiProvider.post('/auth/login', data: data);
-    print(res);
     return LoginResponse.fromJson(res);
   }
 
   Future<LoginResponse> register(String password, User user) async {
     final data = {
       "phone": user.phone,
-      "lastName": user.lastName ?? '',
-      "firstName": user.firstName ?? '',
-      "shopName": user.shopName ?? '',
-      "registerNumber": user.registerNumber ?? '',
-      "companyRegisterNumber": user.companyRegisterNumber ?? '',
-      "type": user.type,
-      "carriers": [],
-      "status": user.status,
-      "jobStatus": "resting",
-      "password": password
+      // "lastName": user.lastName ?? '',
+      // "firstName": user.firstName ?? '',
+      // "shopName": user.shopName ?? '',
+      // "registerNumber": user.registerNumber ?? '',
+      // "companyRegisterNumber": user.companyRegisterNumber ?? '',
+      // "type": user.type,
+      // "carriers": [],
+      // "status": user.status,
+      // "jobStatus": "resting",
+      // "password": password
     };
     print(data);
     final res = await apiProvider.post('/auth/register', data: data);

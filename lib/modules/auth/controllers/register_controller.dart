@@ -40,7 +40,6 @@ class RegisterController extends GetxController {
       isLoading = true;
       if (user.value?.type == 'business' || user.value?.type == 'carrier') {
         user.value?.status = 'pending';
-        user.value?.carriers = [];
       } else {
         user.value?.status = 'active';
       }

@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Deliver',
+      title: 'Water',
       debugShowCheckedModeBanner: false,
       initialBinding: AppBinding(),
       defaultTransition: Transition.cupertino,

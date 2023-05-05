@@ -10,8 +10,8 @@ class DioProvider extends GetxService {
   @override
   void onInit() {
     dio.options.baseUrl = isProduction
-        ? 'https://deliverbackend-production.up.railway.app'
-        : 'https://deliverbackend-production.up.railway.app';
+        ? 'https://waternestjs-production.up.railway.app'
+        : 'https://waternestjs-production.up.railway.app';
 
     // ? 'http://192.168.1.2:5050'
     // : 'http://192.168.1.2:5050';

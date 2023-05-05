@@ -1,4 +1,3 @@
-import 'package:app/modules/auth/widgets/input_label.dart';
 import 'package:app/modules/home/controllers/controllers.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
@@ -49,13 +48,13 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
                 title,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(
-                width: 120,
-                child: Input(
-                  labelText: '',
-                  tController: controller.searchTextController,
-                ),
-              ),
+              // SizedBox(
+              //   width: 120,
+              //   child: Input(
+              //     labelText: '',
+              //     tController: controller.searchTextController,
+              //   ),
+              // ),
               IconButton(onPressed: () {}, icon: const Icon(Icons.access_alarm))
             ],
           ),

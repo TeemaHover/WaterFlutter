@@ -4,6 +4,12 @@ const secondary = Color(0xff092443);
 const primary = Color(0xffF55951);
 const line = Color(0xff8F92A1);
 const success = Color(0xff06D37D);
+const darkblue = Color(0xFF1d8be2);
+const blue = Color(0xFF38a2f5);
+const gray = Color(0xFFf7f8fa);
+const bgcolor = Color(0xFFf7f8fa);
+const white = Color(0xFFFFFFFF);
+const black = Color(0xFF000000);
 
 
 

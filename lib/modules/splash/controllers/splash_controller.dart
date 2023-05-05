@@ -83,12 +83,11 @@ class SplashController extends GetxController {
     worker = ever<String?>(
       token,
       (tkn) {
-        Get.offAllNamed(Routes.HOME);
-        // if (tkn != null) {
-        //   Get.offAllNamed(Routes.HOME);
-        // } else {
-        //   Get.offAllNamed(Routes.AUTH);
-        // }
+        if (tkn != null) {
+          Get.offAllNamed(Routes.HOME);
+        } else {
+          Get.offAllNamed(Routes.AUTH);
+        }
       },
     );
     token.value = storage.getString(StorageKeys.token.name);

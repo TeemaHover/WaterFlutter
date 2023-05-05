@@ -3,12 +3,8 @@ import 'package:app/modules/test/view/test.dart';
 import 'package:app/providers/api_repository.dart';
 import 'package:app/shared/index.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:get/get.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeController extends GetxController
@@ -17,9 +13,7 @@ class HomeController extends GetxController
   final showPerformanceOverlay = false.obs;
   final currentIndex = 0.obs;
   final isLoading = false.obs;
-  final searchTextController = TextEditingController();
   final rxUser = Rxn<User?>();
-  final scannedBarcode = ''.obs;
   final apiRepository = Get.find<ApiRepository>();
 
   User? get user => rxUser.value;
@@ -42,26 +36,6 @@ class HomeController extends GetxController
     update();
   }
 
-  Future<Product> scanBarcodeNormal() async {
-    if (defaultTargetPlatform == TargetPlatform.android) {
-      await Permission.camera.request();
-    }
-
-    try {
-      final barcode = await FlutterBarcodeScanner.scanBarcode(
-          '#ff6666', 'Cancel', true, ScanMode.BARCODE);
-
-      scannedBarcode.value = barcode;
-      final Product product =
-          await apiRepository.getProductByBarcode(int.parse(barcode));
-
-      return product;
-    } on PlatformException {
-      print('failed');
-      return Product();
-    }
-  }
-
   Future<void> setupApp() async {
     isLoading.value = true;
     try {
@@ -79,7 +53,7 @@ class HomeController extends GetxController
 
   @override
   void onInit() async {
-    //await setupApp();
+    await setupApp();
     super.onInit();
   }
 }

@@ -6,8 +6,7 @@ import '../modules/modules.dart';
 
 part 'routes.dart';
 
-class 
-AppPages {
+class AppPages {
   AppPages._();
 
   static const INITIAL = Routes.SPLASH;
@@ -18,20 +17,19 @@ AppPages {
       page: () => HomeView(),
       binding: HomeBinding(),
     ),
-
     GetPage(
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
     ),
-    // GetPage(
-    //   name: _Paths.AUTH,
-    //   page: () => const AuthView(),
-    //   binding: AuthBinding(),
-    //   children: [
-    //     GetPage(name: _Paths.LOGIN, page: () => LoginView()),
-    //     // GetPage(name: _Paths.REGISTER, page: () => RegisterView()),
-    //   ],
-    // ),
+    GetPage(
+      name: _Paths.AUTH,
+      page: () => const AuthView(),
+      binding: AuthBinding(),
+      children: [
+        GetPage(name: _Paths.LOGIN, page: () => LoginView()),
+        // GetPage(name: _Paths.REGISTER, page: () => RegisterView()),
+      ],
+    ),
   ];
 }

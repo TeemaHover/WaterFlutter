@@ -56,15 +56,7 @@ class RegisterUserInfo extends StatelessWidget {
       case "lastName":
         controller.user.value?.lastName = text;
         break;
-      case "shopName":
-        controller.user.value?.shopName = text;
-        break;
-      case "registerNumber":
-        controller.user.value?.registerNumber = text;
-        break;
-      case "companyRegisterNumber":
-        controller.user.value?.companyRegisterNumber = text;
-        break;
+
       case "phone":
         controller.user.value?.phone = text;
         break;
