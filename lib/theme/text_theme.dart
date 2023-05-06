@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../shared/constants/colors.dart';
@@ -13,6 +12,6 @@ const TextStyle largeTitle = TextStyle(
 );
 const TextStyle mediumTitle = TextStyle(
   fontWeight: FontWeight.bold,
-  fontSize: 20,
+  fontSize: 15,
   color: Colors.black,
 );

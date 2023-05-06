@@ -1,12 +1,13 @@
 import 'package:app/data/data.dart';
+import 'package:app/modules/test/view/event.dart';
+import 'package:app/modules/test/view/information.dart';
+import 'package:app/modules/test/view/test.dart';
 import 'package:app/providers/api_repository.dart';
 import 'package:app/shared/index.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../test/view/test2.dart';
 
 class HomeController extends GetxController
     with StateMixin<User>, WidgetsBindingObserver {
@@ -23,8 +24,11 @@ class HomeController extends GetxController
   Widget getView(int index) {
     switch (index) {
       case 0:
-        return const TestViewNext();
-
+        return const Information();
+      case 1:
+        return const Event();
+      case 2:
+        return const TestView();
       case 4:
         return const SizedBox();
       default:

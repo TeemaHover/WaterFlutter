@@ -1,9 +1,5 @@
-import 'package:app/shared/widgets/new/app_bar.dart';
-import 'package:app/shared/widgets/new/card.dart';
-import 'package:app/shared/widgets/new/statistic.dart';
+import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
-
-import '../../../shared/constants/colors.dart';
 
 class TestView extends StatefulWidget {
   const TestView({super.key});
@@ -18,17 +14,23 @@ class _TestViewState extends State<TestView> {
     return Scaffold(
       backgroundColor: bgcolor,
       appBar: deq(title: "Нүүр"),
-      body: Column(
-        children: [
-          const WaterCard(),
-          Container(
-            color: white,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [Statistic()],
-            ),
+      body: SizedBox(
+        height: defaultHeight(context),
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            children: [
+              const WaterCard(),
+              Container(
+                color: white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [Statistic()],
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

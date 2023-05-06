@@ -11,11 +11,6 @@ const mainNavbar = [
     'label': 'Хүргэлт',
   },
   {
-    'icon': 'assets/svg/navigationBar/barcode.svg',
-    'activeIcon': 'assets/svg/navigationBar/barcodeActive.svg',
-    'label': 'Barcode',
-  },
-  {
     'icon': 'assets/svg/navigationBar/bookmark.svg',
     'activeIcon': 'assets/svg/navigationBar/bookmarkActive.svg',
     'label': 'Сагс',

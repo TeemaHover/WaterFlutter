@@ -1,15 +1,17 @@
+import 'package:app/shared/widgets/notif_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../../shared/constants/colors.dart';
+import '../../../shared/widgets/main_card.dart';
 
-class TestViewNext extends StatefulWidget {
-  const TestViewNext({super.key});
+class Event extends StatefulWidget {
+  const Event({super.key});
 
   @override
-  State<TestViewNext> createState() => _TestViewNextState();
+  State<Event> createState() => _EventState();
 }
 
-class _TestViewNextState extends State<TestViewNext> {
+class _EventState extends State<Event> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -47,10 +49,22 @@ class _TestViewNextState extends State<TestViewNext> {
           body: TabBarView(
             children: [
               Container(
-                color: Colors.yellow,
+                color: gray,
+                child: Column(
+                  children: const [
+                    NotificationCard(),
+                    CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
+                  ],
+                ),
               ),
               Container(
-                color: Colors.orange,
+                color: gray,
+                child: Column(
+                  children: const [
+                    NotificationCard(),
+                    CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
+                  ],
+                ),
               ),
             ],
           )),

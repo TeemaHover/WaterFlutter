@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/colors.dart';
+import '../constants/colors.dart';
 
 class WaterCard extends StatefulWidget {
   const WaterCard({super.key});
@@ -15,13 +15,11 @@ class _WaterCardState extends State<WaterCard> {
     return Center(
       child: Card(
           child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: blue,
               ),
-              width: 300,
-              height: 180,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -30,14 +28,14 @@ class _WaterCardState extends State<WaterCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      cardTitle("Усны хэрэглээ", white),
+                      cardTitle("Усны хэрэглээ", white, context),
                       Row(
                         children: [
-                          cardTitle("33,437", white),
-                          cardTitle(' м.куб', white)
+                          cardTitle("33,437", white, context),
+                          cardTitle(' м.куб', white, context)
                         ],
                       ),
-                      cardTitle("Өнгөрсөн сард", white),
+                      cardTitle("Өнгөрсөн сард", white, context),
                     ],
                   ),
                   Container(
@@ -57,12 +55,12 @@ class _WaterCardState extends State<WaterCard> {
   }
 }
 
-cardTitle(String text, Color cl) {
+cardTitle(String text, Color cl, BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(5),
     child: Text(
       text,
-      style: TextStyle(color: cl),
+      style: Theme.of(context).textTheme.titleMedium!.copyWith(color: cl),
     ),
   );
 }

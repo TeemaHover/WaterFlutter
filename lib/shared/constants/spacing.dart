@@ -26,7 +26,7 @@ const borderRadius12 = 12.0;
 
 double defaultHeight(BuildContext context) {
   return MediaQuery.of(context).size.height -
-      80 -
+      78 -
       MediaQuery.of(context).padding.top -
       MediaQuery.of(context).padding.bottom;
 }

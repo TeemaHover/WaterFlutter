@@ -1,7 +1,5 @@
-import 'package:app/shared/widgets/new/bar_chart.dart';
+import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
-import 'card.dart';
 
 class Statistic extends StatefulWidget {
   const Statistic({super.key});
@@ -25,12 +23,12 @@ class _StatisticState extends State<Statistic> {
                 Column(
                   children: [
                     waterStatistic('1-р сар дундаж хэрэглээ', '35.5', '-19,99',
-                        Icons.water_drop, blue),
+                        Icons.water_drop, blue, context),
                     waterStatistic('1-р сар дундаж хэрэглээ', '35.5', '-19,99',
-                        Icons.money, Colors.yellow),
+                        Icons.money, Colors.yellow, context),
                   ],
                 ),
-                achievmentStatistic('Цол 1')
+                achievmentStatistic('Цол 1', context)
               ],
             ),
           ],
@@ -38,7 +36,7 @@ class _StatisticState extends State<Statistic> {
   }
 }
 
-achievmentStatistic(String badge) {
+achievmentStatistic(String badge, BuildContext context) {
   return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
@@ -55,8 +53,8 @@ achievmentStatistic(String badge) {
               color: Colors.yellow,
               size: 100,
             ),
-            cardTitle('Одоо байгаа цол', black),
-            cardTitle('Цол 1', black),
+            cardTitle('Одоо байгаа цол', black, context),
+            cardTitle('Цол 1', black, context),
             const Icon(Icons.arrow_downward),
             Container(
               decoration: BoxDecoration(
@@ -86,22 +84,21 @@ achievmentStatistic(String badge) {
           ])));
 }
 
-waterStatistic(
-    String title, String value, String percent, IconData icon, Color cl) {
+waterStatistic(String title, String value, String percent, IconData icon,
+    Color cl, BuildContext context) {
   return Container(
     margin: const EdgeInsets.all(10),
     padding: const EdgeInsets.all(10),
     width: 165,
-    height: 220,
     color: gray,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        cardTitle(title, black),
+        cardTitle(title, black, context),
         Row(
           children: [
-            cardTitle(value, black),
-            cardTitle(' м.куб', black),
+            cardTitle(value, black, context),
+            cardTitle(' м.куб', black, context),
             Icon(
               icon,
               color: cl,
@@ -122,7 +119,7 @@ waterStatistic(
                 color: Colors.white,
                 size: 15,
               ),
-              cardTitle(percent, white)
+              cardTitle(percent, white, context)
             ],
           ),
         ),
