@@ -42,7 +42,10 @@ achievmentStatistic(String badge, BuildContext context) {
       padding: const EdgeInsets.all(10),
       width: 165,
       height: 460,
-      color: gray,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+        color: gray,
+      ),
       child: Center(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,7 +93,10 @@ waterStatistic(String title, String value, String percent, IconData icon,
     margin: const EdgeInsets.all(10),
     padding: const EdgeInsets.all(10),
     width: 165,
-    color: gray,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(25),
+      color: gray,
+    ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -98,7 +104,7 @@ waterStatistic(String title, String value, String percent, IconData icon,
         Row(
           children: [
             cardTitle(value, black, context),
-            cardTitle(' м.куб', black, context),
+            cardTitle(icon == Icons.money ? ' мнт' : ' м.куб', black, context),
             Icon(
               icon,
               color: cl,

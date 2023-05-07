@@ -17,7 +17,12 @@ class _WaterCardState extends State<WaterCard> {
           child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [blue, darkblue],
+                    tileMode: TileMode.mirror),
                 color: blue,
               ),
               child: Column(

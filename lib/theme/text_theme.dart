@@ -15,3 +15,8 @@ const TextStyle mediumTitle = TextStyle(
   fontSize: 15,
   color: Colors.black,
 );
+const TextStyle smallTitle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 13,
+  color: Colors.black,
+);

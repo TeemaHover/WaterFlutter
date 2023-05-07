@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../shared/constants/colors.dart';
 import '../../../shared/widgets/main_card.dart';
 import '../../../shared/widgets/notif_card.dart';
+import '../../../shared/widgets/timer.dart';
 
 class Information extends StatefulWidget {
   const Information({super.key});
@@ -52,7 +53,7 @@ class _InformationState extends State<Information> {
                 color: gray,
                 child: Column(
                   children: const [
-                    NotificationCard(),
+                    Timer(),
                     CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
                   ],
                 ),
