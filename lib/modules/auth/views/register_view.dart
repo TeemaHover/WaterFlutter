@@ -1,9 +1,9 @@
 import 'package:app/modules/auth/controllers/controllers.dart';
-import 'package:app/modules/auth/widgets/register_password.dart';
-import 'package:app/modules/auth/widgets/widgets.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../shared/widgets/main_button.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -11,20 +11,122 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(RegisterController());
-    List<Widget> widgets = [
-      const RegisterUserTypeWidget(),
-      const RegisterUserInfo(),
-      const RegisterUserPasswordWidget()
-    ];
     return Scaffold(
-      body: Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: origin, vertical: MediaQuery.of(context).padding.top),
-          height: defaultHeight(context),
-          child: Obx(() => widgets.firstWhere((w) {
-                final i = widgets.indexOf(w);
-                return controller.currentIndex.value == i;
-              }))),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  padding: const EdgeInsets.all(origin),
+                  color: lightblue,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    // mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      // Container(
+                      //   alignment: Alignment.center,
+                      //   margin: const EdgeInsets.only(top: 16),
+                      //   child: Image.asset(
+                      //     imageLogo,
+                      //     width: MediaQuery.of(context).size.width > 400
+                      //         ? 200
+                      //         : MediaQuery.of(context).size.width * 0.5,
+                      //   ),
+                      // ),
+                      Container(
+                          alignment: Alignment.centerLeft,
+                          height: MediaQuery.of(context).size.height * 0.4,
+                          margin: const EdgeInsets.only(top: 16),
+                          child: const Text("Бүртгүүлэх")),
+                      Column(
+                        children: [
+                          //Ene controliig nemeh
+                          TextFormField(
+                            //focusNode: controller.phoneFocus,
+                            decoration: const InputDecoration(
+                              labelText: 'Овог нэр',
+                            ),
+                            onChanged: (p0) => {
+                              //controller.phone.value = p0
+                            },
+                          ),
+                          space16,
+                          TextFormField(
+                            //focusNode: controller.phoneFocus,
+                            decoration: const InputDecoration(
+                              labelText: 'Утасны дугаар',
+                            ),
+                            onChanged: (p0) => {
+                              //controller.phone.value = p0
+                            },
+                          ),
+                          space16,
+                          TextFormField(
+                              //focusNode: controller.passwordFocus,
+                              decoration: const InputDecoration(
+                                labelText: 'Нууц үг',
+                                // suffixIcon: IconButton(
+                                //     icon: Icon(
+                                //       !controller.isVisible.value
+                                //           ? Icons.visibility
+                                //           : Icons.visibility_off,
+                                //       color: Colors.grey,
+                                //     ),
+                                //     onPressed: () {
+                                //       controller.isVisible.value =
+                                //           !controller.isVisible.value;
+                                //     }),
+                              ),
+                              obscureText: controller.isVisible.value,
+                              controller: controller.passwordController,
+                              onChanged: (p0) => {}),
+                          space16,
+                        ],
+                      ),
+                      space16,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          MainButton(
+                            onPressed: () async {
+                              //controller.login(context);
+                            },
+                            //ene hesegt text iin oorchilson
+                            text: 'Бүртгүүлэх',
+                            color: lightblack,
+                            child: const SizedBox(),
+                          ),
+                          // MainButton(
+                          //   onPressed: () {},
+                          //   color: Colors.transparent,
+                          //   contentColor: lightblack,
+                          //   text: 'Нууц үг мартсан ?',
+                          //   child: const SizedBox(),
+                          // ),
+                          space16,
+                          //ene buttonii text iig solison
+                          MainButton(
+                            onPressed: () {
+                              // Navigator.of(context)
+                              //     .push(createRoute(const RegisterView()));
+                            },
+                            color: Colors.transparent,
+                            contentColor: lightblack,
+                            text: 'Terms & Conditions',
+                            child: const SizedBox(),
+                          ),
+                          space16,
+                        ],
+                      ),
+                    ],
+                  )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

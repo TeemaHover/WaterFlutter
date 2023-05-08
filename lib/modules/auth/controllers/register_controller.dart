@@ -16,7 +16,7 @@ class RegisterController extends GetxController {
   get isLoading => loading.value;
   set isLoading(value) => loading.value = value;
   final phoneFocus = FocusNode();
-
+  final registerUser = Rxn(User());
   final currentIndex = 0.obs;
 
   final apiRepository = Get.find<ApiRepository>();

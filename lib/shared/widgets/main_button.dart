@@ -13,7 +13,7 @@ class MainButton extends StatelessWidget {
       this.width,
       this.padding = const EdgeInsets.fromLTRB(12.0, 6.0, 12.0, 6.0),
       this.height = 56.0,
-      this.borderRadius = 18.0,
+      this.borderRadius = 10.0,
       this.disabled = false,
       this.shadow = true,
       this.disabledColor = secondary})

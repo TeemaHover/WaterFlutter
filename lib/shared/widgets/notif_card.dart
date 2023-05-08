@@ -1,6 +1,5 @@
 import 'package:app/shared/constants/colors.dart';
-import 'package:app/shared/widgets/card.dart';
-import 'package:app/shared/widgets/main_card.dart';
+import 'package:app/shared/widgets/wallet_card.dart';
 import 'package:flutter/material.dart';
 
 class NotificationCard extends StatefulWidget {
@@ -70,7 +69,6 @@ class _NotificationCardState extends State<NotificationCard> {
               ),
             ],
           ),
-          CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
         ]),
       ),
     );

@@ -1,17 +1,19 @@
 import 'package:app/data/data.dart';
+import 'package:app/modules/modules.dart';
 import 'package:app/modules/test/view/event.dart';
 import 'package:app/modules/test/view/information.dart';
 import 'package:app/modules/test/view/test.dart';
 import 'package:app/providers/api_repository.dart';
 import 'package:app/shared/index.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeController extends GetxController
     with StateMixin<User>, WidgetsBindingObserver {
   final ApiRepository _apiRepository = Get.find();
+  final authController = Get.put(AuthController(apiRepository: Get.find()));
   final showPerformanceOverlay = false.obs;
   final currentIndex = 0.obs;
   final isLoading = false.obs;
@@ -29,8 +31,13 @@ class HomeController extends GetxController
         return const Event();
       case 2:
         return const TestView();
-      case 4:
-        return const SizedBox();
+      case 3:
+        return Center(
+          child: TextButton(
+            onPressed: () => authController.logout(),
+            child: const Text('Logout'),
+          ),
+        );
       default:
         return const Center(child: Text('Something went wrong'));
     }

@@ -11,7 +11,8 @@ const darkgray = Color(0xFFd9d9d9);
 const bgcolor = Color(0xFFf7f8fa);
 const white = Color(0xFFFFFFFF);
 const black = Color(0xFF000000);
-
+const lightblue = Color(0xFFDCF2FF);
+const lightblack = Color(0xFF353A48);
 
 
 

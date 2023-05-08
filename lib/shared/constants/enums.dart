@@ -1,5 +1,1 @@
-enum StorageKeys {
-  home,
-  token
-  
-}
+enum StorageKeys { home, token }

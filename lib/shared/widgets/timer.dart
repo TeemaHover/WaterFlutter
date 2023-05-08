@@ -1,5 +1,4 @@
 import 'package:app/shared/constants/colors.dart';
-import 'package:app/shared/widgets/main_card.dart';
 import 'package:flutter/material.dart';
 
 class Timer extends StatefulWidget {
@@ -13,24 +12,153 @@ class _TimerState extends State<Timer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: darkgray,
         ),
         child: Column(
-          children: const [
-            Text(
-              "Дэлхийн цаг",
-              style: TextStyle(fontSize: 20),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              child: const Text(
+                "Цэвэр усны нөөц дуусах өдөр",
+                style: TextStyle(fontSize: 20),
+              ),
             ),
-            Spacer(),
-            Text(
-              "Монголын цаг",
-              style: TextStyle(fontSize: 20),
-            ),
-            CardMain(title: "Байгууллагын нэр", time: "2023/05/12"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                      ),
+                      child: const Text(
+                        "00",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                    const Text(
+                      "өдөр",
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                      ),
+                      child: const Text(
+                        "00",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                    const Text(
+                      "өдөр",
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                      ),
+                      child: const Text(
+                        "00",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                    const Text(
+                      "өдөр",
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                      ),
+                      child: const Text(
+                        "00",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                    const Text(
+                      "өдөр",
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                      ),
+                      child: const Text(
+                        "00",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                    const Text(
+                      "өдөр",
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: white,
+                      ),
+                      child: const Text(
+                        "00",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                    const Text(
+                      "өдөр",
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+              ],
+            )
           ],
         ));
   }

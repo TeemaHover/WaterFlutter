@@ -1,5 +1,4 @@
 import 'package:app/modules/auth/auth.dart';
-import 'package:app/modules/auth/widgets/input_label.dart';
 import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,56 +16,59 @@ class LoginView extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 padding: const EdgeInsets.all(origin),
+                color: lightblue,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   // mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    // Container(
+                    //   alignment: Alignment.center,
+                    //   margin: const EdgeInsets.only(top: 16),
+                    //   child: Image.asset(
+                    //     imageLogo,
+                    //     width: MediaQuery.of(context).size.width > 400
+                    //         ? 200
+                    //         : MediaQuery.of(context).size.width * 0.5,
+                    //   ),
+                    // ),
                     Container(
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.only(top: 16),
-                      child: Image.asset(
-                        imageLogo,
-                        width: MediaQuery.of(context).size.width > 400
-                            ? 200
-                            : MediaQuery.of(context).size.width * 0.5,
-                      ),
-                    ),
+                        alignment: Alignment.centerLeft,
+                        height: MediaQuery.of(context).size.height * 0.5,
+                        margin: const EdgeInsets.only(top: 16),
+                        child: const Text("Тавтай морил")),
                     Column(
                       children: [
-                        Input(
+                        TextFormField(
                           focusNode: controller.phoneFocus,
-                          labelText: 'Утасны дугаар',
-                          onChange: (p0) => {controller.phone.value = p0},
+                          decoration: const InputDecoration(
+                            labelText: 'Утасны дугаар',
+                          ),
+                          onChanged: (p0) => {controller.phone.value = p0},
                         ),
                         space16,
                         Obx(
-                          () => Input(
+                          () => TextFormField(
                               focusNode: controller.passwordFocus,
-                              suffixIcon: IconButton(
-                                  icon: Icon(
-                                    !controller.isVisible.value
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
-                                    color: Colors.grey,
-                                  ),
-                                  onPressed: () {
-                                    controller.isVisible.value =
-                                        !controller.isVisible.value;
-                                  }),
+                              decoration: InputDecoration(
+                                labelText: 'Нууц үг',
+                                suffixIcon: IconButton(
+                                    icon: Icon(
+                                      !controller.isVisible.value
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                      color: Colors.grey,
+                                    ),
+                                    onPressed: () {
+                                      controller.isVisible.value =
+                                          !controller.isVisible.value;
+                                    }),
+                              ),
                               obscureText: controller.isVisible.value,
-                              labelText: 'Нууц үг',
-                              tController: controller.loginPasswordController,
-                              onChange: (p0) => {}),
+                              controller: controller.loginPasswordController,
+                              onChanged: (p0) => {}),
                         ),
                         space16,
-                        MainButton(
-                          onPressed: () {},
-                          color: Colors.transparent,
-                          contentColor: primary,
-                          text: 'Нууц үг мартсан',
-                          child: const SizedBox(),
-                        ),
                       ],
                     ),
                     space16,
@@ -78,6 +80,14 @@ class LoginView extends StatelessWidget {
                             controller.login(context);
                           },
                           text: 'Нэвтрэх',
+                          color: lightblack,
+                          child: const SizedBox(),
+                        ),
+                        MainButton(
+                          onPressed: () {},
+                          color: Colors.transparent,
+                          contentColor: lightblack,
+                          text: 'Нууц үг мартсан ?',
                           child: const SizedBox(),
                         ),
                         space16,
@@ -87,7 +97,7 @@ class LoginView extends StatelessWidget {
                                 .push(createRoute(const RegisterView()));
                           },
                           color: Colors.transparent,
-                          contentColor: primary,
+                          contentColor: lightblack,
                           text: 'Бүртгүүлэх',
                           child: const SizedBox(),
                         ),

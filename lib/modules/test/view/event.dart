@@ -50,6 +50,7 @@ class _EventState extends State<Event> {
             children: [
               Container(
                 color: gray,
+                height: MediaQuery.of(context).size.height,
                 child: Column(
                   children: const [
                     NotificationCard(),
@@ -59,6 +60,7 @@ class _EventState extends State<Event> {
               ),
               Container(
                 color: gray,
+                height: MediaQuery.of(context).size.height,
                 child: Column(
                   children: const [
                     NotificationCard(),

@@ -1,8 +1,7 @@
 import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
 
-import '../../../shared/widgets/main_card.dart';
-import '../../../shared/widgets/notif_card.dart';
+import '../../../shared/widgets/information_card.dart';
 import '../../../shared/widgets/timer.dart';
 
 class Information extends StatefulWidget {
@@ -35,7 +34,7 @@ class _InformationState extends State<Information> {
                       ),
                     ],
                     indicatorSize: TabBarIndicatorSize.tab,
-                    // isScrollable: true,
+                    isScrollable: true,
                     labelPadding: EdgeInsets.symmetric(horizontal: 40),
                     indicator: UnderlineTabIndicator(
                         borderSide: BorderSide(width: 5.0, color: Colors.white),
@@ -48,12 +47,32 @@ class _InformationState extends State<Information> {
             ),
           ),
           body: TabBarView(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             children: [
-              Timer(),
-              
-              NotificationCard(),
-              
+              Container(
+                color: gray,
+                child: Column(
+                  children: const [
+                    Timer(),
+                    Expanded(
+                      child: InformationCard(
+                          title: "Байгууллагын нэр", time: "2023/05/12"),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                color: gray,
+                child: Column(
+                  children: const [
+                    Timer(),
+                    Expanded(
+                      child: InformationCard(
+                          title: "Байгууллагын нэр", time: "2023/05/12"),
+                    )
+                  ],
+                ),
+              ),
             ],
           )),
     );
