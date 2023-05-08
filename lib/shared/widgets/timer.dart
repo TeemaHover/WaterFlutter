@@ -1,4 +1,5 @@
 import 'package:app/shared/constants/colors.dart';
+import 'package:app/shared/widgets/main_card.dart';
 import 'package:flutter/material.dart';
 
 class Timer extends StatefulWidget {
@@ -29,6 +30,7 @@ class _TimerState extends State<Timer> {
               "Монголын цаг",
               style: TextStyle(fontSize: 20),
             ),
+            CardMain(title: "Байгууллагын нэр", time: "2023/05/12"),
           ],
         ));
   }
