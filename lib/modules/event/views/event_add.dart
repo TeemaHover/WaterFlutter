@@ -21,132 +21,103 @@ class _EventAddState extends State<EventAdd> {
           width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width / 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              space16,
-              const Text(
-                "Зар оруулах хэсэг",
-              ),
-              space24,
-              AddContainerWidget(title: 'Оролцох гишүүдийн хязгаар', children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                space16,
+                const Text(
+                  "Зар оруулах хэсэг",
+                ),
+                space24,
+                AddContainerWidget(
+                  title: 'Хөтөлбөрийн нэр',
                   children: [
-                    Text(
-                      'Гишүүд',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge
-                    ),
-                    space16,
                     SizedBox(
                       width: 127,
                       child: TextField(
                         decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: small, horizontal: 12),
-                            border: OutlineInputBorder(
+                            border: const OutlineInputBorder(
                                 borderSide: BorderSide(color: textGray)),
-                            hintText: 'Тоогоо бичнэ үү.',
+                            hintText: 'Нэрээ бичнэ үү.',
                             hintStyle: Theme.of(context).textTheme.labelMedium),
                       ),
                     ),
                   ],
-                )
-              ]),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width / 20,
-                    vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: white,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                space24,
+                AddContainerWidget(
+                    title: 'Оролцох гишүүдийн хязгаар',
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text('Гишүүд',
+                              style: Theme.of(context).textTheme.labelLarge),
+                          space16,
+                          SizedBox(
+                            width: 127,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: small, horizontal: 12),
+                                  border: const OutlineInputBorder(
+                                      borderSide: BorderSide(color: textGray)),
+                                  hintText: 'Тоогоо бичнэ үү.',
+                                  hintStyle:
+                                      Theme.of(context).textTheme.labelMedium),
+                            ),
+                          ),
+                        ],
+                      )
+                    ]),
+                space24,
+                AddContainerWidget(title: 'Хөтөлбөрийн урамшуулал', children: [
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text('Урамшуулал',
+                              style: Theme.of(context).textTheme.labelLarge),
+                          space16,
+                          SizedBox(
+                            width: 127,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: small, horizontal: 12),
+                                  border: const OutlineInputBorder(
+                                      borderSide: BorderSide(color: textGray)),
+                                  hintText: 'Урамшуулалын нэр.',
+                                  hintStyle:
+                                      Theme.of(context).textTheme.labelMedium),
+                            ),
+                          ),
+                          space16,
+                          MainButton(
+                              onPressed: () {},
+                              text: "",
+                              height: 30,
+                              child: const SizedBox())
+                        ],
+                      ),
+                      space16,
+                      MainButton(
+                          onPressed: () {},
+                          text: "Өөр урамшуулал нэмэх",
+                          child: const SizedBox())
+                    ],
+                  )
+                ]),
+                const SizedBox(
+                  height: 20,
+                ),
+                AddContainerWidget(
+                  title: 'Хөтөлбөрийн үргэлжлэх хугацаа',
                   children: [
-                    Text("Оролцох гишүүдийн хязгаар",
-                        style: Theme.of(context).textTheme.titleMedium),
-                    Row(
-                      children: [
-                        Text("Гишүүд",
-                            style: Theme.of(context).textTheme.labelMedium),
-                        // TextField(
-                        //   decoration: InputDecoration(
-                        //     border: InputBorder.none,
-                        //     hintText: 'Event Description',
-                        //   ),
-                        // )
-                        const Text("TextForm")
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width / 20,
-                    vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: white,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Хөтөлбөрийн урамшуулал",
-                        style: Theme.of(context).textTheme.titleMedium),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Урамшуулал",
-                            style: Theme.of(context).textTheme.labelMedium),
-                        // TextField(
-                        //   decoration: InputDecoration(
-                        //     border: InputBorder.none,
-                        //     hintText: 'Event Description',
-                        //   ),
-                        // )
-
-                        const Text("TextForm"),
-                        MainButton(
-                            onPressed: () {},
-                            text: "",
-                            height: 30,
-                            child: const SizedBox())
-                      ],
-                    ),
-                    MainButton(
-                        onPressed: () {},
-                        text: "Өөр урамшуулал нэмэх",
-                        child: const SizedBox())
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width / 20,
-                    vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: white,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Хөтөлбөрийн үргэлжлэх хугацаа",
-                        style: Theme.of(context).textTheme.titleMedium),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -154,67 +125,105 @@ class _EventAddState extends State<EventAdd> {
                           children: [
                             Text("Эхлэх огноо",
                                 style: Theme.of(context).textTheme.labelMedium),
-                            const Text("TextField"),
+                            space16,
+                            SizedBox(
+                              width: 127,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: small, horizontal: 12),
+                                    border: const OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: textGray)),
+                                    hintText: 'Огноо.',
+                                    hintStyle: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium),
+                              ),
+                            ),
                           ],
                         ),
                         Column(
                           children: [
                             Text("Дуусах огноо",
                                 style: Theme.of(context).textTheme.labelMedium),
-                            const Text("TextField"),
+                            space16,
+                            SizedBox(
+                              width: 127,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: small, horizontal: 12),
+                                    border: const OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: textGray)),
+                                    hintText: 'Огноо.',
+                                    hintStyle: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium),
+                              ),
+                            ),
                           ],
                         )
                       ],
                     )
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width / 20,
-                    vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: white,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Гүйцэтгэх ажил",
-                        style: Theme.of(context).textTheme.titleMedium),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text("Ажил 1",
-                                style: Theme.of(context).textTheme.labelMedium),
-                            const Text("TextField"),
-                          ],
+                space24,
+                AddContainerWidget(title: 'Гүйцэтгэх ажил', children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text('Ажил',
+                              style: Theme.of(context).textTheme.labelLarge),
+                          space16,
+                          SizedBox(
+                            width: 127,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: small, horizontal: 12),
+                                  border: const OutlineInputBorder(
+                                      borderSide: BorderSide(color: textGray)),
+                                  hintText: 'Ажлын нэр.',
+                                  hintStyle:
+                                      Theme.of(context).textTheme.labelMedium),
+                            ),
+                          ),
+                        ],
+                      ),
+                      space16,
+                      SizedBox(
+                        width: double.infinity,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.symmetric(
+                                  vertical: small, horizontal: 12),
+                              border: const OutlineInputBorder(
+                                  borderSide: BorderSide(color: textGray)),
+                              hintText: 'Ажлын гүйцэтгэлийн дэлгэрэнгүй.',
+                              hintStyle:
+                                  Theme.of(context).textTheme.labelMedium),
                         ),
-                        const Text("TextField"),
-                        MainButton(
-                            onPressed: () {},
-                            text: "Өөр урамшуулал нэмэх",
-                            child: const SizedBox())
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              MainButton(
-                  onPressed: () {},
-                  text: "Нийтлэх",
-                  width: double.infinity,
-                  child: const SizedBox())
-            ],
+                      ),
+                      space16,
+                      MainButton(
+                          onPressed: () {},
+                          text: "Өөр урамшуулал нэмэх",
+                          child: const SizedBox())
+                    ],
+                  )
+                ]),
+                space24,
+                MainButton(
+                    onPressed: () {},
+                    text: "Нийтлэх",
+                    width: double.infinity,
+                    child: const SizedBox())
+              ],
+            ),
           ),
         ));
   }
