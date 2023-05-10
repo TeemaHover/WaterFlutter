@@ -12,7 +12,7 @@ class _EventAddState extends State<EventAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: deq(title: "Add"),
+        appBar: MainAppBar(title: "Add"),
         body: Container(
           width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.symmetric(

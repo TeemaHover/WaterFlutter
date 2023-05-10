@@ -1,5 +1,6 @@
 import 'package:app/data/data.dart';
 import 'package:app/modules/modules.dart';
+import 'package:app/modules/newscreen/view/company_home.dart';
 import 'package:app/modules/newscreen/view/event.dart';
 import 'package:app/modules/newscreen/view/information.dart';
 import 'package:app/providers/api_repository.dart';
