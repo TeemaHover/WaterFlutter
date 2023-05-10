@@ -182,12 +182,6 @@ class _CardMainState extends State<CardMain> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: const Text(
-              'Бусад хөтөлбөрүүд',
-            ),
-          ),
-          Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
