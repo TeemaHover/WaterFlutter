@@ -7,5 +7,5 @@ export 'bar_chart.dart';
 export 'statistic.dart';
 export 'notif_card.dart';
 export 'navigationbar.dart';
-
+export 'graphic.dart';
 export 'touchable_scale.dart';

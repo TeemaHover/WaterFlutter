@@ -1,71 +1,75 @@
+import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../constants/colors.dart';
-
-class WaterCard extends StatefulWidget {
+class WaterCard extends StatelessWidget {
   const WaterCard({super.key});
 
   @override
-  State<WaterCard> createState() => _WaterCardState();
-}
-
-class _WaterCardState extends State<WaterCard> {
-  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Card(
-          child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+    return Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(medium),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: const LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Color(0xff39BCFE),
+                Color(0xff3899F2),
+              ],
+              tileMode: TileMode.mirror),
+          color: blue,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              "Усны хэрэглээ",
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: white,
+                  ),
+            ),
+            space4,
+            RichText(
+                text: TextSpan(
+                    text: "33,123 ",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .copyWith(color: white),
+                    children: [
+                  TextSpan(
+                      text: "м.куб",
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(color: white)),
+                ])),
+            space4,
+            Text(
+              "Өнгөрсөн сард",
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: white,
+                  ),
+            ),
+            space24,
+            Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                gradient: const LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [blue, blue],
-                    tileMode: TileMode.mirror),
+                borderRadius: BorderRadius.circular(origin),
                 color: blue,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      cardTitle("Усны хэрэглээ", white, context),
-                      Row(
-                        children: [
-                          cardTitle("33,437", white, context),
-                          cardTitle(' м.куб', white, context)
-                        ],
-                      ),
-                      cardTitle("Өнгөрсөн сард", white, context),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: blue,
-                    ),
-                    padding: const EdgeInsets.all(5),
-                    child: const Icon(
-                      Icons.newspaper,
-                      color: Colors.white,
-                    ),
-                  )
-                ],
-              ))),
-    );
+              padding: const EdgeInsets.all(10),
+              child: const Icon(
+                Icons.newspaper,
+                color: Colors.white,
+              ),
+            )
+          ],
+        ));
+    ;
   }
-}
-
-cardTitle(String text, Color cl, BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.all(5),
-    child: Text(
-      text,
-      style: Theme.of(context).textTheme.titleMedium!.copyWith(color: cl),
-    ),
-  );
 }

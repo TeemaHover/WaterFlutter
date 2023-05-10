@@ -15,7 +15,7 @@ class _CompanyHomeState extends State<CompanyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: deq(title: "Company Home"),
+      appBar: MainAppBar(title: "Company Home"),
       body: Container(
         child: Column(
           children: const [

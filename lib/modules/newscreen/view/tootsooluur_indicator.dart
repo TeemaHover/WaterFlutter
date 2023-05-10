@@ -12,7 +12,7 @@ class _ToIndicatorState extends State<ToIndicator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: deq(title: "Усны заалт оруулах"),
+      appBar: MainAppBar(title: "Усны заалт оруулах"),
       body: Container(
           margin: EdgeInsets.all(MediaQuery.of(context).size.width / 20),
           width: MediaQuery.of(context).size.width,

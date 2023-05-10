@@ -21,11 +21,10 @@ class _NotificationCardState extends State<NotificationCard> {
       ),
       child: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          cardTitle('Хөтөлбөрийн нэр', black, context),
-          cardTitle(
-              'Тухайн хөтөлбөрийн товч танилцуулга 15-20 үгэнд багтах ёстой.',
-              black,
-              context),
+          Text("Хөтөлбөрийн нэр",
+              style: Theme.of(context).textTheme.bodyMedium),
+          Text("Тухайн хөтөлбөрийн товч танилцуулга 15-20 үгэнд багтах ёстой.",
+              style: Theme.of(context).textTheme.titleMedium),
           Stack(
             alignment: AlignmentDirectional.center,
             children: [

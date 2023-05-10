@@ -17,7 +17,6 @@ class _InformationState extends State<Information> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-          backgroundColor: bgGray,
           appBar: AppBar(
             backgroundColor: bgGray,
             bottom: const PreferredSize(
@@ -41,9 +40,9 @@ class _InformationState extends State<Information> {
                         insets: EdgeInsets.symmetric(horizontal: 0.0))),
               ),
             ),
-            title: const Text(
+            title: Text(
               'Мэдээлэл',
-              style: TextStyle(color: Colors.black),
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
           body: TabBarView(

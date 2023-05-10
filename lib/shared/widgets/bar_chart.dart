@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 
-class _BarChart extends StatelessWidget {
+class BarChartWidget extends StatelessWidget {
+  const BarChartWidget({super.key, required this.cl});
   final Color cl;
-
-  const _BarChart(this.cl);
 
   @override
   Widget build(BuildContext context) {
@@ -190,26 +189,4 @@ class _BarChart extends StatelessWidget {
           showingTooltipIndicators: [0],
         ),
       ];
-}
-
-class BarChartSample3 extends StatefulWidget {
-  final Color cl;
-
-  const BarChartSample3({super.key, required this.cl});
-
-  @override
-  State<StatefulWidget> createState() => BarChartSample3State();
-}
-
-class BarChartSample3State extends State<BarChartSample3> {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        height: 100,
-        child: Center(
-            child: AspectRatio(
-          aspectRatio: 2.7,
-          child: _BarChart(widget.cl),
-        )));
-  }
 }

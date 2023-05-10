@@ -17,7 +17,6 @@ class _EventState extends State<Event> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-          backgroundColor: bgGray,
           appBar: AppBar(
             backgroundColor: bgGray,
             bottom: const PreferredSize(

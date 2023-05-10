@@ -5,15 +5,15 @@ const TextStyle head1 =
 
 const TextStyle bodyLarge = TextStyle(
   fontSize: 35,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
 );
 const TextStyle bodyMedium = TextStyle(
   fontSize: 22,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
 );
 const TextStyle bodySmall = TextStyle(
   fontSize: 20,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
 );
 
 const TextStyle titleLarge = TextStyle(
@@ -21,11 +21,11 @@ const TextStyle titleLarge = TextStyle(
   fontSize: 18,
 );
 const TextStyle titleMedium = TextStyle(
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
   fontSize: 16,
 );
 const TextStyle titleSmall = TextStyle(
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
   fontSize: 15,
 );
 const TextStyle labelLarge = TextStyle(
@@ -35,4 +35,8 @@ const TextStyle labelLarge = TextStyle(
 const TextStyle labelMedium = TextStyle(
   fontWeight: FontWeight.normal,
   fontSize: 12,
+);
+const TextStyle labelSmall = TextStyle(
+  fontWeight: FontWeight.normal,
+  fontSize: 8,
 );

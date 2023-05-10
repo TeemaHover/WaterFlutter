@@ -13,7 +13,7 @@ class _TestViewState extends State<TestView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgGray,
-      appBar: deq(title: "Нүүр"),
+      appBar: MainAppBar(title: "Нүүр"),
       body: SizedBox(
         height: defaultHeight(context),
         child: SingleChildScrollView(

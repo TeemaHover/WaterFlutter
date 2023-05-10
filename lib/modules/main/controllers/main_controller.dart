@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class HomeController extends GetxController
+class MainController extends GetxController
     with StateMixin<User>, WidgetsBindingObserver {
   final ApiRepository _apiRepository = Get.find();
   final authController = Get.put(AuthController(apiRepository: Get.find()));
@@ -26,7 +26,7 @@ class HomeController extends GetxController
   Widget getView(int index) {
     switch (index) {
       case 0:
-        return const MainView();
+        return const Information();
       case 1:
         return const Event();
       case 2:
