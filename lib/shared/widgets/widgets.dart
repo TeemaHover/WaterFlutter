@@ -8,4 +8,5 @@ export 'statistic.dart';
 export 'notif_card.dart';
 export 'navigationbar.dart';
 export 'graphic.dart';
+export 'achievement.dart';
 export 'touchable_scale.dart';

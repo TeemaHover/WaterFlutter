@@ -1,17 +1,19 @@
+
+import 'package:app/shared/constants/index.dart';
 import 'package:app/shared/widgets/notif_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../../shared/constants/colors.dart';
 import '../../../shared/widgets/main_card.dart';
 
-class Event extends StatefulWidget {
-  const Event({super.key});
+class EventView extends StatefulWidget {
+  const EventView({super.key});
 
   @override
-  State<Event> createState() => _EventState();
+  State<EventView> createState() => _EventViewState();
 }
 
-class _EventState extends State<Event> {
+class _EventViewState extends State<EventView> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -48,41 +50,40 @@ class _EventState extends State<Event> {
           body: TabBarView(
             children: [
               Container(
-                color: gray,
-                height: MediaQuery.of(context).size.height,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const NotificationCard(),
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: const Text(
-                        'Бусад хөтөлбөрүүд',
+                color: bgGray,
+                height: defaultHeight(context),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const NotificationCard(),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: const Text(
+                          'Бусад хөтөлбөрүүд',
+                        ),
                       ),
-                    ),
-                    const CardMain(
-                        title: "Байгууллагын нэр", time: "2023/05/12")
-                  ],
+                      const CardMain(
+                          title: "Байгууллагын нэр", time: "2023/05/12")
+                    ],
+                  ),
                 ),
               ),
               Container(
-                color: gray,
-                height: MediaQuery.of(context).size.height,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const NotificationCard(),
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: const Text(
+                color: bgGray,
+                height: defaultHeight(context),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      NotificationCard(),
+                      Text(
                         'Бусад хөтөлбөрүүд',
                       ),
-                    ),
-                    const CardMain(
-                        title: "Байгууллагын нэр", time: "2023/05/12")
-                  ],
+                      CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
+                    ],
+                  ),
                 ),
               ),
             ],

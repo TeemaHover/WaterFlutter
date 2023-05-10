@@ -1,6 +1,6 @@
 import 'package:app/data/data.dart';
 import 'package:app/modules/modules.dart';
-import 'package:app/modules/newscreen/view/event.dart';
+
 import 'package:app/modules/newscreen/view/information.dart';
 import 'package:app/providers/api_repository.dart';
 import 'package:app/shared/index.dart';
@@ -28,7 +28,7 @@ class HomeController extends GetxController
       case 0:
         return const MainView();
       case 1:
-        return const Event();
+        return const EventView();
       case 2:
         return const EventAdd();
       case 3:

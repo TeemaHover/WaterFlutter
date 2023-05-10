@@ -1,3 +1,4 @@
+import 'package:app/modules/modules.dart';
 import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
 
@@ -28,30 +29,32 @@ class _EventAddState extends State<EventAdd> {
                 "Зар оруулах хэсэг",
               ),
               space24,
-              Container(
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width / 20,
-                    vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: white,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              AddContainerWidget(title: 'Оролцох гишүүдийн хязгаар', children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("Untitled Event",
-                        style: Theme.of(context).textTheme.bodyMedium),
-                    // TextField(
-                    //   decoration: InputDecoration(
-                    //     border: InputBorder.none,
-                    //     hintText: 'Event Description',
-                    //   ),
-                    // )
-                    const Text("TextForm")
+                    Text(
+                      'Гишүүд',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelLarge
+                    ),
+                    space16,
+                    SizedBox(
+                      width: 127,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: small, horizontal: 12),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(color: textGray)),
+                            hintText: 'Тоогоо бичнэ үү.',
+                            hintStyle: Theme.of(context).textTheme.labelMedium),
+                      ),
+                    ),
                   ],
-                ),
-              ),
+                )
+              ]),
               const SizedBox(
                 height: 20,
               ),

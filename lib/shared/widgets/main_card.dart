@@ -18,7 +18,7 @@ class _CardMainState extends State<CardMain> {
       onTap: () {
         showModalBottomSheet(
           context: context,
-          isScrollControlled: true,
+          isScrollControlled: false,
           backgroundColor: Colors.transparent,
           builder: (context) => Container(
               height: MediaQuery.of(context).size.height * 0.9,

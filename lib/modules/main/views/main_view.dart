@@ -26,7 +26,7 @@ class _MainViewState extends State<MainView> {
               ),
               space24,
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: white,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(25),
@@ -74,7 +74,7 @@ class _MainViewState extends State<MainView> {
                             ),
                           ),
                         ),
-                        achievmentStatistic('Цол 1', context)
+                        Flexible(child: AchievementWidget()),
                       ],
                     ),
                   ],
