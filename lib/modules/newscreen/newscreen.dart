@@ -1,1 +1,1 @@
-export 'view/tootsooluur_indicator.dart';
+export 'view/company_home.dart';

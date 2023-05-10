@@ -25,5 +25,5 @@ abstract class _Paths {
   static const AUDIO = '/audio';
   static const VIDEO = '/video';
   //newscreen
-  static const TOOTSOOLUUR = '/tootsooluur_indicator';
+  static const TOOTSOOLUUR = '/companyhome';
 }
