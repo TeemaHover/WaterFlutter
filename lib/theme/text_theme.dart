@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// const TextStyle bodyLarge = TextStyle(
+//  TextStyle bodyLarge = TextStyle(
 //   fontSize: 35,
 //   fontWeight: FontWeight.w600,
 // );
 
-// const TextStyle head1 =
+//  TextStyle head1 =
 //     TextStyle(fontWeight: FontWeight.bold, fontSize: 36.0, color: Colors.black);
 
 // const TextStyle bodyMedium = TextStyle(

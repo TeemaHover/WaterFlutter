@@ -1,6 +1,7 @@
 import 'package:app/shared/constants/colors.dart';
 import 'package:app/shared/index.dart';
 import 'package:app/shared/widgets/wallet_card.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class NotificationCard extends StatefulWidget {
@@ -22,8 +23,7 @@ class _NotificationCardState extends State<NotificationCard> {
       ),
       child: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text("Хөтөлбөрийн нэр",
-              style: Theme.of(context).textTheme.bodyMedium),
+          Text("Хөтөлбөрийн нэр", style: FontStyles.bodyMedium),
           Text("Тухайн хөтөлбөрийн товч танилцуулга 15-20 үгэнд багтах ёстой.",
               style: Theme.of(context).textTheme.titleMedium),
           Stack(
