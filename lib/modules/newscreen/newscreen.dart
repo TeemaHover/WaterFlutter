@@ -1,1 +1,1 @@
-export 'view/company_home.dart';
+export 'view/event_add.dart';

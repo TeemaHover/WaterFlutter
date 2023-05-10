@@ -18,10 +18,15 @@ class _CompanyHomeState extends State<CompanyHome> {
       appBar: deq(title: "Company Home"),
       body: Container(
         child: Column(
-          children: const [
-            Text("asd"),
-            NotificationCard(),
-            CardMain(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width / 20),
+              child: const Text("Asd"),
+            ),
+            const NotificationCard(),
+            const CardMain(
               title: "asd",
               time: "10",
             ),

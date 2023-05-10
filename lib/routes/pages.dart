@@ -24,7 +24,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TOOTSOOLUUR,
-      page: () => const CompanyHome(),
+      page: () => const EventAdd(),
       binding: null,
     ),
     GetPage(
