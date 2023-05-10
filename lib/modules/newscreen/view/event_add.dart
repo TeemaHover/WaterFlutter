@@ -12,7 +12,10 @@ class _EventAddState extends State<EventAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: MainAppBar(title: "Add"),
+        backgroundColor: lightGray,
+        appBar: MainAppBar(
+          title: "Add",
+        ),
         body: Container(
           width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.symmetric(
@@ -20,7 +23,9 @@ class _EventAddState extends State<EventAdd> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Asd"),
+              const Text(
+                "Зар оруулах хэсэг",
+              ),
               Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.symmetric(
@@ -28,18 +33,20 @@ class _EventAddState extends State<EventAdd> {
                     vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: gray,
+                  color: white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text("Untitled text"),
+                  children: [
+                    Text("Untitled Event",
+                        style: Theme.of(context).textTheme.bodyMedium),
                     // TextField(
                     //   decoration: InputDecoration(
                     //     border: InputBorder.none,
                     //     hintText: 'Event Description',
                     //   ),
                     // )
+                    const Text("TextForm")
                   ],
                 ),
               ),
@@ -53,21 +60,24 @@ class _EventAddState extends State<EventAdd> {
                     vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: gray,
+                  color: white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Untitled text"),
+                    Text("Оролцох гишүүдийн хязгаар",
+                        style: Theme.of(context).textTheme.titleMedium),
                     Row(
-                      children: const [
-                        Text("Start Date"),
+                      children: [
+                        Text("Гишүүд",
+                            style: Theme.of(context).textTheme.labelMedium),
                         // TextField(
                         //   decoration: InputDecoration(
                         //     border: InputBorder.none,
                         //     hintText: 'Event Description',
                         //   ),
                         // )
+                        const Text("TextForm")
                       ],
                     )
                   ],
@@ -82,22 +92,25 @@ class _EventAddState extends State<EventAdd> {
                     vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: gray,
+                  color: white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Untitled text"),
+                    Text("Хөтөлбөрийн урамшуулал",
+                        style: Theme.of(context).textTheme.titleMedium),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text("Урамшуулал"),
+                        Text("Урамшуулал",
+                            style: Theme.of(context).textTheme.labelMedium),
                         // TextField(
                         //   decoration: InputDecoration(
                         //     border: InputBorder.none,
                         //     hintText: 'Event Description',
                         //   ),
                         // )
+
                         const Text("TextForm"),
                         MainButton(
                             onPressed: () {},
@@ -122,25 +135,28 @@ class _EventAddState extends State<EventAdd> {
                     vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: gray,
+                  color: white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Хөтөлөрийн үргэлжлэх хугацаа"),
+                    Text("Хөтөлбөрийн үргэлжлэх хугацаа",
+                        style: Theme.of(context).textTheme.titleMedium),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Column(
-                          children: const [
-                            Text("data"),
-                            Text("TextField"),
+                          children: [
+                            Text("Эхлэх огноо",
+                                style: Theme.of(context).textTheme.labelMedium),
+                            const Text("TextField"),
                           ],
                         ),
                         Column(
-                          children: const [
-                            Text("data"),
-                            Text("TextField"),
+                          children: [
+                            Text("Дуусах огноо",
+                                style: Theme.of(context).textTheme.labelMedium),
+                            const Text("TextField"),
                           ],
                         )
                       ],
@@ -157,23 +173,29 @@ class _EventAddState extends State<EventAdd> {
                     vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: gray,
+                  color: white,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Гүйцэтгэх ажил"),
+                    Text("Гүйцэтгэх ажил",
+                        style: Theme.of(context).textTheme.titleMedium),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          children: const [
-                            Text("data"),
-                            Text("TextField"),
+                          children: [
+                            Text("Ажил 1",
+                                style: Theme.of(context).textTheme.labelMedium),
+                            const Text("TextField"),
                           ],
                         ),
-                        const Text("TextField")
+                        const Text("TextField"),
+                        MainButton(
+                            onPressed: () {},
+                            text: "Өөр урамшуулал нэмэх",
+                            child: const SizedBox())
                       ],
                     )
                   ],

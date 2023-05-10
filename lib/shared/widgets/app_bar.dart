@@ -19,6 +19,5 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
       shadowColor: Colors.transparent,
       backgroundColor: Colors.white,
     );
-    ;
   }
 }

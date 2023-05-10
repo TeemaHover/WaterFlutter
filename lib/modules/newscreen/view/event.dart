@@ -71,12 +71,17 @@ class _EventState extends State<Event> {
                 height: MediaQuery.of(context).size.height,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    NotificationCard(),
-                    Text(
-                      'Бусад хөтөлбөрүүд',
+                  children: [
+                    const NotificationCard(),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: const Text(
+                        'Бусад хөтөлбөрүүд',
+                      ),
                     ),
-                    CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
+                    const CardMain(
+                        title: "Байгууллагын нэр", time: "2023/05/12")
                   ],
                 ),
               ),
