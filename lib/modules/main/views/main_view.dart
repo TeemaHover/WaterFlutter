@@ -14,7 +14,7 @@ class _MainViewState extends State<MainView> {
     return Scaffold(
       appBar: MainAppBar(title: "Нүүр"),
       body: Container(
-        color: lightGray,
+        color: bgGray,
         height: defaultHeight(context),
         child: SingleChildScrollView(
           // physics: const NeverScrollableScrollPhysics(),
@@ -74,7 +74,7 @@ class _MainViewState extends State<MainView> {
                             ),
                           ),
                         ),
-                        Flexible(child: AchievementWidget()),
+                        const Flexible(child: AchievementWidget()),
                       ],
                     ),
                   ],

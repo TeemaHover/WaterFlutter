@@ -1,6 +1,5 @@
+import 'package:app/shared/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class MainAppBar extends StatelessWidget with PreferredSizeWidget {
   MainAppBar({super.key, required this.title});
@@ -17,7 +16,7 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
         style: Theme.of(context).textTheme.bodyLarge,
       ),
       shadowColor: Colors.transparent,
-      backgroundColor: Colors.white,
+      backgroundColor: bgGray,
     );
   }
 }
