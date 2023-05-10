@@ -11,7 +11,7 @@ class CalculatorAddWidget extends StatelessWidget {
       body: Container(
           margin: EdgeInsets.all(MediaQuery.of(context).size.width / 20),
           width: double.infinity,
-          height: defaultHeight(context),
+          height: 800,
           child: Column(
             children: [
               const Text("Хүйтэн ус"),

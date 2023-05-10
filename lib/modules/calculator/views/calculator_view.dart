@@ -1,7 +1,9 @@
-import 'package:app/modules/modules.dart';
+import 'package:app/modules/calculator/calculator.dart';
 import 'package:app/shared/index.dart';
 
 import 'package:flutter/material.dart';
+
+import '../../../theme/text_theme.dart';
 
 class CalculatorView extends StatefulWidget {
   const CalculatorView({super.key});
@@ -19,6 +21,7 @@ class _CalculatorViewState extends State<CalculatorView> {
       ),
       body: Container(
         margin: EdgeInsets.all(MediaQuery.of(context).size.width / 20),
+        height: defaultHeight(context),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,7 +34,12 @@ class _CalculatorViewState extends State<CalculatorView> {
               ),
               child: const SizedBox(),
             ),
-            const Text("data"),
+            space16,
+            Text(
+              "Усны заалт оруулах",
+              style: FontStyles.bodyMedium,
+            ),
+            space16,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,10 +67,14 @@ class _CalculatorViewState extends State<CalculatorView> {
                 ),
               ],
             ),
+            space16,
             const Divider(
               color: blue,
             ),
-            const CalculatorAddWidget(),
+            space16,
+            const CalculatorTileWidget(),
+            space16,
+            const CalculatorTileWidget(),
             SizedBox(
               height: MediaQuery.of(context).size.height / 25,
             ),

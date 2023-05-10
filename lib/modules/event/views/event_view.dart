@@ -1,4 +1,3 @@
-
 import 'package:app/shared/constants/index.dart';
 import 'package:app/shared/widgets/notif_card.dart';
 import 'package:flutter/material.dart';
@@ -76,12 +75,17 @@ class _EventViewState extends State<EventView> {
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      NotificationCard(),
-                      Text(
-                        'Бусад хөтөлбөрүүд',
+                    children: [
+                      const NotificationCard(),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: const Text(
+                          'Бусад хөтөлбөрүүд',
+                        ),
                       ),
-                      CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
+                      const CardMain(
+                          title: "Байгууллагын нэр", time: "2023/05/12")
                     ],
                   ),
                 ),

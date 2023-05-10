@@ -29,7 +29,7 @@ class HomeController extends GetxController
       case 1:
         return const EventView();
       case 2:
-        return const CalculatorView();
+        return const CalculatorAddWidget();
       case 3:
         return Center(
           child: TextButton(

@@ -1,4 +1,5 @@
 import 'package:app/shared/constants/colors.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class CalculatorTileWidget extends StatefulWidget {
@@ -32,12 +33,18 @@ class _CalculatorTileWidgetState extends State<CalculatorTileWidget> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Бусад хөтөлбөрүүд'),
+                Text(
+                  'Халуун усны мэдээлэл',
+                  style: FontStyles.labelLarge,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("data"),
-                    Text("data"),
+                  children: [
+                    Text(
+                      "123,456 мкв",
+                      style: FontStyles.labelMedium,
+                    ),
+                    Text("123,456 төгрөг", style: FontStyles.labelMedium),
                   ],
                 )
               ],
