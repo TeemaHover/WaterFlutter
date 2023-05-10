@@ -82,7 +82,7 @@ class _MontlyWaterCalculatorState extends State<MontlyWaterCalculator> {
                 text: "+",
                 width: MediaQuery.of(context).size.width / 2.5,
                 height: 49,
-                color: darkblue,
+                color: blue,
                 child: const SizedBox())
           ],
         ));

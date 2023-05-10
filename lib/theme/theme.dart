@@ -19,8 +19,13 @@ class MyTheme {
       elevation: 8.0,
     ),
     textTheme: const TextTheme(
-      titleMedium: mediumTitle,
-      titleLarge: largeTitle,
+      bodyLarge: bodyLarge,
+      bodyMedium: bodyMedium,
+      bodySmall: bodySmall,
+      titleLarge: titleLarge,
+      titleMedium: titleMedium,
+      titleSmall: titleSmall,
+      labelLarge: labelLarge,
     ),
     tabBarTheme: TabBarTheme(
       labelColor: secondary,

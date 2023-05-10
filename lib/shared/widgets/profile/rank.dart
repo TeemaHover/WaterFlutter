@@ -21,7 +21,7 @@ class _RankState extends State<Rank> {
             bottomLeft: Radius.circular(50),
             bottomRight: Radius.circular(50),
           ),
-          color: lightwhite,
+          color: bgGray,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

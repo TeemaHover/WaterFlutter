@@ -17,9 +17,9 @@ class _InformationState extends State<Information> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-          backgroundColor: bgcolor,
+          backgroundColor: bgGray,
           appBar: AppBar(
-            backgroundColor: bgcolor,
+            backgroundColor: bgGray,
             bottom: const PreferredSize(
               preferredSize: Size.fromHeight(40),
               child: Align(

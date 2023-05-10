@@ -12,7 +12,7 @@ class _TestViewState extends State<TestView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgcolor,
+      backgroundColor: bgGray,
       appBar: deq(title: "Нүүр"),
       body: SizedBox(
         height: defaultHeight(context),

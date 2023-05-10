@@ -21,7 +21,7 @@ class _WaterCardState extends State<WaterCard> {
                 gradient: const LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
-                    colors: [blue, darkblue],
+                    colors: [blue, blue],
                     tileMode: TileMode.mirror),
                 color: blue,
               ),
@@ -46,7 +46,7 @@ class _WaterCardState extends State<WaterCard> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: darkblue,
+                      color: blue,
                     ),
                     padding: const EdgeInsets.all(5),
                     child: const Icon(
