@@ -12,7 +12,7 @@ class _EventAddState extends State<EventAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: lightGray,
+        backgroundColor: bgGray,
         appBar: MainAppBar(
           title: "Add",
         ),
