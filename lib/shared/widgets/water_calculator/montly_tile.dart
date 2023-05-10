@@ -42,10 +42,20 @@ class _MontlyTileState extends State<MontlyTile> {
                   ],
                 ),
               ),
-              Row(
+              Column(
                 children: [
-                  Text(widget.waterConsumption),
-                  const Icon(Icons.water_drop)
+                  Row(
+                    children: [
+                      Text(widget.waterConsumption),
+                      const Icon(Icons.water_drop)
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(widget.waterConsumption),
+                      const Icon(Icons.money)
+                    ],
+                  )
                 ],
               )
             ],
