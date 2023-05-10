@@ -33,7 +33,14 @@ class _MontlyWaterCalculatorState extends State<MontlyWaterCalculator> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text("data"),
-                    const Text("data мкв"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text("data мкв"),
+                        Text("="),
+                        Text("data мкв"),
+                      ],
+                    ),
                     Row(
                       children: const [
                         Text("data"),
@@ -42,11 +49,6 @@ class _MontlyWaterCalculatorState extends State<MontlyWaterCalculator> {
                     )
                   ],
                 ),
-                Expanded(
-                    child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [Icon(Icons.water_drop)],
-                ))
               ],
             ),
             MainButton(

@@ -7,6 +7,8 @@ const success = Color(0xff06D37D);
 const darkgray = Color(0xFFd9d9d9);
 const lightblue = Color(0xFFDCF2FF);
 const primary = Color(0xFF353A48);
+const loginBg = Color(0xffD9FFC1);
+const loginText = Color(0xffC0D8EB);
 
 //  main colors
 const skyBlue = Color(0xff48ACF7);

@@ -12,11 +12,15 @@ class LoginView extends StatelessWidget {
       child: Column(
         children: [
           Center(
-            child: Container(
+              child: Obx(
+            () => Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 padding: const EdgeInsets.all(origin),
-                color: lightblue,
+                color: controller.isPasswordFocus.value ||
+                        controller.isPhoneFocus.value
+                    ? lightblue
+                    : loginBg,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   // mainAxisSize: MainAxisSize.min,
@@ -39,10 +43,13 @@ class LoginView extends StatelessWidget {
                     Container(
                         alignment: Alignment.centerLeft,
                         margin: const EdgeInsets.only(top: 16),
-                        child: const Text(
+                        child: Text(
                           "Тавтай морил",
                           style: TextStyle(
-                              color: primary,
+                              color: controller.isPasswordFocus.value ||
+                                      controller.isPhoneFocus.value
+                                  ? loginText
+                                  : primary,
                               fontSize: 50,
                               letterSpacing: -0.3,
                               fontWeight: FontWeight.w700),
@@ -52,9 +59,11 @@ class LoginView extends StatelessWidget {
                         Obx(
                           () => TextField(
                             autofocus: true,
+                            style: Theme.of(context).textTheme.labelLarge,
                             keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
                               hintText: 'Утасны дугаар',
+                              hintStyle: Theme.of(context).textTheme.labelLarge,
                               suffixIcon: IconButton(
                                   icon: !controller.isPhoneFocus.value
                                       ? Icon(
@@ -77,9 +86,11 @@ class LoginView extends StatelessWidget {
                         Obx(
                           () => TextFormField(
                               autofocus: true,
+                              style: Theme.of(context).textTheme.labelLarge,
                               decoration: InputDecoration(
                                 hintText: 'Нууц үг ',
-                                hintStyle: Theme.of(context).textTheme.,
+                                hintStyle:
+                                    Theme.of(context).textTheme.labelLarge,
                                 suffixIcon: IconButton(
                                     icon: Icon(
                                       controller.isVisible.value
@@ -139,7 +150,7 @@ class LoginView extends StatelessWidget {
                     ),
                   ],
                 )),
-          ),
+          )),
         ],
       ),
     );

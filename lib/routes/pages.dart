@@ -23,8 +23,8 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      name: _Paths.WATERCALCULATOR,
-      page: () => const WaterCalculator(),
+      name: _Paths.TOOTSOOLUUR,
+      page: () => const ToIndicator(),
       binding: null,
     ),
     GetPage(
