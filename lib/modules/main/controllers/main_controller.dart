@@ -27,7 +27,7 @@ class MainController extends GetxController
   Widget getView(int index) {
     switch (index) {
       case 0:
-        return const Information();
+        return const MainView();
       case 1:
         return const Event();
       case 2:

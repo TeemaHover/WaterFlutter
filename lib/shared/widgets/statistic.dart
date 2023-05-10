@@ -23,7 +23,7 @@ class _StatisticState extends State<Statistic> {
   }
 }
 
-achievmentStatistic(String badge, BuildContext context) {
+achievementStatistic(String badge, BuildContext context) {
   return Container(
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
