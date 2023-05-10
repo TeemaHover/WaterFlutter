@@ -32,6 +32,7 @@ const lightGray = Color(0xffECEDF3);
 const textGray = Color(0xff959A9E);
 const bgGray = Color(0xFFf7f8fa);
 const blue = Color(0xFF1d8be2);
+const green = Color(0xFF80C457);
 
 // Color hexToColor(String hex) {
 //   assert(RegExp(r'^#([0-9a-fA-F]{6})|([0-9a-fA-F]{8})$').hasMatch(hex),

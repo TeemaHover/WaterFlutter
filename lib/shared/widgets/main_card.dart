@@ -1,4 +1,4 @@
-import 'package:app/shared/constants/colors.dart';
+import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
 
 class CardMain extends StatefulWidget {
@@ -18,10 +18,11 @@ class _CardMainState extends State<CardMain> {
       onTap: () {
         showModalBottomSheet(
           context: context,
-          isScrollControlled: false,
+          isScrollControlled: true,
           backgroundColor: Colors.transparent,
           builder: (context) => Container(
               height: MediaQuery.of(context).size.height * 0.9,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 48),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -31,44 +32,57 @@ class _CardMainState extends State<CardMain> {
               ),
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Хөтөлбөрийн нэр"),
-                    const Text("asdasdasdad"),
+                    Text(
+                      "Хөтөлбөрийн нэр",
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    space16,
+                    Text("asdasdasdad",
+                        style: Theme.of(context).textTheme.titleMedium),
+                    space16,
                     Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: darkgray,
+                          color: bgGray,
                         ),
                         child: Column(
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Text("Гишүүд"),
-                                Text("660/1000"),
+                              children: [
+                                Text("Гишүүд",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium),
+                                Text("660/1000",
+                                    style:
+                                        Theme.of(context).textTheme.labelSmall),
                               ],
                             ),
                             const Text("Progress bar")
                           ],
                         )),
+                    space16,
                     Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: darkgray,
+                          color: bgGray,
                         ),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text("Урамшуулал"),
-                              const Text("as"),
+                              Text("Урамшуулал",
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium),
+                              Text("as",
+                                  style:
+                                      Theme.of(context).textTheme.titleSmall),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -92,27 +106,31 @@ class _CardMainState extends State<CardMain> {
                                 ],
                               )
                             ])),
+                    space16,
                     Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: darkgray,
+                          color: bgGray,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Text("Гишүүд"),
+                              children: [
+                                Text("Үргэжлэх хугацаа",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium),
                               ],
                             ),
-                            const Text("a")
+                            Text("a",
+                                style: Theme.of(context).textTheme.titleSmall)
                           ],
                         )),
+                    space16,
                     const Divider(
                       height: 20,
                       thickness: 2,
@@ -121,28 +139,49 @@ class _CardMainState extends State<CardMain> {
                       color: black,
                     ),
                     Container(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Хөтөлбөрт хамааралтай зураг бичлэг",
+                              style: Theme.of(context).textTheme.bodyMedium),
+                          space16,
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            height: 400,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: gray,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    space16,
+                    Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
-                            children: const [Text("Гүйцэтгэх ажил")],
+                            children: [
+                              Text("Гүйцэтгэх ажил",
+                                  style: Theme.of(context).textTheme.bodyMedium)
+                            ],
                           ),
-                          const Text("a")
+                          Text("a",
+                              style: Theme.of(context).textTheme.titleSmall)
                         ],
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: darkgray,
+                        color: bgGray,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,11 +189,14 @@ class _CardMainState extends State<CardMain> {
                           Row(
                             children: const [Icon(Icons.forest_outlined)],
                           ),
-                          const Text("Ажил гүйцэтгэлийн нэр"),
-                          const Text("a")
+                          Text("Ажил гүйцэтгэлийн нэр",
+                              style: Theme.of(context).textTheme.titleMedium),
+                          Text("a",
+                              style: Theme.of(context).textTheme.titleSmall)
                         ],
                       ),
                     ),
+                    space16,
                     const Divider(
                       height: 20,
                       thickness: 2,
@@ -162,20 +204,21 @@ class _CardMainState extends State<CardMain> {
                       endIndent: 20,
                       color: black,
                     ),
+                    space16,
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.9,
                       height: 50,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: white,
-                            backgroundColor: darkgray,
+                            foregroundColor: black,
+                            backgroundColor: bgGray,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
                           onPressed: () {},
                           child: const Text("Бүртгүүлэх")),
-                    )
+                    ),
                   ],
                 ),
               )),
