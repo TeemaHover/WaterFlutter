@@ -22,21 +22,27 @@ class LoginView extends StatelessWidget {
                   // mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    // Container(
-                    //   alignment: Alignment.center,
-                    //   margin: const EdgeInsets.only(top: 16),
-                    //   child: Image.asset(
-                    //     imageLogo,
-                    //     width: MediaQuery.of(context).size.width > 400
-                    //         ? 200
-                    //         : MediaQuery.of(context).size.width * 0.5,
-                    //   ),
-                    // ),
+                    Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.only(top: 16),
+                      child: Image.asset(
+                        imageLogo,
+                        width: MediaQuery.of(context).size.width > 400
+                            ? 200
+                            : MediaQuery.of(context).size.width * 0.5,
+                      ),
+                    ),
                     Container(
                         alignment: Alignment.centerLeft,
-                        height: MediaQuery.of(context).size.height * 0.5,
                         margin: const EdgeInsets.only(top: 16),
-                        child: const Text("Тавтай морил")),
+                        child: const Text(
+                          "Тавтай морил",
+                          style: TextStyle(
+                              color: primary,
+                              fontSize: 50,
+                              letterSpacing: -0.3,
+                              fontWeight: FontWeight.w700),
+                        )),
                     Column(
                       children: [
                         TextFormField(
@@ -80,13 +86,12 @@ class LoginView extends StatelessWidget {
                             controller.login(context);
                           },
                           text: 'Нэвтрэх',
-                          color: lightblack,
                           child: const SizedBox(),
                         ),
                         MainButton(
                           onPressed: () {},
                           color: Colors.transparent,
-                          contentColor: lightblack,
+                          contentColor: primary,
                           text: 'Нууц үг мартсан ?',
                           child: const SizedBox(),
                         ),
@@ -97,7 +102,7 @@ class LoginView extends StatelessWidget {
                                 .push(createRoute(const RegisterView()));
                           },
                           color: Colors.transparent,
-                          contentColor: lightblack,
+                          contentColor: primary,
                           text: 'Бүртгүүлэх',
                           child: const SizedBox(),
                         ),

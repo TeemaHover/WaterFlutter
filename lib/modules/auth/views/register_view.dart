@@ -96,13 +96,13 @@ class RegisterView extends StatelessWidget {
                             },
                             //ene hesegt text iin oorchilson
                             text: 'Бүртгүүлэх',
-                            color: lightblack,
+
                             child: const SizedBox(),
                           ),
                           // MainButton(
                           //   onPressed: () {},
                           //   color: Colors.transparent,
-                          //   contentColor: lightblack,
+                          //   contentColor: lightBlack,
                           //   text: 'Нууц үг мартсан ?',
                           //   child: const SizedBox(),
                           // ),
@@ -114,7 +114,7 @@ class RegisterView extends StatelessWidget {
                               //     .push(createRoute(const RegisterView()));
                             },
                             color: Colors.transparent,
-                            contentColor: lightblack,
+                            contentColor: primary,
                             text: 'Terms & Conditions',
                             child: const SizedBox(),
                           ),
