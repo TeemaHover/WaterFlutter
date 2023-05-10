@@ -1,5 +1,6 @@
 import 'package:app/modules/auth/auth.dart';
 import 'package:app/shared/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -59,11 +60,11 @@ class LoginView extends StatelessWidget {
                         Obx(
                           () => TextField(
                             autofocus: true,
-                            style: Theme.of(context).textTheme.labelLarge,
+                            style: FontStyles.labelLarge,
                             keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
                               hintText: 'Утасны дугаар',
-                              hintStyle: Theme.of(context).textTheme.labelLarge,
+                              hintStyle: FontStyles.labelLarge,
                               suffixIcon: IconButton(
                                   icon: !controller.isPhoneFocus.value
                                       ? Icon(
@@ -86,11 +87,10 @@ class LoginView extends StatelessWidget {
                         Obx(
                           () => TextFormField(
                               autofocus: true,
-                              style: Theme.of(context).textTheme.labelLarge,
+                              style: FontStyles.labelLarge,
                               decoration: InputDecoration(
                                 hintText: 'Нууц үг ',
-                                hintStyle:
-                                    Theme.of(context).textTheme.labelLarge,
+                                hintStyle: FontStyles.labelLarge,
                                 suffixIcon: IconButton(
                                     icon: Icon(
                                       controller.isVisible.value

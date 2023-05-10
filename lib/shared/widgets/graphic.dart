@@ -1,5 +1,6 @@
 import 'package:app/shared/constants/colors.dart';
 import 'package:app/shared/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -42,11 +43,11 @@ class GraphicWidget extends StatelessWidget {
               RichText(
                   text: TextSpan(
                       text: "$value ",
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: FontStyles.titleLarge,
                       children: [
                     TextSpan(
                         text: symbol,
-                        style: Theme.of(context).textTheme.labelSmall),
+                        style: FontStyles.labelSmall),
                   ])),
               icon
             ],

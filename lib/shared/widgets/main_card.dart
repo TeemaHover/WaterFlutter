@@ -37,11 +37,11 @@ class _CardMainState extends State<CardMain> {
                   children: [
                     Text(
                       "Хөтөлбөрийн нэр",
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: FontStyles.bodyMedium,
                     ),
                     space16,
                     Text("asdasdasdad",
-                        style: Theme.of(context).textTheme.titleMedium),
+                        style: FontStyles.titleMedium),
                     space16,
                     Container(
                         padding: const EdgeInsets.symmetric(
@@ -61,7 +61,7 @@ class _CardMainState extends State<CardMain> {
                                         .titleMedium),
                                 Text("660/1000",
                                     style:
-                                        Theme.of(context).textTheme.labelSmall),
+                                        FontStyles.labelSmall),
                               ],
                             ),
                             const Text("Progress bar")
@@ -80,10 +80,10 @@ class _CardMainState extends State<CardMain> {
                             children: [
                               Text("Урамшуулал",
                                   style:
-                                      Theme.of(context).textTheme.titleMedium),
+                                      FontStyles.titleMedium),
                               Text("as",
                                   style:
-                                      Theme.of(context).textTheme.titleSmall),
+                                      FontStyles.titleSmall),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -128,7 +128,7 @@ class _CardMainState extends State<CardMain> {
                               ],
                             ),
                             Text("a",
-                                style: Theme.of(context).textTheme.titleSmall)
+                                style: FontStyles.titleSmall)
                           ],
                         )),
                     space16,
@@ -146,7 +146,7 @@ class _CardMainState extends State<CardMain> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Хөтөлбөрт хамааралтай зураг бичлэг",
-                              style: Theme.of(context).textTheme.bodyMedium),
+                              style: FontStyles.bodyMedium),
                           space16,
                           Container(
                             width: MediaQuery.of(context).size.width * 0.9,
@@ -169,11 +169,11 @@ class _CardMainState extends State<CardMain> {
                           Row(
                             children: [
                               Text("Гүйцэтгэх ажил",
-                                  style: Theme.of(context).textTheme.bodyMedium)
+                                  style: FontStyles.bodyMedium)
                             ],
                           ),
                           Text("a",
-                              style: Theme.of(context).textTheme.titleSmall)
+                              style: FontStyles.titleSmall)
                         ],
                       ),
                     ),
@@ -191,9 +191,9 @@ class _CardMainState extends State<CardMain> {
                             children: const [Icon(Icons.forest_outlined)],
                           ),
                           Text("Ажил гүйцэтгэлийн нэр",
-                              style: Theme.of(context).textTheme.titleMedium),
+                              style: FontStyles.titleMedium),
                           Text("a",
-                              style: Theme.of(context).textTheme.titleSmall)
+                              style: FontStyles.titleSmall)
                         ],
                       ),
                     ),
@@ -256,7 +256,7 @@ class _CardMainState extends State<CardMain> {
                     children: [
                       Text(
                         widget.title,
-                        style: Theme.of(context).textTheme.titleSmall,
+                        style: FontStyles.titleSmall,
                       ),
                       Text(
                         'Эхлах хугацаа: ${widget.time}',
@@ -276,7 +276,7 @@ class _CardMainState extends State<CardMain> {
                         size: 32,
                       ),
                       Text('990/1000',
-                          style: Theme.of(context).textTheme.labelLarge),
+                          style: FontStyles.labelLarge),
                     ],
                   ),
                 ),

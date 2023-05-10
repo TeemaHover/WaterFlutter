@@ -1,4 +1,5 @@
 import 'package:app/shared/constants/colors.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class InformationCard extends StatefulWidget {
@@ -52,12 +53,12 @@ class _InformationCardState extends State<InformationCard> {
                   children: [
                     Text(
                       widget.title,
-                      style: Theme.of(context).textTheme.titleSmall,
+                      style: FontStyles.titleSmall,
                     ),
                     const Icon(Icons.star),
                     Text(
                       'Нийтлэгдсэн огноо: ${widget.time}',
-                      style: Theme.of(context).textTheme.labelLarge,
+                      style: FontStyles.labelLarge,
                     ),
                   ],
                 ),

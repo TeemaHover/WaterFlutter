@@ -1,4 +1,5 @@
 import 'package:app/shared/constants/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -29,9 +30,9 @@ class WaterCard extends StatelessWidget {
           children: [
             Text(
               "Усны хэрэглээ",
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: white,
-                  ),
+              style: FontStyles.titleMedium!.copyWith(
+                color: white,
+              ),
             ),
             space4,
             RichText(
@@ -52,9 +53,9 @@ class WaterCard extends StatelessWidget {
             space4,
             Text(
               "Өнгөрсөн сард",
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: white,
-                  ),
+              style: FontStyles.titleMedium!.copyWith(
+                color: white,
+              ),
             ),
             space24,
             Container(

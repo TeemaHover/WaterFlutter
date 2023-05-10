@@ -1,5 +1,6 @@
 import 'package:app/modules/modules.dart';
 import 'package:app/shared/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class EventAdd extends StatefulWidget {
@@ -42,7 +43,7 @@ class _EventAddState extends State<EventAdd> {
                             border: const OutlineInputBorder(
                                 borderSide: BorderSide(color: textGray)),
                             hintText: 'Нэрээ бичнэ үү.',
-                            hintStyle: Theme.of(context).textTheme.labelMedium),
+                            hintStyle: FontStyles.labelMedium),
                       ),
                     ),
                   ],
@@ -54,8 +55,7 @@ class _EventAddState extends State<EventAdd> {
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('Гишүүд',
-                              style: Theme.of(context).textTheme.labelLarge),
+                          Text('Гишүүд', style: FontStyles.labelLarge),
                           space16,
                           SizedBox(
                             width: 127,
@@ -66,8 +66,7 @@ class _EventAddState extends State<EventAdd> {
                                   border: const OutlineInputBorder(
                                       borderSide: BorderSide(color: textGray)),
                                   hintText: 'Тоогоо бичнэ үү.',
-                                  hintStyle:
-                                      Theme.of(context).textTheme.labelMedium),
+                                  hintStyle: FontStyles.labelMedium),
                             ),
                           ),
                         ],
@@ -80,8 +79,7 @@ class _EventAddState extends State<EventAdd> {
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('Урамшуулал',
-                              style: Theme.of(context).textTheme.labelLarge),
+                          Text('Урамшуулал', style: FontStyles.labelLarge),
                           space16,
                           SizedBox(
                             width: 127,
@@ -92,8 +90,7 @@ class _EventAddState extends State<EventAdd> {
                                   border: const OutlineInputBorder(
                                       borderSide: BorderSide(color: textGray)),
                                   hintText: 'Урамшуулалын нэр.',
-                                  hintStyle:
-                                      Theme.of(context).textTheme.labelMedium),
+                                  hintStyle: FontStyles.labelMedium),
                             ),
                           ),
                           space16,
@@ -123,8 +120,7 @@ class _EventAddState extends State<EventAdd> {
                       children: [
                         Column(
                           children: [
-                            Text("Эхлэх огноо",
-                                style: Theme.of(context).textTheme.labelMedium),
+                            Text("Эхлэх огноо", style: FontStyles.labelMedium),
                             space16,
                             SizedBox(
                               width: 127,
@@ -145,8 +141,7 @@ class _EventAddState extends State<EventAdd> {
                         ),
                         Column(
                           children: [
-                            Text("Дуусах огноо",
-                                style: Theme.of(context).textTheme.labelMedium),
+                            Text("Дуусах огноо", style: FontStyles.labelMedium),
                             space16,
                             SizedBox(
                               width: 127,
@@ -176,8 +171,7 @@ class _EventAddState extends State<EventAdd> {
                     children: [
                       Row(
                         children: [
-                          Text('Ажил',
-                              style: Theme.of(context).textTheme.labelLarge),
+                          Text('Ажил', style: FontStyles.labelLarge),
                           space16,
                           SizedBox(
                             width: 127,
@@ -188,8 +182,7 @@ class _EventAddState extends State<EventAdd> {
                                   border: const OutlineInputBorder(
                                       borderSide: BorderSide(color: textGray)),
                                   hintText: 'Ажлын нэр.',
-                                  hintStyle:
-                                      Theme.of(context).textTheme.labelMedium),
+                                  hintStyle: FontStyles.labelMedium),
                             ),
                           ),
                         ],
@@ -204,8 +197,7 @@ class _EventAddState extends State<EventAdd> {
                               border: const OutlineInputBorder(
                                   borderSide: BorderSide(color: textGray)),
                               hintText: 'Ажлын гүйцэтгэлийн дэлгэрэнгүй.',
-                              hintStyle:
-                                  Theme.of(context).textTheme.labelMedium),
+                              hintStyle: FontStyles.labelMedium),
                         ),
                       ),
                       space16,

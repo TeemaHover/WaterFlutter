@@ -1,5 +1,6 @@
 import 'package:app/shared/constants/colors.dart';
 import 'package:app/shared/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -21,7 +22,7 @@ class AddContainerWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: Theme.of(context).textTheme.titleMedium),
+          Text(title, style: FontStyles.titleMedium),
           space4,
           space8,
           Padding(

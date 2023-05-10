@@ -1,4 +1,5 @@
 import 'package:app/shared/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class Statistic extends StatefulWidget {
@@ -43,8 +44,8 @@ achievementStatistic(String badge, BuildContext context) {
               size: 100,
             ),
             Text("Одоо байгаа цол",
-                style: Theme.of(context).textTheme.labelMedium),
-            Text("Цол 1", style: Theme.of(context).textTheme.titleLarge),
+                style: FontStyles.labelMedium),
+            Text("Цол 1", style: FontStyles.titleLarge),
             const Icon(Icons.arrow_downward),
             Container(
               decoration: BoxDecoration(

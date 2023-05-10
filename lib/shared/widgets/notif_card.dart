@@ -25,7 +25,7 @@ class _NotificationCardState extends State<NotificationCard> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text("Хөтөлбөрийн нэр", style: FontStyles.bodyMedium),
           Text("Тухайн хөтөлбөрийн товч танилцуулга 15-20 үгэнд багтах ёстой.",
-              style: Theme.of(context).textTheme.titleMedium),
+              style: FontStyles.titleMedium),
           Stack(
             alignment: AlignmentDirectional.center,
             children: [

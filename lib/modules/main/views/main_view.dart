@@ -1,4 +1,5 @@
 import 'package:app/shared/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class MainView extends StatefulWidget {
@@ -12,9 +13,18 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(title: "Нүүр"),
+      appBar: AppBar(
+        title: Text(
+          "Нүүр",
+          style: FontStyles.bodyLarge.copyWith(
+            color: Colors.black,
+          ),
+        ),
+        elevation: 2,
+        backgroundColor: white,
+      ),
       body: Container(
-        color: lightGray,
+        color: bg,
         height: defaultHeight(context),
         child: SingleChildScrollView(
           // physics: const NeverScrollableScrollPhysics(),
@@ -38,7 +48,7 @@ class _MainViewState extends State<MainView> {
                   children: [
                     Text(
                       'Статистик',
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: FontStyles.bodyMedium,
                     ),
                     space16,
                     Row(
