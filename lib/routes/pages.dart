@@ -24,7 +24,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TOOTSOOLUUR,
-      page: () => const Tootsooluur(),
+      page: () => const ToIndicator(),
       binding: null,
     ),
     GetPage(

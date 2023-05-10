@@ -30,7 +30,7 @@ class HomeController extends GetxController
       case 1:
         return const Event();
       case 2:
-        return const Tootsooluur();
+        return const ToIndicator();
       case 3:
         return Center(
           child: TextButton(

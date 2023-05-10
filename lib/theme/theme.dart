@@ -26,6 +26,7 @@ class MyTheme {
       titleMedium: titleMedium,
       titleSmall: titleSmall,
       labelLarge: labelLarge,
+      labelMedium: labelMedium,
     ),
     tabBarTheme: TabBarTheme(
       labelColor: secondary,

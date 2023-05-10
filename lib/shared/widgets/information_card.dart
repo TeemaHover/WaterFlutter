@@ -26,7 +26,10 @@ class _InformationCardState extends State<InformationCard> {
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 20),
           padding: const EdgeInsets.all(10),
-          color: white,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: white,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -47,9 +50,15 @@ class _InformationCardState extends State<InformationCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(widget.title),
+                    Text(
+                      widget.title,
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
                     const Icon(Icons.star),
-                    Text('Нийтлэгдсэн огноо: ${widget.time}'),
+                    Text(
+                      'Нийтлэгдсэн огноо: ${widget.time}',
+                      style: Theme.of(context).textTheme.labelLarge,
+                    ),
                   ],
                 ),
               ),

@@ -190,7 +190,10 @@ class _CardMainState extends State<CardMain> {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             padding: const EdgeInsets.all(10),
-            color: white,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: white,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -210,8 +213,12 @@ class _CardMainState extends State<CardMain> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(widget.title),
-                      Text('Эхлах хугацаа: ${widget.time}'),
+                      Text(
+                        widget.title,
+                        style: Theme.of(context).textTheme.titleSmall,
+                      ),
+                      Text('Эхлах хугацаа: ${widget.time}',
+                          style: Theme.of(context).textTheme.labelLarge),
                     ],
                   ),
                 ),
@@ -220,12 +227,13 @@ class _CardMainState extends State<CardMain> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(
+                    children: [
+                      const Icon(
                         Icons.person_outline,
                         size: 32,
                       ),
-                      Text('990/1000'),
+                      Text('990/1000',
+                          style: Theme.of(context).textTheme.labelLarge),
                     ],
                   ),
                 ),

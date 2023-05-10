@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../shared/constants/colors.dart';
-
 const TextStyle head1 =
     TextStyle(fontWeight: FontWeight.bold, fontSize: 36.0, color: Colors.black);
 
@@ -31,6 +29,10 @@ const TextStyle titleSmall = TextStyle(
   fontSize: 15,
 );
 const TextStyle labelLarge = TextStyle(
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+);
+const TextStyle labelMedium = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 12,
 );
