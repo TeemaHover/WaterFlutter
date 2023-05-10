@@ -18,8 +18,9 @@ class AuthController extends GetxController {
   final isVisible = true.obs;
   get isLoading => loading.value;
   set isLoading(value) => loading.value = value;
-  final phoneFocus = FocusNode();
-  final passwordFocus = FocusNode();
+
+  final isPhoneFocus = false.obs;
+  final isPasswordFocus = false.obs;
 
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final phone = "".obs;
@@ -37,13 +38,20 @@ class AuthController extends GetxController {
   @override
   onInit() {
     super.onInit();
-    loginPhoneController.addListener(_loginEmailListener);
-  }
-
-  _loginEmailListener() {
-    if (loginPhoneController.text.length == 8) {
-      Get.focusScope?.unfocus();
-    }
+    // passwordFocus.addListener(() {
+    //   if (passwordFocus.hasFocus) {
+    //     isPasswordFocus.value = true;
+    //   } else {
+    //     isPasswordFocus.value = false;
+    //   }
+    // });
+    // phoneFocus.addListener(() {
+    //   if (phoneFocus.hasFocus) {
+    //     isPhoneFocus.value = true;
+    //   } else {
+    //     isPhoneFocus.value = false;
+    //   }
+    // });
   }
 
   login(BuildContext context) async {
@@ -87,7 +95,7 @@ class AuthController extends GetxController {
 
   @override
   void dispose() {
-    loginPasswordController.removeListener(_loginEmailListener);
+    // loginPasswordController.removeListener(_loginEmailListener);
     loginPhoneController.dispose();
     loginPasswordController.dispose();
     super.dispose();

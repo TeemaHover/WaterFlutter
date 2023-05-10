@@ -23,15 +23,19 @@ class LoginView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.only(top: 16),
-                      child: Image.asset(
-                        imageLogo,
-                        width: MediaQuery.of(context).size.width > 400
-                            ? 200
-                            : MediaQuery.of(context).size.width * 0.5,
-                      ),
-                    ),
+                        alignment: Alignment.center,
+                        margin: const EdgeInsets.only(top: 16),
+                        child: Obx(
+                          () => controller.isPasswordFocus.value ||
+                                  controller.isPhoneFocus.value
+                              ? SizedBox()
+                              : Image.asset(
+                                  imageLogo,
+                                  width: MediaQuery.of(context).size.width > 400
+                                      ? 200
+                                      : MediaQuery.of(context).size.width * 0.5,
+                                ),
+                        )),
                     Container(
                         alignment: Alignment.centerLeft,
                         margin: const EdgeInsets.only(top: 16),
@@ -45,24 +49,42 @@ class LoginView extends StatelessWidget {
                         )),
                     Column(
                       children: [
-                        TextFormField(
-                          focusNode: controller.phoneFocus,
-                          decoration: const InputDecoration(
-                            labelText: 'Утасны дугаар',
+                        Obx(
+                          () => TextField(
+                            autofocus: true,
+                            keyboardType: TextInputType.phone,
+                            decoration: InputDecoration(
+                              hintText: 'Утасны дугаар',
+                              suffixIcon: IconButton(
+                                  icon: !controller.isPhoneFocus.value
+                                      ? Icon(
+                                          Icons.email_outlined,
+                                          color: Colors.grey,
+                                        )
+                                      : SizedBox(),
+                                  onPressed: () {}),
+                            ),
+                            onTap: () {
+                              controller.isPhoneFocus.value = true;
+                              controller.isPasswordFocus.value = false;
+                            },
+                            onTapOutside: (event) =>
+                                controller.isPhoneFocus.value = false,
+                            onChanged: (p0) => {controller.phone.value = p0},
                           ),
-                          onChanged: (p0) => {controller.phone.value = p0},
                         ),
                         space16,
                         Obx(
                           () => TextFormField(
-                              focusNode: controller.passwordFocus,
+                              autofocus: true,
                               decoration: InputDecoration(
-                                labelText: 'Нууц үг',
+                                hintText: 'Нууц үг ',
+                                hintStyle: Theme.of(context).textTheme.,
                                 suffixIcon: IconButton(
                                     icon: Icon(
-                                      !controller.isVisible.value
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
+                                      controller.isVisible.value
+                                          ? Icons.lock_outline
+                                          : Icons.lock_open_outlined,
                                       color: Colors.grey,
                                     ),
                                     onPressed: () {
@@ -70,6 +92,12 @@ class LoginView extends StatelessWidget {
                                           !controller.isVisible.value;
                                     }),
                               ),
+                              onTap: () {
+                                controller.isPasswordFocus.value = true;
+                                controller.isPhoneFocus.value = false;
+                              },
+                              onTapOutside: (event) =>
+                                  controller.isPasswordFocus.value = false,
                               obscureText: controller.isVisible.value,
                               controller: controller.loginPasswordController,
                               onChanged: (p0) => {}),
