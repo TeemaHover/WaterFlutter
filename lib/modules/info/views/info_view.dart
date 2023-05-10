@@ -1,4 +1,5 @@
 import 'package:app/shared/constants/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 import '../../../shared/widgets/information_card.dart';
@@ -42,7 +43,7 @@ class _InfoViewState extends State<InfoView> {
             ),
             title: Text(
               'Мэдээлэл',
-              style: Theme.of(context).textTheme.bodyLarge,
+              // style: FontStyles.asd,
             ),
           ),
           body: TabBarView(

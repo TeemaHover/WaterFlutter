@@ -8,6 +8,7 @@ import '../shared/index.dart';
 
 class MyTheme {
   static ThemeData light = ThemeData(
+    fontFamily: "Montserrat",
     primaryColor: primary,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: secondary,
@@ -20,17 +21,18 @@ class MyTheme {
     ),
     primarySwatch: bg,
     scaffoldBackgroundColor: bgGray,
-    textTheme: GoogleFonts.montserratTextTheme(
-      const TextTheme(
-          bodyLarge: bodyLarge,
-          bodyMedium: bodyMedium,
-          bodySmall: bodySmall,
-          titleLarge: titleLarge,
-          titleMedium: titleMedium,
-          titleSmall: titleSmall,
-          labelLarge: labelLarge,
-          labelSmall: labelSmall),
-    ),
+    // textTheme: GoogleFonts.montserratTextTheme(
+    //   TextTheme(
+    //       bodyLarge: bodyLarge,
+    //       bodyMedium: bodyMedium,
+    //       bodySmall: bodySmall,
+    //       titleLarge: titleLarge,
+    //       titleMedium: titleMedium,
+    //       titleSmall: titleSmall,
+    //       labelLarge: labelLarge,
+    //       labelSmall: labelSmall,
+    //       ),
+    // ),
     tabBarTheme: TabBarTheme(
       labelColor: secondary,
       unselectedLabelColor: Colors.black,

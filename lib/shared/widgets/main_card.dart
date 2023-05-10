@@ -1,4 +1,5 @@
 import 'package:app/shared/constants/index.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class CardMain extends StatefulWidget {
@@ -257,8 +258,10 @@ class _CardMainState extends State<CardMain> {
                         widget.title,
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
-                      Text('Эхлах хугацаа: ${widget.time}',
-                          style: Theme.of(context).textTheme.labelLarge),
+                      Text(
+                        'Эхлах хугацаа: ${widget.time}',
+                      ),
+                      // style: FontStyles.labelSmall)
                     ],
                   ),
                 ),
