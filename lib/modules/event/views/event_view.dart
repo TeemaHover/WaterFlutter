@@ -1,3 +1,4 @@
+
 import 'package:app/shared/constants/index.dart';
 import 'package:app/shared/widgets/notif_card.dart';
 import 'package:flutter/material.dart';
@@ -5,14 +6,14 @@ import 'package:flutter/material.dart';
 import '../../../shared/constants/colors.dart';
 import '../../../shared/widgets/main_card.dart';
 
-class Event extends StatefulWidget {
-  const Event({super.key});
+class EventView extends StatefulWidget {
+  const EventView({super.key});
 
   @override
-  State<Event> createState() => _EventState();
+  State<EventView> createState() => _EventViewState();
 }
 
-class _EventState extends State<Event> {
+class _EventViewState extends State<EventView> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

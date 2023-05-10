@@ -6,7 +6,7 @@ import 'package:app/providers/api_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainController extends GetxController {
+class EventController extends GetxController {
   final ApiRepository _apiRepository = Get.find();
   final authController = Get.put(AuthController(apiRepository: Get.find()));
 
