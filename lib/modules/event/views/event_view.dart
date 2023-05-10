@@ -1,9 +1,8 @@
-
-import 'package:app/shared/constants/index.dart';
-import 'package:app/shared/widgets/notif_card.dart';
+import 'package:app/modules/event/controllers/controller.dart';
+import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../shared/constants/colors.dart';
 import '../../../shared/widgets/main_card.dart';
 
 class EventView extends StatefulWidget {
@@ -16,6 +15,7 @@ class EventView extends StatefulWidget {
 class _EventViewState extends State<EventView> {
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(EventController());
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -56,7 +56,14 @@ class _EventViewState extends State<EventView> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const NotificationCard(),
+                      Obx(
+                        () => controller.loading.value ||
+                                controller.events.isEmpty
+                            ? const SizedBox()
+                            : NotificationCard(
+                                event: controller.events.first,
+                              ),
+                      ),
                       Container(
                         margin: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10),
@@ -64,8 +71,14 @@ class _EventViewState extends State<EventView> {
                           'Бусад хөтөлбөрүүд',
                         ),
                       ),
-                      const CardMain(
-                          title: "Байгууллагын нэр", time: "2023/05/12")
+                      Obx(() => controller.loading.value
+                          ? const SizedBox()
+                          : Column(
+                              children: controller.events
+                                  .map((element) => CardMain(
+                                        event: element,
+                                      ))
+                                  .toList()))
                     ],
                   ),
                 ),
@@ -76,12 +89,30 @@ class _EventViewState extends State<EventView> {
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      NotificationCard(),
-                      Text(
-                        'Бусад хөтөлбөрүүд',
+                    children: [
+                      Obx(
+                        () => controller.loading.value ||
+                                controller.events.isEmpty
+                            ? const SizedBox()
+                            : NotificationCard(
+                                event: controller.events.first,
+                              ),
                       ),
-                      CardMain(title: "Байгууллагын нэр", time: "2023/05/12")
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: const Text(
+                          'Бусад хөтөлбөрүүд',
+                        ),
+                      ),
+                      Obx(() => controller.loading.value
+                          ? const SizedBox()
+                          : Column(
+                              children: controller.events
+                                  .map((element) => CardMain(
+                                        event: element,
+                                      ))
+                                  .toList()))
                     ],
                   ),
                 ),

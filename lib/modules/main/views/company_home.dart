@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../shared/widgets/app_bar.dart';
-import '../../../shared/widgets/main_card.dart';
-import '../../../shared/widgets/notif_card.dart';
 
 class CompanyView extends StatefulWidget {
   const CompanyView({super.key});
@@ -24,11 +22,11 @@ class _CompanyViewState extends State<CompanyView> {
                 horizontal: MediaQuery.of(context).size.width / 20),
             child: const Text("Asd"),
           ),
-          const NotificationCard(),
-          const CardMain(
-            title: "asd",
-            time: "10",
-          ),
+          // const NotificationCard(),
+          // CardMain(
+          //   title: "asd",
+          //   time: DateTime.now(),
+          // ),
         ],
       ),
     );

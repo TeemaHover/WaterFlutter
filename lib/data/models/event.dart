@@ -1,7 +1,10 @@
+import 'package:app/data/data.dart';
+
 class Event {
   String? sId;
   String? name;
-  String? business;
+  String? description;
+  Business? business;
   int? members;
   int? registerMembers;
   int? startDate;
@@ -15,6 +18,7 @@ class Event {
       {this.sId,
       this.name,
       this.business,
+      this.description,
       this.members,
       this.registerMembers,
       this.startDate,
@@ -27,7 +31,9 @@ class Event {
   Event.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
     name = json['name'];
-    business = json['business'];
+    description = json['description'];
+    business =
+        json['business'] != null ? Business.fromJson(json['business']) : null;
     members = json['members'];
     registerMembers = json['registerMembers'];
     startDate = json['startDate'];
@@ -36,34 +42,37 @@ class Event {
     if (json['execEvent'] != null) {
       execEvent = <ExecEvent>[];
       json['execEvent'].forEach((v) {
-        execEvent!.add(new ExecEvent.fromJson(v));
+        execEvent!.add(ExecEvent.fromJson(v));
       });
     }
     users = json['users'].cast<String>();
     if (json['sale'] != null) {
       sale = <Sale>[];
       json['sale'].forEach((v) {
-        sale!.add(new Sale.fromJson(v));
+        sale!.add(Sale.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
-    data['name'] = this.name;
-    data['business'] = this.business;
-    data['members'] = this.members;
-    data['registerMembers'] = this.registerMembers;
-    data['startDate'] = this.startDate;
-    data['endDate'] = this.endDate;
-    data['exec'] = this.exec;
-    if (this.execEvent != null) {
-      data['execEvent'] = this.execEvent!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['name'] = name;
+    if (business != null) {
+      data['business'] = business!.toJson();
     }
-    data['users'] = this.users;
-    if (this.sale != null) {
-      data['sale'] = this.sale!.map((v) => v.toJson()).toList();
+    data['description'] = description;
+    data['members'] = members;
+    data['registerMembers'] = registerMembers;
+    data['startDate'] = startDate;
+    data['endDate'] = endDate;
+    data['exec'] = exec;
+    if (execEvent != null) {
+      data['execEvent'] = execEvent!.map((v) => v.toJson()).toList();
+    }
+    data['users'] = users;
+    if (sale != null) {
+      data['sale'] = sale!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -81,9 +90,9 @@ class ExecEvent {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['description'] = this.description;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['description'] = description;
     return data;
   }
 }
@@ -103,18 +112,18 @@ class Sale {
     if (json['detail'] != null) {
       detail = <Detail>[];
       json['detail'].forEach((v) {
-        detail!.add(new Detail.fromJson(v));
+        detail!.add(Detail.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['description'] = this.description;
-    data['type'] = this.type;
-    if (this.detail != null) {
-      data['detail'] = this.detail!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['description'] = description;
+    data['type'] = type;
+    if (detail != null) {
+      data['detail'] = detail!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -134,10 +143,10 @@ class Detail {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['value'] = this.value;
-    data['name'] = this.name;
-    data['unit'] = this.unit;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['value'] = value;
+    data['name'] = name;
+    data['unit'] = unit;
     return data;
   }
 }
