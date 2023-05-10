@@ -12,6 +12,7 @@ const bgcolor = Color(0xFFf7f8fa);
 const white = Color(0xFFFFFFFF);
 const black = Color(0xFF000000);
 const lightblue = Color(0xFFDCF2FF);
+const lightwhite = Color(0xFFF7F8FA);
 const lightblack = Color(0xFF353A48);
 
 

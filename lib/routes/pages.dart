@@ -23,6 +23,11 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
+      name: _Paths.WATERCALCULATOR,
+      page: () => const WaterCalculator(),
+      binding: null,
+    ),
+    GetPage(
       name: _Paths.AUTH,
       page: () => const AuthView(),
       binding: AuthBinding(),

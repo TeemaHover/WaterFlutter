@@ -9,6 +9,7 @@ abstract class Routes {
   static const AUTH = _Paths.AUTH;
   static const PRIME = _Paths.PRIME;
   static const SPLASH = _Paths.SPLASH;
+  static const PROFILE = _Paths.WATERCALCULATOR;
   static const LOGIN = _Paths.AUTH + _Paths.LOGIN;
   static const AUDIO = _Paths.HOME + _Paths.AUDIO;
   static const VIDEO = _Paths.HOME + _Paths.VIDEO;
@@ -23,4 +24,6 @@ abstract class _Paths {
   static const AUTH = '/auth';
   static const AUDIO = '/audio';
   static const VIDEO = '/video';
+  //newscreen
+  static const WATERCALCULATOR = '/watercalculator';
 }

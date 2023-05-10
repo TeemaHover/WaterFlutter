@@ -1,8 +1,7 @@
 import 'package:app/data/data.dart';
 import 'package:app/modules/modules.dart';
-import 'package:app/modules/test/view/event.dart';
-import 'package:app/modules/test/view/information.dart';
-import 'package:app/modules/test/view/test.dart';
+import 'package:app/modules/newscreen/view/event.dart';
+import 'package:app/modules/newscreen/view/information.dart';
 import 'package:app/providers/api_repository.dart';
 import 'package:app/shared/index.dart';
 import 'package:dio/dio.dart';
@@ -14,6 +13,7 @@ class HomeController extends GetxController
     with StateMixin<User>, WidgetsBindingObserver {
   final ApiRepository _apiRepository = Get.find();
   final authController = Get.put(AuthController(apiRepository: Get.find()));
+
   final showPerformanceOverlay = false.obs;
   final currentIndex = 0.obs;
   final isLoading = false.obs;
@@ -30,7 +30,7 @@ class HomeController extends GetxController
       case 1:
         return const Event();
       case 2:
-        return const TestView();
+        return const WaterCalculator();
       case 3:
         return Center(
           child: TextButton(
