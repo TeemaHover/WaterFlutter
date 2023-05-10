@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import '../../../shared/widgets/information_card.dart';
 import '../../../shared/widgets/timer.dart';
 
-class Information extends StatefulWidget {
-  const Information({super.key});
+class InfoView extends StatefulWidget {
+  const InfoView({super.key});
 
   @override
-  State<Information> createState() => _InformationState();
+  State<InfoView> createState() => _InfoViewState();
 }
 
-class _InformationState extends State<Information> {
+class _InfoViewState extends State<InfoView> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

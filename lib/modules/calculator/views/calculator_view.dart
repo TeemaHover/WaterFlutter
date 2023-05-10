@@ -1,15 +1,16 @@
+import 'package:app/modules/modules.dart';
 import 'package:app/shared/index.dart';
-import 'package:app/shared/widgets/tootsooluur/tootsooluur_tile.dart';
+
 import 'package:flutter/material.dart';
 
-class Tootsooluur extends StatefulWidget {
-  const Tootsooluur({super.key});
+class CalculatorView extends StatefulWidget {
+  const CalculatorView({super.key});
 
   @override
-  State<Tootsooluur> createState() => _TootsooluurState();
+  State<CalculatorView> createState() => _CalculatorViewState();
 }
 
-class _TootsooluurState extends State<Tootsooluur> {
+class _CalculatorViewState extends State<CalculatorView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +62,7 @@ class _TootsooluurState extends State<Tootsooluur> {
             const Divider(
               color: blue,
             ),
-            const TootsooluurTile(),
+            const CalculatorAddWidget(),
             SizedBox(
               height: MediaQuery.of(context).size.height / 25,
             ),

@@ -1,15 +1,14 @@
-import 'package:app/shared/widgets/water_calculator/montly_tile.dart';
-import 'package:app/shared/widgets/water_calculator/montly_water_calculator.dart';
+import 'package:app/modules/modules.dart';
 import 'package:flutter/material.dart';
 
-class WaterCalculator extends StatefulWidget {
-  const WaterCalculator({super.key});
+class WaterCalculatorWidget extends StatefulWidget {
+  const WaterCalculatorWidget({super.key});
 
   @override
-  State<WaterCalculator> createState() => _WaterCalculatorState();
+  State<WaterCalculatorWidget> createState() => _WaterCalculatorWidgetState();
 }
 
-class _WaterCalculatorState extends State<WaterCalculator> {
+class _WaterCalculatorWidgetState extends State<WaterCalculatorWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

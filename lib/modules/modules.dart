@@ -4,3 +4,5 @@ export 'splash/splash.dart';
 export 'newscreen/newscreen.dart';
 export 'main/main.dart';
 export 'event/event.dart';
+export 'calculator/calculator.dart';
+export 'info/info.dart';

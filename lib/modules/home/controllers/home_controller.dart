@@ -1,7 +1,6 @@
 import 'package:app/data/data.dart';
 import 'package:app/modules/modules.dart';
 
-import 'package:app/modules/newscreen/view/information.dart';
 import 'package:app/providers/api_repository.dart';
 import 'package:app/shared/index.dart';
 import 'package:dio/dio.dart';

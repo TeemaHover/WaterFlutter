@@ -1,4 +1,5 @@
 import 'package:app/shared/constants/colors.dart';
+import 'package:app/shared/index.dart';
 import 'package:app/shared/widgets/wallet_card.dart';
 import 'package:flutter/material.dart';
 
@@ -28,27 +29,30 @@ class _NotificationCardState extends State<NotificationCard> {
           Stack(
             alignment: AlignmentDirectional.center,
             children: [
-              Align(
-                alignment: AlignmentDirectional.topStart,
-                child: Container(
-                  width: 150,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.circular(20),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      width: double.infinity,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional.topEnd,
-                child: Container(
-                  width: 150,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.circular(20),
+                  space16,
+                  Expanded(
+                    child: Container(
+                      width: double.infinity,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
               Align(
                 alignment: AlignmentDirectional.center,

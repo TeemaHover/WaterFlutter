@@ -1,15 +1,11 @@
-import 'package:app/shared/constants/index.dart';
-import 'package:app/shared/widgets/main_button.dart';
+import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-class MontlyWaterCalculator extends StatefulWidget {
+class MontlyWaterCalculator extends StatelessWidget {
   const MontlyWaterCalculator({super.key});
 
-  @override
-  State<MontlyWaterCalculator> createState() => _MontlyWaterCalculatorState();
-}
-
-class _MontlyWaterCalculatorState extends State<MontlyWaterCalculator> {
   @override
   Widget build(BuildContext context) {
     return Container(

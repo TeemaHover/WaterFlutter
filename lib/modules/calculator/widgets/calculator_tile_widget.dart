@@ -1,14 +1,14 @@
 import 'package:app/shared/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class TootsooluurTile extends StatefulWidget {
-  const TootsooluurTile({super.key});
+class CalculatorTileWidget extends StatefulWidget {
+  const CalculatorTileWidget({super.key});
 
   @override
-  State<TootsooluurTile> createState() => _TootsooluurTileState();
+  State<CalculatorTileWidget> createState() => _CalculatorTileWidgetState();
 }
 
-class _TootsooluurTileState extends State<TootsooluurTile> {
+class _CalculatorTileWidgetState extends State<CalculatorTileWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(

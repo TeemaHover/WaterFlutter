@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-class MontlyTile extends StatefulWidget {
-  final String month;
-  final String waterConsumption;
-  final String date;
+class MontlyTile extends StatelessWidget {
   const MontlyTile(
       {super.key,
+      required this.date,
       required this.month,
-      required this.waterConsumption,
-      required this.date});
-
-  @override
-  State<MontlyTile> createState() => _MontlyTileState();
-}
-
-class _MontlyTileState extends State<MontlyTile> {
+      required this.waterConsumption});
+  final String month;
+  final String date;
+  final String waterConsumption;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +19,7 @@ class _MontlyTileState extends State<MontlyTile> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(widget.month),
+          Text(month),
           const SizedBox(
             height: 10,
           ),
@@ -37,8 +33,8 @@ class _MontlyTileState extends State<MontlyTile> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(widget.waterConsumption),
-                    Text(widget.date),
+                    Text(waterConsumption),
+                    Text(date),
                   ],
                 ),
               ),
@@ -46,15 +42,12 @@ class _MontlyTileState extends State<MontlyTile> {
                 children: [
                   Row(
                     children: [
-                      Text(widget.waterConsumption),
+                      Text(waterConsumption),
                       const Icon(Icons.water_drop)
                     ],
                   ),
                   Row(
-                    children: [
-                      Text(widget.waterConsumption),
-                      const Icon(Icons.money)
-                    ],
+                    children: [Text(waterConsumption), const Icon(Icons.money)],
                   )
                 ],
               )
@@ -63,5 +56,6 @@ class _MontlyTileState extends State<MontlyTile> {
         ],
       ),
     );
+    ;
   }
 }

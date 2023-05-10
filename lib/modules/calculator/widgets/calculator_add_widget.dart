@@ -1,14 +1,11 @@
 import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-class ToIndicator extends StatefulWidget {
-  const ToIndicator({super.key});
+class CalculatorAddWidget extends StatelessWidget {
+  const CalculatorAddWidget({super.key});
 
-  @override
-  State<ToIndicator> createState() => _ToIndicatorState();
-}
-
-class _ToIndicatorState extends State<ToIndicator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,5 +127,6 @@ class _ToIndicatorState extends State<ToIndicator> {
             ],
           )),
     );
+    ;
   }
 }
