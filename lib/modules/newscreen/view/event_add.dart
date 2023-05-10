@@ -23,9 +23,11 @@ class _EventAddState extends State<EventAdd> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              space16,
               const Text(
                 "Зар оруулах хэсэг",
               ),
+              space24,
               Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.symmetric(
