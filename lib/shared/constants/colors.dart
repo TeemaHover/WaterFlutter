@@ -20,11 +20,12 @@ const lightblue = Color(0xFFDCF2FF);
 const primary = Color(0xFF353A48);
 const loginBg = Color(0xffD9FFC1);
 const loginText = Color(0xffC0D8EB);
-MaterialColor bg = MaterialColor(0xFFf7f8fa, color);
+MaterialColor bg = MaterialColor(0xFFF6FCFF, color);
 
 //  main colors
-const skyBlue = Color(0xff48ACF7);
+const skyBlue = Color.fromARGB(255, 113, 141, 163);
 const whiteBlue = Color(0xffE5F2FB);
+const bgLightBlue = Color(0xffF6FCFF);
 const white = Color(0xFFFFFFFF);
 const black = Color(0xFF000000);
 const textBlack = Color(0xFF292D32);
@@ -34,6 +35,9 @@ const textGray = Color(0xff959A9E);
 const bgGray = Color(0xFFf7f8fa);
 const blue = Color(0xFF1d8be2);
 const green = Color(0xFF80C457);
+
+// Blue pallete
+const mainBlue = Color(0xFF1D8BE2);
 
 // Color hexToColor(String hex) {
 //   assert(RegExp(r'^#([0-9a-fA-F]{6})|([0-9a-fA-F]{8})$').hasMatch(hex),

@@ -16,6 +16,7 @@ class MainButton extends StatelessWidget {
       this.borderRadius = 10.0,
       this.disabled = false,
       this.shadow = true,
+      this.border,
       this.disabledColor = secondary})
       : super(key: key);
   final Widget child;
@@ -29,6 +30,7 @@ class MainButton extends StatelessWidget {
   final double borderRadius;
   final bool disabled;
   final bool shadow;
+  final Border? border;
 
   final Color disabledColor;
 
@@ -45,9 +47,9 @@ class MainButton extends StatelessWidget {
       width: width,
       duration: const Duration(milliseconds: 300),
       decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(borderRadius),
-      ),
+          color: color,
+          borderRadius: BorderRadius.circular(borderRadius),
+          border: border),
       padding: padding,
       child: Align(
         widthFactor: 1.0,
@@ -63,7 +65,7 @@ class MainButton extends StatelessWidget {
                     text!,
                     style: const TextStyle(
                       fontSize: 16,
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.w500,
                     ),
                   )
                 : child,
