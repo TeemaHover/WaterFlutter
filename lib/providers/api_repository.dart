@@ -1,5 +1,7 @@
 import 'package:app/data/data.dart';
 import 'package:app/providers/dio_provider.dart';
+import 'package:dio/dio.dart';
+import 'package:get/get.dart';
 
 class ApiRepository {
   ApiRepository({required this.apiProvider});
@@ -45,7 +47,7 @@ class ApiRepository {
     try {
       final data = {
         "name": e.name,
-        "members": 0,
+        "members": e.members,
         "registerMembers": 0,
         "startDate": e.startDate,
         "endDate": e.endDate,
@@ -73,11 +75,8 @@ class ApiRepository {
   }
 
   Future<bool> registerEvent(String id) async {
-    try {
-      final response = await apiProvider.get('/event/member/$id') as bool;
-      return response;
-    } on Exception {
-      rethrow;
-    }
+    final response = apiProvider.get('/event/member/$id').toString();
+
+    return response.toLowerCase() == 'true';
   }
 }

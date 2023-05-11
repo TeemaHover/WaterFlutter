@@ -1,13 +1,16 @@
 import 'package:app/data/data.dart';
+import 'package:app/modules/event/controllers/controller.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CardMain extends StatelessWidget {
   const CardMain({super.key, required this.event});
   final Event event;
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(EventController());
     DateTime time = DateTime.fromMillisecondsSinceEpoch(
         event.startDate ?? DateTime.now().millisecondsSinceEpoch);
     return GestureDetector(
@@ -74,27 +77,32 @@ class CardMain extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("Урамшуулал", style: FontStyles.titleMedium),
+                              space16,
                               Text("${event.exec}",
                                   style: FontStyles.titleSmall),
+                              space16,
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: white,
+                                  Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: white,
+                                      ),
+                                      height: 200,
                                     ),
-                                    width: 160,
-                                    height: 200,
                                   ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: white,
+                                  space16,
+                                  Expanded(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: white,
+                                      ),
+                                      height: 200,
                                     ),
-                                    width: 160,
-                                    height: 200,
                                   ),
                                 ],
                               )
@@ -184,10 +192,9 @@ class CardMain extends StatelessWidget {
                                               Icon(Icons.forest_outlined)
                                             ],
                                           ),
-                                          Text("${event.execEvent?.first.name}",
+                                          Text("${e.name}",
                                               style: FontStyles.titleMedium),
-                                          Text(
-                                              "${event.execEvent?.first.description}",
+                                          Text("${e.description}",
                                               style: FontStyles.titleSmall)
                                         ],
                                       ))
@@ -214,7 +221,9 @@ class CardMain extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            controller.registerEvent(event.sId!);
+                          },
                           child: const Text("Бүртгүүлэх")),
                     ),
                   ],
@@ -222,65 +231,68 @@ class CardMain extends StatelessWidget {
               )),
         );
       },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: white,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SizedBox(
-                  width: 50,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: darkgray,
-                    ),
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: small),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: white,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SizedBox(
                     width: 50,
-                    height: 50,
-                  ),
-                ),
-                SizedBox(
-                  width: 200,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        event.business?.companyName ?? '',
-                        style: FontStyles.titleSmall,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: darkgray,
                       ),
-                      Text(
-                        'Эхлах хугацаа: ${time.year}/${time.month}/${time.day}',
-                      ),
-                      // style: FontStyles.labelSmall)
-                    ],
+                      width: 50,
+                      height: 50,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: 70,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        Icons.person_outline,
-                        size: 32,
-                      ),
-                      Text('${event.registerMembers}/${event.members}',
-                          style: FontStyles.labelLarge),
-                    ],
+                  SizedBox(
+                    width: 200,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          event.business?.companyName ?? '',
+                          style: FontStyles.titleSmall,
+                        ),
+                        Text(
+                          'Эхлах хугацаа: ${time.year}/${time.month}/${time.day}',
+                        ),
+                        // style: FontStyles.labelSmall)
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 70,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.person_outline,
+                          size: 32,
+                        ),
+                        Text('${event.registerMembers}/${event.members}',
+                            style: FontStyles.labelLarge),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
