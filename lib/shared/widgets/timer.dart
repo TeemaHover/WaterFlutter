@@ -54,7 +54,7 @@ class _TimerState extends State<Timer> {
                       ),
                     ),
                     const Text(
-                      "өдөр",
+                      "Жил",
                       style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
@@ -75,7 +75,7 @@ class _TimerState extends State<Timer> {
                       ),
                     ),
                     const Text(
-                      "өдөр",
+                      "Сар",
                       style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
@@ -96,7 +96,7 @@ class _TimerState extends State<Timer> {
                       ),
                     ),
                     const Text(
-                      "өдөр",
+                      "Өдөр",
                       style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
@@ -117,7 +117,7 @@ class _TimerState extends State<Timer> {
                       ),
                     ),
                     const Text(
-                      "өдөр",
+                      "Цаг",
                       style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
@@ -138,7 +138,7 @@ class _TimerState extends State<Timer> {
                       ),
                     ),
                     const Text(
-                      "өдөр",
+                      "Минут",
                       style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
@@ -159,7 +159,7 @@ class _TimerState extends State<Timer> {
                       ),
                     ),
                     const Text(
-                      "өдөр",
+                      "Секунд",
                       style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
