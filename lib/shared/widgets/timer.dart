@@ -32,7 +32,7 @@ class _TimerState extends State<Timer> {
               margin: const EdgeInsets.only(bottom: 10),
               child: const Text(
                 "Цэвэр усны нөөц дуусах өдөр",
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, color: white),
               ),
             ),
             Row(
@@ -55,7 +55,7 @@ class _TimerState extends State<Timer> {
                     ),
                     const Text(
                       "өдөр",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
                 ),
@@ -76,7 +76,7 @@ class _TimerState extends State<Timer> {
                     ),
                     const Text(
                       "өдөр",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
                 ),
@@ -97,7 +97,7 @@ class _TimerState extends State<Timer> {
                     ),
                     const Text(
                       "өдөр",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
                 ),
@@ -118,7 +118,7 @@ class _TimerState extends State<Timer> {
                     ),
                     const Text(
                       "өдөр",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
                 ),
@@ -139,7 +139,7 @@ class _TimerState extends State<Timer> {
                     ),
                     const Text(
                       "өдөр",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
                 ),
@@ -160,7 +160,7 @@ class _TimerState extends State<Timer> {
                     ),
                     const Text(
                       "өдөр",
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 14, color: white),
                     ),
                   ],
                 ),
