@@ -1,5 +1,6 @@
 import 'package:app/data/data.dart';
 import 'package:app/modules/event/controllers/controller.dart';
+import 'package:app/modules/home/controllers/controllers.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class CardMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(EventController());
+    final homeController = Get.put(HomeController());
     DateTime time = DateTime.fromMillisecondsSinceEpoch(
         event.startDate ?? DateTime.now().millisecondsSinceEpoch);
     return GestureDetector(
@@ -62,16 +64,17 @@ class CardMain extends StatelessWidget {
                                     style: FontStyles.labelSmall),
                               ],
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: double.infinity,
                               height: 10,
                               child: ClipRRect(
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
+                                    const BorderRadius.all(Radius.circular(10)),
                                 child: LinearProgressIndicator(
-                                  value: 0.7,
-                                  color: Color(0xff3899F2),
-                                  backgroundColor: Color(0xffD6D6D6),
+                                  value: event.registerMembers!.toDouble() /
+                                      event.members!.toDouble(),
+                                  color: const Color(0xff3899F2),
+                                  backgroundColor: const Color(0xffD6D6D6),
                                 ),
                               ),
                             )
@@ -235,7 +238,18 @@ class CardMain extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            controller.registerEvent(event.sId!);
+                            if (event.users
+                                    ?.contains(homeController.user!.sId) ==
+                                null) {
+                              if (event.registerMembers == event.members) {
+                                Get.snackbar('Дүүрсэн байна.', "");
+                              } else {
+                                controller.registerEvent(event.sId!);
+                              }
+                            } else {
+                              Get.snackbar('Бүртгүүлсэн байна.', "");
+                            }
+                            Navigator.pop(context);
                           },
                           child: const Text("Бүртгүүлэх")),
                     ),
@@ -271,7 +285,6 @@ class CardMain extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 200,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -280,27 +293,26 @@ class CardMain extends StatelessWidget {
                           style: FontStyles.titleSmall,
                         ),
                         Text(
-                          'Эхлах хугацаа: ${time.year}/${time.month}/${time.day}',
+                          'Эхлэх хугацаа: ${time.year}/${time.month}/${time.day}',
                         ),
                         // style: FontStyles.labelSmall)
                       ],
                     ),
                   ),
-                  SizedBox(
-                    width: 70,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.person_outline,
-                          size: 32,
-                        ),
-                        Text('${event.registerMembers}/${event.members}',
-                            style: FontStyles.labelLarge),
-                      ],
-                    ),
-                  ),
+                  homeController.user?.type == 'user'
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.person_outline,
+                              size: 32,
+                            ),
+                            Text('${event.registerMembers}/${event.members}',
+                                style: FontStyles.labelLarge),
+                          ],
+                        )
+                      : const SizedBox()
                 ],
               ),
             ),
