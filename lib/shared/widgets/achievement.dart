@@ -1,7 +1,5 @@
-import 'package:app/shared/constants/colors.dart';
+import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class AchievementWidget extends StatelessWidget {
   const AchievementWidget({super.key});
@@ -10,7 +8,7 @@ class AchievementWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.all(10),
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           color: bgGray,
@@ -25,17 +23,21 @@ class AchievementWidget extends StatelessWidget {
                 color: Colors.yellow,
                 size: 100,
               ),
+              space24,
               Text("Одоо байгаа цол",
                   style: Theme.of(context)
                       .textTheme
                       .labelMedium!
                       .copyWith(color: textGray)),
+              space8,
               Text("Цол 1",
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
                       .copyWith(fontWeight: FontWeight.w700)),
+              space32,
               const Icon(Icons.arrow_downward),
+              space16,
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),

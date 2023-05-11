@@ -16,7 +16,14 @@ class _TimerState extends State<Timer> {
         padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: darkgray,
+          gradient: const LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                Color(0xff39BCFE),
+                Color(0xff3899F2),
+              ],
+              tileMode: TileMode.mirror),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
