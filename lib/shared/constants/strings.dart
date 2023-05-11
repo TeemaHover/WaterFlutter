@@ -1,29 +1,30 @@
 const landrinaSolid = 'LondrinaSolid';
 const mainNavbar = [
   {
-    'icon': 'assets/svg/navigationBar/home.svg',
-    'activeIcon': 'assets/svg/navigationBar/homeActive.svg',
+    // 'icon': 'assets/svg/navigationBar/home.svg',
+    'icon': 'assets/images/icons/navigationBar/home.png',
+    'activeIcon': 'assets/images/icons/navigationBar/home.gif',
     'label': 'Нүүр',
   },
   {
-    'icon': 'assets/svg/navigationBar/deliver.svg',
-    'activeIcon': 'assets/svg/navigationBar/deliverActive.svg',
-    'label': 'Статистик',
-  },
-  {
-    'icon': 'assets/svg/navigationBar/bookmark.svg',
-    'activeIcon': 'assets/svg/navigationBar/bookmarkActive.svg',
+    'icon': 'assets/images/icons/navigationBar/calculate.png',
+    'activeIcon': 'assets/images/icons/navigationBar/calculate.gif',
     'label': 'Тоолуур',
   },
   {
-    'icon': 'assets/svg/navigationBar/bookmark.svg',
-    'activeIcon': 'assets/svg/navigationBar/bookmarkActive.svg',
+    'icon': 'assets/images/icons/navigationBar/event.png',
+    'activeIcon': 'assets/images/icons/navigationBar/event.gif',
     'label': 'Хөтөлбөр',
   },
   {
-    'icon': 'assets/svg/navigationBar/profile.svg',
-    'activeIcon': 'assets/svg/navigationBar/profileActive.svg',
-    'label': 'Profile',
+    'icon': 'assets/images/icons/navigationBar/news.png',
+    'activeIcon': 'assets/images/icons/navigationBar/news.gif',
+    'label': 'Мэдээлэл',
+  },
+  {
+    'icon': 'assets/images/icons/navigationBar/notification.png',
+    'activeIcon': 'assets/images/icons/navigationBar/notification.gif',
+    'label': 'Мэдэгдэл',
   },
 ];
 
