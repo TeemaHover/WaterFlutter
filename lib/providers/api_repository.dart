@@ -96,8 +96,7 @@ class ApiRepository {
 
   Future<bool> sendPayment(Payment p) async {
     try {
-      final data = {"items": p.items, "userItems": p.userItem, "date": p.date};
-
+      final data = {"items": p.items, "date": p.date};
       await apiProvider.post('/payment', data: data);
       return true;
     } on Exception {

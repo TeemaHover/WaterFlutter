@@ -26,11 +26,11 @@ class HomeController extends GetxController
     switch (index) {
       case 0:
         return const MainView();
-      case 1:
-        return const EventView();
       case 2:
         return const CalculatorView();
       case 3:
+        return const EventView();
+      case 4:
         return Center(
           child: TextButton(
             onPressed: () => authController.logout(),
