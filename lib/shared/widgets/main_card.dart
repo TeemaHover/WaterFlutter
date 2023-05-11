@@ -62,7 +62,19 @@ class CardMain extends StatelessWidget {
                                     style: FontStyles.labelSmall),
                               ],
                             ),
-                            const Text("Progress bar")
+                            const SizedBox(
+                              width: double.infinity,
+                              height: 10,
+                              child: ClipRRect(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                child: LinearProgressIndicator(
+                                  value: 0.7,
+                                  color: Color(0xff3899F2),
+                                  backgroundColor: Color(0xffD6D6D6),
+                                ),
+                              ),
+                            )
                           ],
                         )),
                     space16,
@@ -76,7 +88,8 @@ class CardMain extends StatelessWidget {
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Урамшуулал", style: FontStyles.titleMedium),
+                              const Text("Урамшуулал",
+                                  style: FontStyles.titleMedium),
                               space16,
                               Text("${event.exec}",
                                   style: FontStyles.titleSmall),
@@ -127,7 +140,7 @@ class CardMain extends StatelessWidget {
                                         .titleMedium),
                               ],
                             ),
-                            Text("a", style: FontStyles.titleSmall)
+                            const Text("a", style: FontStyles.titleSmall)
                           ],
                         )),
                     space16,
@@ -144,7 +157,7 @@ class CardMain extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Хөтөлбөрт хамааралтай зураг бичлэг",
+                          const Text("Хөтөлбөрт хамааралтай зураг бичлэг",
                               style: FontStyles.bodyMedium),
                           space16,
                           Container(
@@ -166,7 +179,7 @@ class CardMain extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
-                            children: [
+                            children: const [
                               Text("Гүйцэтгэх ажил",
                                   style: FontStyles.bodyMedium)
                             ],

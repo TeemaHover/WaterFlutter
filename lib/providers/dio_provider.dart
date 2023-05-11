@@ -15,6 +15,8 @@ class DioProvider extends GetxService {
 
     // ? 'http://192.168.1.2:5050'
     // : 'http://192.168.1.2:5050';
+    // ? 'http://192.168.1.14:5050'
+    // : 'http://192.168.1.14:5050';
 
     dio.interceptors.addAll(
       [

@@ -52,14 +52,16 @@ class Payment {
 class PaymentItem {
   String? title;
   int? unitPrice;
+  int? quantity;
   String? symbol;
 
-  PaymentItem({this.title, this.unitPrice, this.symbol});
+  PaymentItem({this.title, this.unitPrice, this.symbol, this.quantity});
 
   PaymentItem.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     unitPrice = json['unitPrice'];
     symbol = json['symbol'];
+    quantity = json['quantity'];
   }
 
   Map<String, dynamic> toJson() {
@@ -67,6 +69,7 @@ class PaymentItem {
     data['title'] = title;
     data['unitPrice'] = unitPrice;
     data['symbol'] = symbol;
+    data['quantity'] = quantity;
     return data;
   }
 }

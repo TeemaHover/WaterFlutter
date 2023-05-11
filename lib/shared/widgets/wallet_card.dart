@@ -1,8 +1,6 @@
 import 'package:app/shared/constants/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class WaterCard extends StatelessWidget {
   const WaterCard({super.key});
@@ -22,6 +20,14 @@ class WaterCard extends StatelessWidget {
                 Color(0xff3899F2),
               ],
               tileMode: TileMode.mirror),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 3,
+              blurRadius: 7,
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
           color: blue,
         ),
         child: Column(
@@ -30,7 +36,7 @@ class WaterCard extends StatelessWidget {
           children: [
             Text(
               "Усны хэрэглээ",
-              style: FontStyles.titleMedium!.copyWith(
+              style: FontStyles.titleMedium.copyWith(
                 color: white,
               ),
             ),
@@ -53,7 +59,7 @@ class WaterCard extends StatelessWidget {
             space4,
             Text(
               "Өнгөрсөн сард",
-              style: FontStyles.titleMedium!.copyWith(
+              style: FontStyles.titleMedium.copyWith(
                 color: white,
               ),
             ),
@@ -71,6 +77,5 @@ class WaterCard extends StatelessWidget {
             )
           ],
         ));
-    ;
   }
 }

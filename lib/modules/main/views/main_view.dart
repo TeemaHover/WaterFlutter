@@ -20,8 +20,8 @@ class _MainViewState extends State<MainView> {
             color: Colors.black,
           ),
         ),
-        elevation: 2,
-        backgroundColor: white,
+        elevation: 0,
+        backgroundColor: bgGray,
       ),
       body: Container(
         color: bgGray,
@@ -30,6 +30,7 @@ class _MainViewState extends State<MainView> {
           // physics: const NeverScrollableScrollPhysics(),
           child: Column(
             children: [
+              space24,
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: WaterCard(),
@@ -46,7 +47,7 @@ class _MainViewState extends State<MainView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Статистик',
                       style: FontStyles.bodyMedium,
                     ),
@@ -84,7 +85,14 @@ class _MainViewState extends State<MainView> {
                             ),
                           ),
                         ),
-                        const Flexible(child: AchievementWidget()),
+                        Flexible(
+                            child: SingleChildScrollView(
+                          child: Column(
+                            children: const [
+                              AchievementWidget(),
+                            ],
+                          ),
+                        )),
                       ],
                     ),
                   ],

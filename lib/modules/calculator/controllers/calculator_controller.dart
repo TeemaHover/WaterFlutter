@@ -8,9 +8,9 @@ import 'package:get/get.dart';
 
 class CalculatorController extends GetxController {
   final ApiRepository _apiRepository = Get.find();
-  final authController = Get.put(AuthController(apiRepository: Get.find()));
+  final homeController = Get.put(HomeController());
   final voluntary = Rxn(Voluntary());
-  final paymentItem = <Items>[].obs;
+  final paymentItem = <PaymentItem>[].obs;
   final payments = <Payment>[].obs;
   final loading = false.obs;
   getEvents() async {
@@ -35,6 +35,29 @@ class CalculatorController extends GetxController {
     } catch (e) {
       print(e);
       loading.value = false;
+    }
+  }
+
+  Future<bool> sendPayment() async {
+    try {
+      loading.value = true;
+      Payment payment = Payment();
+
+      if (homeController.user?.type == 'user') {
+        payment.date = DateTime(DateTime.now().year, DateTime.now().month)
+            .millisecondsSinceEpoch;
+        payment.items = paymentItem;
+      }
+
+      final res = await _apiRepository.sendPayment(payment);
+      loading.value = false;
+      paymentItem.value = [];
+      return res;
+    } catch (e) {
+      print(e);
+      loading.value = false;
+      paymentItem.value = [];
+      return false;
     }
   }
 

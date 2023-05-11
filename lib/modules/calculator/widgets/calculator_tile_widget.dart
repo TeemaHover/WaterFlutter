@@ -1,15 +1,18 @@
+import 'package:app/data/data.dart';
 import 'package:app/shared/constants/colors.dart';
+import 'package:app/shared/constants/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 
 class CalculatorTileWidget extends StatelessWidget {
-  const CalculatorTileWidget({super.key});
-
+  const CalculatorTileWidget({super.key, required this.item});
+  final PaymentItem item;
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: small),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: darkgray,
@@ -31,17 +34,18 @@ class CalculatorTileWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Халуун усны мэдээлэл',
+                  item.title ?? '',
                   style: FontStyles.labelLarge,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "123,456 мкв",
+                      "${item.quantity} ${item.symbol}",
                       style: FontStyles.labelMedium,
                     ),
-                    Text("123,456 төгрөг", style: FontStyles.labelMedium),
+                    Text("${item.quantity! * item.unitPrice!} төгрөг",
+                        style: FontStyles.labelMedium),
                   ],
                 )
               ],
