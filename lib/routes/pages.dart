@@ -24,7 +24,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TOOTSOOLUUR,
-      page: () => const EventAdd(),
+      page: () => const CalculatorView(),
       binding: null,
     ),
     GetPage(

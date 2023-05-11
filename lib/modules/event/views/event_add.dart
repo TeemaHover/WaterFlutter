@@ -10,7 +10,10 @@ class EventAdd extends StatefulWidget {
   State<EventAdd> createState() => _EventAddState();
 }
 
+const List<String> list = <String>['One', 'Two', 'Three'];
+
 class _EventAddState extends State<EventAdd> {
+  String dropdownValue = list.first;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,18 +97,40 @@ class _EventAddState extends State<EventAdd> {
                             ),
                           ),
                           space16,
-                          MainButton(
-                              onPressed: () {},
-                              text: "",
-                              height: 30,
-                              child: const SizedBox())
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: darkgray,
+                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 2),
+                            child: DropdownButton<String>(
+                              value: dropdownValue,
+                              icon: const Icon(Icons.arrow_downward),
+                              elevation: 16,
+
+                              style: const TextStyle(color: black),
+                              // underline: Container(
+                              //   height: 2,
+                              //   color: Colors.deepPurpleAccent,
+                              // ),
+                              onChanged: (String? value) {
+                                // This is called when the user selects an item.
+                                setState(() {
+                                  dropdownValue = value!;
+                                });
+                              },
+                              items: list.map<DropdownMenuItem<String>>(
+                                  (String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          )
                         ],
                       ),
                       space16,
-                      MainButton(
-                          onPressed: () {},
-                          text: "Өөр урамшуулал нэмэх",
-                          child: const SizedBox())
                     ],
                   )
                 ]),
@@ -158,6 +183,46 @@ class _EventAddState extends State<EventAdd> {
                                         .labelMedium),
                               ),
                             ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                space24,
+                AddContainerWidget(
+                  title: 'Certificate-ын зураг оруулах',
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Row(
+                          children: [
+                            Text("Та зургаа оруулна уу",
+                                style: Theme.of(context).textTheme.labelMedium),
+                          ],
+                        ),
+                        space16,
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 127,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: small, horizontal: 12),
+                                    border: const OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: textGray)),
+                                    hintText: 'Огноо.',
+                                    hintStyle: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium),
+                              ),
+                            ),
+                            space16,
+                            Text("File name",
+                                style: Theme.of(context).textTheme.labelMedium),
                           ],
                         )
                       ],

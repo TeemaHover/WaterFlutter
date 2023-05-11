@@ -1,20 +1,15 @@
+import 'package:app/data/data.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
-class CardMain extends StatefulWidget {
-  final String title;
-  final String time;
-
-  const CardMain({super.key, required this.title, required this.time});
-
-  @override
-  State<CardMain> createState() => _CardMainState();
-}
-
-class _CardMainState extends State<CardMain> {
+class CardMain extends StatelessWidget {
+  const CardMain({super.key, required this.event});
+  final Event event;
   @override
   Widget build(BuildContext context) {
+    DateTime time = DateTime.fromMillisecondsSinceEpoch(
+        event.startDate ?? DateTime.now().millisecondsSinceEpoch);
     return GestureDetector(
       onTap: () {
         showModalBottomSheet(
@@ -36,11 +31,11 @@ class _CardMainState extends State<CardMain> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Хөтөлбөрийн нэр",
+                      event.name ?? '',
                       style: FontStyles.bodyMedium,
                     ),
                     space16,
-                    Text("asdasdasdad",
+                    Text(event.description ?? '',
                         style: FontStyles.titleMedium),
                     space16,
                     Container(
@@ -59,9 +54,9 @@ class _CardMainState extends State<CardMain> {
                                     style: Theme.of(context)
                                         .textTheme
                                         .titleMedium),
-                                Text("660/1000",
-                                    style:
-                                        FontStyles.labelSmall),
+                                Text(
+                                    "${event.registerMembers}/${event.members}",
+                                    style: FontStyles.labelSmall),
                               ],
                             ),
                             const Text("Progress bar")
@@ -78,12 +73,9 @@ class _CardMainState extends State<CardMain> {
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Урамшуулал",
-                                  style:
-                                      FontStyles.titleMedium),
-                              Text("as",
-                                  style:
-                                      FontStyles.titleSmall),
+                              Text("Урамшуулал", style: FontStyles.titleMedium),
+                              Text("${event.exec}",
+                                  style: FontStyles.titleSmall),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -127,8 +119,7 @@ class _CardMainState extends State<CardMain> {
                                         .titleMedium),
                               ],
                             ),
-                            Text("a",
-                                style: FontStyles.titleSmall)
+                            Text("a", style: FontStyles.titleSmall)
                           ],
                         )),
                     space16,
@@ -172,8 +163,7 @@ class _CardMainState extends State<CardMain> {
                                   style: FontStyles.bodyMedium)
                             ],
                           ),
-                          Text("a",
-                              style: FontStyles.titleSmall)
+                          Text("${event.exec}", style: FontStyles.titleSmall)
                         ],
                       ),
                     ),
@@ -185,17 +175,24 @@ class _CardMainState extends State<CardMain> {
                         color: bgGray,
                       ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: const [Icon(Icons.forest_outlined)],
-                          ),
-                          Text("Ажил гүйцэтгэлийн нэр",
-                              style: FontStyles.titleMedium),
-                          Text("a",
-                              style: FontStyles.titleSmall)
-                        ],
-                      ),
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: event.execEvent
+                                  ?.map((e) => Column(
+                                        children: [
+                                          Row(
+                                            children: const [
+                                              Icon(Icons.forest_outlined)
+                                            ],
+                                          ),
+                                          Text("${event.execEvent?.first.name}",
+                                              style: FontStyles.titleMedium),
+                                          Text(
+                                              "${event.execEvent?.first.description}",
+                                              style: FontStyles.titleSmall)
+                                        ],
+                                      ))
+                                  .toList() ??
+                              []),
                     ),
                     space16,
                     const Divider(
@@ -255,11 +252,11 @@ class _CardMainState extends State<CardMain> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.title,
+                        event.business?.companyName ?? '',
                         style: FontStyles.titleSmall,
                       ),
                       Text(
-                        'Эхлах хугацаа: ${widget.time}',
+                        'Эхлах хугацаа: ${time.year}/${time.month}/${time.day}',
                       ),
                       // style: FontStyles.labelSmall)
                     ],
@@ -275,7 +272,7 @@ class _CardMainState extends State<CardMain> {
                         Icons.person_outline,
                         size: 32,
                       ),
-                      Text('990/1000',
+                      Text('${event.registerMembers}/${event.members}',
                           style: FontStyles.labelLarge),
                     ],
                   ),

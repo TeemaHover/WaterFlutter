@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class GraphicWidget extends StatelessWidget {
   const GraphicWidget(
@@ -23,68 +24,76 @@ class GraphicWidget extends StatelessWidget {
   final Color color;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(origin),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        color: bgGray,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelMedium!
-                  .copyWith(color: textGray)),
-          space4,
-          Row(
+    return InkWell(
+      onTap: () {},
+      highlightColor: Colors.blue.withOpacity(0.4),
+      splashColor: Colors.green.withOpacity(0.5),
+      child: Container(
+        padding: const EdgeInsets.all(origin),
+        margin: EdgeInsets.all(0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          color: bgGray,
+        ),
+        child: InkWell(
+          onTap: () {},
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              RichText(
-                  text: TextSpan(
-                      text: "$value ",
-                      style: FontStyles.titleLarge,
-                      children: [
-                    TextSpan(
-                        text: symbol,
-                        style: FontStyles.labelSmall),
-                  ])),
-              icon
+              Text(title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium!
+                      .copyWith(color: textGray)),
+              space4,
+              Row(
+                children: [
+                  RichText(
+                      text: TextSpan(
+                          text: "$value ",
+                          style: FontStyles.titleLarge
+                              .copyWith(color: Colors.black),
+                          children: [
+                        TextSpan(text: symbol, style: FontStyles.labelSmall),
+                      ])),
+                  icon
+                ],
+              ),
+              space4,
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 6, horizontal: small),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.green,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: 15,
+                    ),
+                    Text('$percent %',
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelMedium!
+                            .copyWith(color: white)),
+                  ],
+                ),
+              ),
+              space32,
+              SizedBox(
+                height: 50,
+                width: 132,
+                child: BarChartWidget(
+                  cl: color,
+                ),
+              )
             ],
           ),
-          space4,
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 6, horizontal: small),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.green,
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                  size: 15,
-                ),
-                Text('$percent %',
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelMedium!
-                        .copyWith(color: white)),
-              ],
-            ),
-          ),
-          space32,
-          SizedBox(
-            height: 50,
-            width: 132,
-            child: BarChartWidget(
-              cl: color,
-            ),
-          )
-        ],
+        ),
       ),
     );
     ;

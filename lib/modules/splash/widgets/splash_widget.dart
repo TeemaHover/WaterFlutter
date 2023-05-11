@@ -1,5 +1,6 @@
 import 'package:app/shared/constants/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashWidget extends StatelessWidget {
   const SplashWidget({super.key});
@@ -9,6 +10,8 @@ class SplashWidget extends StatelessWidget {
     return Hero(
       tag: 'splash',
       child: Container(
+        // child: Lottie.network(
+        // 'https://assets3.lottiefiles.com/packages/lf20_qcl8qzt4.json'),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
@@ -28,6 +31,7 @@ class SplashWidget extends StatelessWidget {
           //   // ],
           // ),
         ),
+
         // child: Center(
         //   child: AppLogo(
         //     height: MediaQuery.of(context).size.height * 0.2,

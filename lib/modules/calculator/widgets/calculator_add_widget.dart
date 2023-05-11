@@ -1,7 +1,5 @@
 import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class CalculatorAddWidget extends StatelessWidget {
   const CalculatorAddWidget({super.key});
@@ -12,7 +10,8 @@ class CalculatorAddWidget extends StatelessWidget {
       appBar: MainAppBar(title: "Усны заалт оруулах"),
       body: Container(
           margin: EdgeInsets.all(MediaQuery.of(context).size.width / 20),
-          width: MediaQuery.of(context).size.width,
+          width: double.infinity,
+          height: 800,
           child: Column(
             children: [
               const Text("Хүйтэн ус"),
@@ -127,6 +126,5 @@ class CalculatorAddWidget extends StatelessWidget {
             ],
           )),
     );
-    ;
   }
 }

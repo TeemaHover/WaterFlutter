@@ -24,7 +24,7 @@ class _MainViewState extends State<MainView> {
         backgroundColor: white,
       ),
       body: Container(
-        color: bg,
+        color: bgGray,
         height: defaultHeight(context),
         child: SingleChildScrollView(
           // physics: const NeverScrollableScrollPhysics(),
@@ -84,7 +84,7 @@ class _MainViewState extends State<MainView> {
                             ),
                           ),
                         ),
-                        Flexible(child: AchievementWidget()),
+                        const Flexible(child: AchievementWidget()),
                       ],
                     ),
                   ],

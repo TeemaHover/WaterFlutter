@@ -35,20 +35,49 @@ class ApiRepository {
     try {
       final response =
           await apiProvider.get('/user/me') as Map<String, dynamic>;
-      print(response);
       return User.fromJson(response);
     } on Exception {
       rethrow;
     }
   }
 
-  // Future<List<Product>> getProduct(String route) async {
-  //   try {
-  //     final response = await apiProvider.get(route);
+  Future<bool> createEvent(Event e) async {
+    try {
+      final data = {
+        "name": e.name,
+        "members": 0,
+        "registerMembers": 0,
+        "startDate": e.startDate,
+        "endDate": e.endDate,
+        "exec": e.exec,
+        "execEvent": e.execEvent,
+        "sale": e.sale,
+        "volunteer": "645bbf8b6ee7be1b6c412741"
+      };
 
-  //     return (response as List).map((e) => Product.fromJson(e)).toList();
-  //   } on Exception {
-  //     rethrow;
-  //   }
-  // }
+      await apiProvider.post('/event', data: data);
+      return true;
+    } on Exception {
+      return false;
+    }
+  }
+
+  Future<List<Event>> getEvent() async {
+    try {
+      final response = await apiProvider.get('/event');
+
+      return (response as List).map((e) => Event.fromJson(e)).toList();
+    } on Exception {
+      rethrow;
+    }
+  }
+
+  Future<bool> registerEvent(String id) async {
+    try {
+      final response = await apiProvider.get('/event/member/$id') as bool;
+      return response;
+    } on Exception {
+      rethrow;
+    }
+  }
 }
