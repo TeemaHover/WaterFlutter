@@ -30,7 +30,7 @@ class GraphicWidget extends StatelessWidget {
       splashColor: Colors.green.withOpacity(0.5),
       child: Container(
         padding: const EdgeInsets.all(origin),
-        margin: EdgeInsets.all(0),
+        margin: const EdgeInsets.all(0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           color: bgGray,
@@ -61,7 +61,8 @@ class GraphicWidget extends StatelessWidget {
               ),
               space4,
               Container(
-                padding: EdgeInsets.symmetric(vertical: 6, horizontal: small),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 6, horizontal: small),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.green,
@@ -86,7 +87,7 @@ class GraphicWidget extends StatelessWidget {
               space32,
               SizedBox(
                 height: 50,
-                width: 132,
+                width: 150,
                 child: BarChartWidget(
                   cl: color,
                 ),
@@ -96,6 +97,5 @@ class GraphicWidget extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

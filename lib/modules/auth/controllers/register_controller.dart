@@ -33,18 +33,16 @@ class RegisterController extends GetxController {
     isVisible.value = !isVisible.value;
   }
 
-  register(BuildContext context) async {
-    AppFocus.unfocus(context);
+  register() async {
+    // AppFocus.unfocus(context);
 
     try {
       isLoading = true;
-      if (user.value?.type == 'business' || user.value?.type == 'carrier') {
-        user.value?.status = 'pending';
-      } else {
-        user.value?.status = 'active';
-      }
-      final res = await apiRepository.register(
-          passwordController.text, user.value as User);
+
+      final res = await apiRepository.registerUser(
+        user.value as User,
+        passwordController.text,
+      );
       _saveTokens(res);
       isLoading = false;
     } on DioError catch (e) {

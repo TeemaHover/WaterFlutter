@@ -35,6 +35,7 @@ const textGray = Color(0xff959A9E);
 const bgGray = Color(0xFFf7f8fa);
 const blue = Color(0xFF1d8be2);
 const green = Color(0xFF80C457);
+const bgBlue = Color(0xFFF5F5F5);
 
 // Blue pallete
 const mainBlue = Color(0xFF1D8BE2);

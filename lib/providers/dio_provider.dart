@@ -12,9 +12,10 @@ class DioProvider extends GetxService {
     dio.options.baseUrl = isProduction
         ? 'https://waternestjs-production.up.railway.app'
         : 'https://waternestjs-production.up.railway.app';
-
+    // dorj
     // ? 'http://192.168.1.2:5050'
     // : 'http://192.168.1.2:5050';
+    // bishu
     // ? 'http://192.168.1.14:5050'
     // : 'http://192.168.1.14:5050';
 

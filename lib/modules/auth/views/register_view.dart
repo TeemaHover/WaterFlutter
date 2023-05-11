@@ -47,38 +47,41 @@ class RegisterView extends StatelessWidget {
                           TextFormField(
                             //focusNode: controller.phoneFocus,
                             decoration: const InputDecoration(
-                              labelText: 'Овог нэр',
+                              hintText: 'Нэр',
                             ),
-                            onChanged: (p0) => {
-                              //controller.phone.value = p0
-                            },
+                            onChanged: (p0) =>
+                                {controller.user.value?.lastName = p0},
                           ),
                           space16,
                           TextFormField(
                             //focusNode: controller.phoneFocus,
+                            keyboardType: TextInputType.number,
                             decoration: const InputDecoration(
-                              labelText: 'Утасны дугаар',
+                              suffixIcon: Icon(
+                                Icons.email_outlined,
+                                color: Colors.grey,
+                              ),
+                              hintText: 'Утасны дугаар',
                             ),
-                            onChanged: (p0) => {
-                              //controller.phone.value = p0
-                            },
+                            onChanged: (p0) =>
+                                {controller.user.value?.phone = p0},
                           ),
                           space16,
                           TextFormField(
                               //focusNode: controller.passwordFocus,
-                              decoration: const InputDecoration(
-                                labelText: 'Нууц үг',
-                                // suffixIcon: IconButton(
-                                //     icon: Icon(
-                                //       !controller.isVisible.value
-                                //           ? Icons.visibility
-                                //           : Icons.visibility_off,
-                                //       color: Colors.grey,
-                                //     ),
-                                //     onPressed: () {
-                                //       controller.isVisible.value =
-                                //           !controller.isVisible.value;
-                                //     }),
+                              decoration: InputDecoration(
+                                hintText: 'Нууц үг',
+                                suffixIcon: IconButton(
+                                    icon: Icon(
+                                      !controller.isVisible.value
+                                          ? Icons.lock_outline
+                                          : Icons.lock_open_outlined,
+                                      color: Colors.grey,
+                                    ),
+                                    onPressed: () {
+                                      controller.isVisible.value =
+                                          !controller.isVisible.value;
+                                    }),
                               ),
                               obscureText: controller.isVisible.value,
                               controller: controller.passwordController,
@@ -92,20 +95,12 @@ class RegisterView extends StatelessWidget {
                         children: [
                           MainButton(
                             onPressed: () async {
-                              //controller.login(context);
+                              controller.register();
                             },
-                            //ene hesegt text iin oorchilson
                             text: 'Бүртгүүлэх',
-
                             child: const SizedBox(),
                           ),
-                          // MainButton(
-                          //   onPressed: () {},
-                          //   color: Colors.transparent,
-                          //   contentColor: lightBlack,
-                          //   text: 'Нууц үг мартсан ?',
-                          //   child: const SizedBox(),
-                          // ),
+
                           space16,
                           //ene buttonii text iig solison
                           MainButton(
