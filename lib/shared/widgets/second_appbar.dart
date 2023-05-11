@@ -3,9 +3,11 @@ import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class SecondAppBar extends StatelessWidget with PreferredSizeWidget {
-  SecondAppBar({super.key, required this.title, this.color = textBlack});
+  SecondAppBar(
+      {super.key, required this.title, this.color = textBlack, this.bg});
   final String title;
   final Color color;
+  final Color? bg;
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override
@@ -26,7 +28,7 @@ class SecondAppBar extends StatelessWidget with PreferredSizeWidget {
         style: FontStyles.bodyMedium.copyWith(color: color),
       ),
       shadowColor: Colors.transparent,
-      backgroundColor: Colors.transparent,
+      backgroundColor: bg ?? Colors.transparent,
     );
   }
 }

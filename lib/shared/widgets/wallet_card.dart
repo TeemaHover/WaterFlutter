@@ -1,12 +1,22 @@
+import 'package:app/data/data.dart';
+import 'package:app/modules/calculator/calculator.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
-class WaterCard extends StatelessWidget {
-  const WaterCard({super.key});
+import '../../modules/main/views/water_calculator_widget.dart';
 
+class WaterCard extends StatelessWidget {
+  const WaterCard({super.key, required this.payment});
+  final Payment payment;
   @override
   Widget build(BuildContext context) {
+    double quantity = 0.0;
+    payment.items?.forEach(
+      (element) {
+        quantity += element.quantity!;
+      },
+    );
     return Container(
         width: double.infinity,
         padding: const EdgeInsets.all(medium),
@@ -43,14 +53,14 @@ class WaterCard extends StatelessWidget {
             space4,
             RichText(
                 text: TextSpan(
-                    text: "33,123 ",
+                    text: "$quantity ",
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge!
                         .copyWith(color: white),
                     children: [
                   TextSpan(
-                      text: "м.куб",
+                      text: "${payment.items?.first.symbol}",
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium!
@@ -58,21 +68,28 @@ class WaterCard extends StatelessWidget {
                 ])),
             space4,
             Text(
-              "Өнгөрсөн сард",
+              "Хамгийн сүүлд илгээсэн",
               style: FontStyles.titleMedium.copyWith(
                 color: white,
               ),
             ),
             space24,
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(origin),
-                color: blue,
-              ),
-              padding: const EdgeInsets.all(10),
-              child: const Icon(
-                Icons.newspaper,
-                color: Colors.white,
+            GestureDetector(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WaterCalculatorWidget(),
+                  )),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(origin),
+                  color: blue,
+                ),
+                padding: const EdgeInsets.all(10),
+                child: const Icon(
+                  Icons.newspaper,
+                  color: Colors.white,
+                ),
               ),
             )
           ],

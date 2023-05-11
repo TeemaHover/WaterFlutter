@@ -9,12 +9,7 @@ class MontlyWaterCalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height / 3,
-        padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width / 15,
-            right: MediaQuery.of(context).size.width / 15,
-            top: MediaQuery.of(context).size.height / 10,
-            bottom: MediaQuery.of(context).size.width / 20),
+        padding: EdgeInsets.symmetric(horizontal: medium, vertical: 12),
         decoration: const BoxDecoration(
           color: lightblue,
         ),

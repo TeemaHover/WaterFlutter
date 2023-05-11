@@ -1,3 +1,4 @@
+import 'package:app/data/data.dart';
 import 'package:app/shared/constants/colors.dart';
 import 'package:app/shared/index.dart';
 import 'package:app/theme/index.dart';
@@ -15,6 +16,7 @@ class GraphicWidget extends StatelessWidget {
       required this.icon,
       required this.value,
       this.color = blue,
+      required this.payments,
       required this.symbol});
   final String title;
   final double percent;
@@ -22,6 +24,7 @@ class GraphicWidget extends StatelessWidget {
   final double value;
   final String symbol;
   final Color color;
+  final List<Payment> payments;
   @override
   Widget build(BuildContext context) {
     return InkWell(
