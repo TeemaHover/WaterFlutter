@@ -55,7 +55,14 @@ class _InformationCardState extends State<InformationCard> {
                       widget.title,
                       style: FontStyles.titleSmall,
                     ),
-                    const Icon(Icons.star),
+                    Row(
+                      children: const [
+                        Text("Асуудлын зэрэг: "),
+                        Icon(Icons.star),
+                        Icon(Icons.star),
+                        Icon(Icons.star),
+                      ],
+                    ),
                     Text(
                       'Нийтлэгдсэн огноо: ${widget.time}',
                       style: FontStyles.labelLarge,

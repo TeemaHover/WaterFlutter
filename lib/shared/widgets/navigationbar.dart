@@ -1,6 +1,5 @@
 import 'package:app/modules/home/controllers/controllers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../shared/index.dart';
@@ -18,8 +17,16 @@ class MainNavigationBar extends StatelessWidget {
         destinations: mainNavbar.map((e) {
           NavigationDestination body;
           body = NavigationDestination(
-            icon: SvgPicture.asset(e['icon']!),
-            selectedIcon: SvgPicture.asset(e['activeIcon']!),
+            icon: Image.asset(
+              e['icon']!,
+              width: 30,
+              height: 30,
+            ),
+            selectedIcon: Image.asset(
+              e['activeIcon']!,
+              width: 30,
+              height: 30,
+            ),
             label: e['label']!,
           );
 

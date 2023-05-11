@@ -1,5 +1,4 @@
 import 'package:app/shared/constants/index.dart';
-import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 import '../../../shared/widgets/information_card.dart';
@@ -25,6 +24,7 @@ class _InfoViewState extends State<InfoView> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: TabBar(
+                    labelColor: black,
                     tabs: [
                       Tab(
                         text: 'Дэлхийд',
@@ -37,20 +37,19 @@ class _InfoViewState extends State<InfoView> {
                     isScrollable: true,
                     labelPadding: EdgeInsets.symmetric(horizontal: 40),
                     indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(width: 5.0, color: Colors.white),
+                        borderSide: BorderSide(width: 2.0, color: blue),
                         insets: EdgeInsets.symmetric(horizontal: 0.0))),
               ),
             ),
-            title: Text(
-              'Мэдээлэл',
-              // style: FontStyles.asd,
-            ),
+            title: const Text('Мэдээлэл', style: TextStyle(color: Colors.black)
+                // style: FontStyles.asd,
+                ),
           ),
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
               Container(
-                color: gray,
+                color: bgGray,
                 child: Column(
                   children: const [
                     Timer(),
@@ -62,7 +61,7 @@ class _InfoViewState extends State<InfoView> {
                 ),
               ),
               Container(
-                color: gray,
+                color: bgGray,
                 child: Column(
                   children: const [
                     Timer(),

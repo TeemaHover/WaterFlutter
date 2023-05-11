@@ -26,6 +26,7 @@ class _EventViewState extends State<EventView> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: TabBar(
+                    labelColor: black,
                     tabs: [
                       Tab(
                         text: 'Улс',
@@ -38,7 +39,7 @@ class _EventViewState extends State<EventView> {
                     isScrollable: true,
                     labelPadding: EdgeInsets.symmetric(horizontal: 40),
                     indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(width: 5.0, color: Colors.white),
+                        borderSide: BorderSide(width: 2.0, color: blue),
                         insets: EdgeInsets.symmetric(horizontal: 0.0))),
               ),
             ),
