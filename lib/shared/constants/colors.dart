@@ -27,6 +27,7 @@ const skyBlue = Color(0xff48ACF7);
 const whiteBlue = Color(0xffE5F2FB);
 const white = Color(0xFFFFFFFF);
 const black = Color(0xFF000000);
+const textBlack = Color(0xFF292D32);
 const gray = Color(0xffAAABB0);
 const lightGray = Color(0xffECEDF3);
 const textGray = Color(0xff959A9E);

@@ -1,15 +1,12 @@
 import 'package:app/shared/constants/colors.dart';
 import 'package:app/theme/index.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/widgets.dart';
 
-class CalculatorTileWidget extends StatefulWidget {
+class CalculatorTileWidget extends StatelessWidget {
   const CalculatorTileWidget({super.key});
 
-  @override
-  State<CalculatorTileWidget> createState() => _CalculatorTileWidgetState();
-}
-
-class _CalculatorTileWidgetState extends State<CalculatorTileWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,5 +50,6 @@ class _CalculatorTileWidgetState extends State<CalculatorTileWidget> {
         ],
       ),
     );
+    ;
   }
 }

@@ -74,6 +74,37 @@ class ApiRepository {
     }
   }
 
+  Future<List<Voluntary>> getVoluntary() async {
+    try {
+      final response = await apiProvider.get('/voluntary');
+
+      return (response as List).map((e) => Voluntary.fromJson(e)).toList();
+    } on Exception {
+      rethrow;
+    }
+  }
+
+  Future<List<Payment>> getPayments() async {
+    try {
+      final response = await apiProvider.get('/payment');
+
+      return (response as List).map((e) => Payment.fromJson(e)).toList();
+    } on Exception {
+      rethrow;
+    }
+  }
+
+  Future<bool> sendPayment(Payment p) async {
+    try {
+      final data = {"items": p.items, "userItems": p.userItem, "date": p.date};
+
+      await apiProvider.post('/payment', data: data);
+      return true;
+    } on Exception {
+      return false;
+    }
+  }
+
   Future<bool> registerEvent(String id) async {
     final response = apiProvider.get('/event/member/$id').toString();
 

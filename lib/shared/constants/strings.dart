@@ -8,12 +8,17 @@ const mainNavbar = [
   {
     'icon': 'assets/svg/navigationBar/deliver.svg',
     'activeIcon': 'assets/svg/navigationBar/deliverActive.svg',
-    'label': 'Хүргэлт',
+    'label': 'Статистик',
   },
   {
     'icon': 'assets/svg/navigationBar/bookmark.svg',
     'activeIcon': 'assets/svg/navigationBar/bookmarkActive.svg',
-    'label': 'Сагс',
+    'label': 'Тоолуур',
+  },
+  {
+    'icon': 'assets/svg/navigationBar/bookmark.svg',
+    'activeIcon': 'assets/svg/navigationBar/bookmarkActive.svg',
+    'label': 'Хөтөлбөр',
   },
   {
     'icon': 'assets/svg/navigationBar/profile.svg',
