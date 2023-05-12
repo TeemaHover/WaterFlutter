@@ -20,19 +20,9 @@ class _CalculatorViewState extends State<CalculatorView> {
     final controller = Get.put(CalculatorController());
     return Scaffold(
       backgroundColor: bgLightBlue,
-      appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Text(
-            "Тооцоолуур",
-            style: FontStyles.bodyMedium.copyWith(
-              fontSize: 26,
-              color: Colors.black,
-            ),
-          ),
-        ),
-        elevation: 0,
-        backgroundColor: bgGray,
+      appBar: MainAppBar(
+        title: 'Тооцоолуур',
+        color: black,
       ),
       body: Container(
         margin: EdgeInsets.all(MediaQuery.of(context).size.width / 20),
@@ -150,7 +140,9 @@ class _CalculatorViewState extends State<CalculatorView> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CalculatorPaymentView(payment: controller.payments.first,),
+                              builder: (context) => CalculatorPaymentView(
+                                payment: controller.payments.first,
+                              ),
                             ));
                       },
                       child: Row(

@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import '../../../theme/text_theme.dart';
 
 class MontlyWaterCalculator extends StatelessWidget {
-  const MontlyWaterCalculator({super.key});
+  const MontlyWaterCalculator(
+      {super.key, required this.quantity, required this.price});
+  final double quantity;
+  final int price;
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +32,11 @@ class MontlyWaterCalculator extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Text("33,437", style: FontStyles.bodyLarge),
-                        Text(" мкв", style: FontStyles.bodyMedium),
-                        Text(" = ", style: FontStyles.bodyMedium),
-                        Text("33,437 ₮", style: FontStyles.bodyLarge),
+                      children: [
+                        Text("$quantity", style: FontStyles.bodySmall),
+                        Text(" мкв", style: FontStyles.titleLarge),
+                        Text(" = ", style: FontStyles.titleLarge),
+                        Text("$price ₮", style: FontStyles.bodySmall),
                       ],
                     ),
                     Row(

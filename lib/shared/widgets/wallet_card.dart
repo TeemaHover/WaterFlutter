@@ -21,6 +21,8 @@ class WaterCard extends StatelessWidget {
         padding: const EdgeInsets.all(medium),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+              image: AssetImage(imageMask), alignment: Alignment.bottomRight),
           gradient: const LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -45,32 +47,24 @@ class WaterCard extends StatelessWidget {
           children: [
             Text(
               "Усны хэрэглээ",
-              style: FontStyles.titleMedium.copyWith(
-                color: white,
-              ),
+              style: FontStyles.titleMedium
+                  .copyWith(color: white, fontWeight: FontWeight.normal),
             ),
             space4,
             RichText(
                 text: TextSpan(
                     text: "$quantity ",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(color: white),
+                    style: FontStyles.bodyLarge,
                     children: [
                   TextSpan(
                       text: "${payment.items?.first.symbol}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium!
-                          .copyWith(color: white)),
+                      style: FontStyles.titleMedium),
                 ])),
             space4,
             Text(
               "Хамгийн сүүлд илгээсэн",
-              style: FontStyles.titleMedium.copyWith(
-                color: white,
-              ),
+              style: FontStyles.titleMedium
+                  .copyWith(color: white, fontWeight: FontWeight.normal),
             ),
             space24,
             GestureDetector(

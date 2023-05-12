@@ -18,9 +18,9 @@ class _MainViewState extends State<MainView> {
     final controller = Get.put(MainController());
     final homeController = Get.put(HomeController());
     return Scaffold(
-         backgroundColor: bgLightBlue,
+      backgroundColor: bgLightBlue,
       appBar: MainAppBar(
-        title: "НҮҮР",
+        title: "Нүүр",
         color: black,
       ),
       body: RefreshIndicator(

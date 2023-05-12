@@ -26,7 +26,11 @@ class WaterCalculatorWidget extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                MontlyWaterCalculator(),
+                MontlyWaterCalculator(
+                  price: controller.avgPrice.value * controller.payments.length,
+                  quantity:
+                      controller.avgQuantity.value * controller.payments.length,
+                ),
                 Column(
                   children: controller.payments.map((element) {
                     return MontlyTile(
