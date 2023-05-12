@@ -26,11 +26,7 @@ class _RankState extends State<Rank> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.emoji_events,
-              color: Colors.yellow,
-              size: 100,
-            ),
+            Image.asset('assets/images/rank.png'),
             const Text("Таны одоогийн цол"),
             const Text("aaaa"),
             MainButton(
