@@ -1,3 +1,4 @@
+import 'package:app/modules/newscreen/view/profile.dart';
 import 'package:app/shared/constants/colors.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,19 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
       ),
       shadowColor: Colors.transparent,
       backgroundColor: bgGray,
+      actions: [
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Profile(),
+                ));
+          },
+          icon: Image.asset('assets/images/Profile.png'),
+          iconSize: 50,
+        )
+      ],
     );
   }
 }

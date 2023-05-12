@@ -17,15 +17,9 @@ class _MainViewState extends State<MainView> {
     final controller = Get.put(MainController());
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Нүүр",
-          style: FontStyles.bodyLarge.copyWith(
-            color: Colors.black,
-          ),
-        ),
-        elevation: 0,
-        backgroundColor: bgGray,
+      appBar: MainAppBar(
+        title: "НҮҮР",
+        color: black,
       ),
       body: RefreshIndicator(
         onRefresh: () async {
@@ -40,10 +34,10 @@ class _MainViewState extends State<MainView> {
               children: [
                 space24,
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Obx(() => controller.payments.isNotEmpty
                       ? WaterCard(payment: controller.payments.first)
-                      : SizedBox()),
+                      : const SizedBox()),
                 ),
                 space24,
                 Container(
@@ -76,7 +70,7 @@ class _MainViewState extends State<MainView> {
                                       value: controller.avgQuantity.value,
                                       percent: -19.99,
                                       symbol: 'м.куб',
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.water_drop,
                                         color: blue,
                                       ),
@@ -91,7 +85,7 @@ class _MainViewState extends State<MainView> {
                                           controller.avgPrice.value.toDouble(),
                                       percent: -19.99,
                                       symbol: 'мнт',
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.water_drop,
                                         color: Colors.yellow,
                                       ),
