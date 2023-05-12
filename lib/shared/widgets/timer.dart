@@ -1,14 +1,11 @@
-import 'package:app/shared/constants/colors.dart';
+import 'package:app/shared/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-class Timer extends StatefulWidget {
-  const Timer({super.key});
-
-  @override
-  State<Timer> createState() => _TimerState();
-}
-
-class _TimerState extends State<Timer> {
+class Timer extends StatelessWidget {
+  const Timer({super.key, required this.time});
+  final int time;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,137 +32,152 @@ class _TimerState extends State<Timer> {
                 style: TextStyle(fontSize: 20, color: white),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 2),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: white,
+            TweenAnimationBuilder<Duration>(
+                duration: Duration(milliseconds: time),
+                tween: Tween(
+                    begin: Duration(milliseconds: time), end: Duration.zero),
+                onEnd: () {
+                  print('Timer ended');
+                },
+                builder: (BuildContext context, Duration value, Widget? child) {
+                  final years = value.inDays ~/ 365;
+                  final months = (value.inDays - years * 365) ~/ 30;
+                  final days = value.inDays - years * 365 - months * 30;
+                  final hours = value.inHours % 24;
+                  final minutes = value.inMinutes % 60;
+                  final seconds = value.inSeconds % 60;
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 18),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: white,
+                            ),
+                            child: Text(
+                              "$years",
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                          const Text(
+                            "Жил",
+                            style: TextStyle(fontSize: 14, color: white),
+                          ),
+                        ],
                       ),
-                      child: const Text(
-                        "00",
-                        style: TextStyle(fontSize: 24),
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 18),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: white,
+                            ),
+                            child: Text(
+                              "$months",
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                          const Text(
+                            "Сар",
+                            style: TextStyle(fontSize: 14, color: white),
+                          ),
+                        ],
                       ),
-                    ),
-                    const Text(
-                      "Жил",
-                      style: TextStyle(fontSize: 14, color: white),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 2),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: white,
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 18),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: white,
+                            ),
+                            child: Text(
+                              "$days",
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                          const Text(
+                            "Өдөр",
+                            style: TextStyle(fontSize: 14, color: white),
+                          ),
+                        ],
                       ),
-                      child: const Text(
-                        "00",
-                        style: TextStyle(fontSize: 24),
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 18),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: white,
+                            ),
+                            child: Text(
+                              "$hours",
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                          const Text(
+                            "Цаг",
+                            style: TextStyle(fontSize: 14, color: white),
+                          ),
+                        ],
                       ),
-                    ),
-                    const Text(
-                      "Сар",
-                      style: TextStyle(fontSize: 14, color: white),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 2),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: white,
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 18),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: white,
+                            ),
+                            child: Text(
+                              "$minutes",
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                          const Text(
+                            "Минут",
+                            style: TextStyle(fontSize: 14, color: white),
+                          ),
+                        ],
                       ),
-                      child: const Text(
-                        "00",
-                        style: TextStyle(fontSize: 24),
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 18),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: white,
+                            ),
+                            child: Text(
+                              "$seconds",
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                          const Text(
+                            "Секунд",
+                            style: TextStyle(fontSize: 14, color: white),
+                          ),
+                        ],
                       ),
-                    ),
-                    const Text(
-                      "Өдөр",
-                      style: TextStyle(fontSize: 14, color: white),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 2),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: white,
-                      ),
-                      child: const Text(
-                        "00",
-                        style: TextStyle(fontSize: 24),
-                      ),
-                    ),
-                    const Text(
-                      "Цаг",
-                      style: TextStyle(fontSize: 14, color: white),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 2),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: white,
-                      ),
-                      child: const Text(
-                        "00",
-                        style: TextStyle(fontSize: 24),
-                      ),
-                    ),
-                    const Text(
-                      "Минут",
-                      style: TextStyle(fontSize: 14, color: white),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 2),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: white,
-                      ),
-                      child: const Text(
-                        "00",
-                        style: TextStyle(fontSize: 24),
-                      ),
-                    ),
-                    const Text(
-                      "Секунд",
-                      style: TextStyle(fontSize: 14, color: white),
-                    ),
-                  ],
-                ),
-              ],
-            )
+                    ],
+                  );
+                }),
           ],
         ));
   }

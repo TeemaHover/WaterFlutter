@@ -12,49 +12,13 @@ class InfoController extends GetxController {
   final loading = false.obs;
   final mongolInfo = <Info>[].obs;
   final worldInfo = <Info>[].obs;
-  getEvents() async {
+  getInfo() async {
     try {
       loading.value = true;
-      final res = await _apiRepository.getEvent();
-      events.value = res;
-      print(res);
-      loading.value = false;
-    } catch (e) {
-      print(e);
-      loading.value = false;
-    }
-  }
-
-  registerEvent(String id) async {
-    try {
-      loading.value = true;
-      final res = await _apiRepository.registerEvent(id);
-      if (res) {
-        Get.snackbar('Success', "success");
-      } else {
-        Get.snackbar('Failed', "sucess");
-      }
-
-      loading.value = false;
-    } on DioError catch (e) {
-      Get.snackbar(
-        'Error',
-        e.response?.data ?? 'Something went wrong',
-      );
-      loading.value = false;
-    }
-  }
-
-  createEvent(Event event) async {
-    try {
-      loading.value = true;
-      final res = await _apiRepository.createEvent(event);
-      if (res) {
-        Get.snackbar('Success', "success");
-      } else {
-        Get.snackbar('Failed', "sucess");
-      }
-
+      final res = await _apiRepository.getInfo('mongol');
+      mongolInfo.value = res;
+      final res1 = await _apiRepository.getInfo('world');
+      worldInfo.value = res1;
       loading.value = false;
     } catch (e) {
       print(e);
@@ -64,7 +28,7 @@ class InfoController extends GetxController {
 
   @override
   void onInit() async {
-    await getEvents();
+    await getInfo();
     super.onInit();
   }
 }

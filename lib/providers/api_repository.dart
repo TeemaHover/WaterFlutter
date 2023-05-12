@@ -1,4 +1,5 @@
 import 'package:app/data/data.dart';
+import 'package:app/data/models/info.dart';
 import 'package:app/providers/dio_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
@@ -61,6 +62,16 @@ class ApiRepository {
       final response = await apiProvider.get('/event');
 
       return (response as List).map((e) => Event.fromJson(e)).toList();
+    } on Exception {
+      rethrow;
+    }
+  }
+
+  Future<List<Info>> getInfo(String rank) async {
+    try {
+      final response = await apiProvider.get('/voluntary/rank/$rank');
+
+      return (response as List).map((e) => Info.fromJson(e)).toList();
     } on Exception {
       rethrow;
     }
