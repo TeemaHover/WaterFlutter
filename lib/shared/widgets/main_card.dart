@@ -154,26 +154,26 @@ class CardMain extends StatelessWidget {
                       endIndent: 20,
                       color: black,
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Хөтөлбөрт хамааралтай зураг бичлэг",
-                              style: FontStyles.bodyMedium),
-                          space16,
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            height: 400,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: gray,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                    // Container(
+                    //   padding: const EdgeInsets.symmetric(
+                    //       horizontal: 10, vertical: 10),
+                    //   child: Column(
+                    //     crossAxisAlignment: CrossAxisAlignment.start,
+                    //     children: [
+                    //       const Text("Хөтөлбөрт хамааралтай зураг бичлэг",
+                    //           style: FontStyles.bodyMedium),
+                    //       space16,
+                    //       Container(
+                    //         width: MediaQuery.of(context).size.width * 0.9,
+                    //         height: 400,
+                    //         decoration: BoxDecoration(
+                    //           borderRadius: BorderRadius.circular(10),
+                    //           color: gray,
+                    //         ),
+                    //       )
+                    //     ],
+                    //   ),
+                    // ),
                     space16,
                     Container(
                       padding: const EdgeInsets.symmetric(
@@ -202,16 +202,25 @@ class CardMain extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: event.execEvent
                                   ?.map((e) => Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
+                                          space16,
                                           Row(
                                             children: const [
-                                              Icon(Icons.forest_outlined)
+                                              Icon(
+                                                Icons.task_alt,
+                                                size: 50,
+                                              )
                                             ],
                                           ),
+                                          space16,
                                           Text("${e.name}",
                                               style: FontStyles.titleMedium),
                                           Text("${e.description}",
-                                              style: FontStyles.titleSmall)
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .titleMedium)
                                         ],
                                       ))
                                   .toList() ??
