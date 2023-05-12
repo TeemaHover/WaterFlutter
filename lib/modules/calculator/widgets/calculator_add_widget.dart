@@ -14,6 +14,7 @@ class CalculatorAddWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(CalculatorController());
     return Scaffold(
+      backgroundColor: Color(0xFFF7F8FA),
       appBar: SecondAppBar(
         title: "Усны заалт оруулах",
         color: black,
@@ -28,59 +29,69 @@ class CalculatorAddWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: items.map((e) {
                     final i = items.indexOf(e);
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          e.title ?? '',
-                          style: FontStyles.bodyMedium,
-                        ),
-                        space24,
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: e.items?.map((item) {
-                                  return Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        item.title ?? '',
-                                        style: FontStyles.titleMedium,
-                                      ),
-                                      space16,
-                                      Container(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.4,
-                                        height: 50,
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: darkgray,
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            e.title ?? '',
+                            style: FontStyles.bodyMedium,
+                          ),
+                          space24,
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: e.items?.map((item) {
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          item.title ?? '',
+                                          style: FontStyles.titleMedium
+                                              .copyWith(
+                                                  fontWeight: FontWeight.w500),
                                         ),
-                                        child: TextField(
-                                          onChanged: (value) {
-                                            if (item.title == 'Хар тоо') {
-                                              controller.paymentItem[i]
-                                                  .quantity = int.parse(value);
-                                            }
-                                          },
-                                          keyboardType: TextInputType.number,
-                                          decoration: InputDecoration(
-                                            border: InputBorder.none,
-                                            hintStyle: FontStyles.labelMedium,
-                                            hintText: item.title ?? '',
+                                        space16,
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.4,
+                                          height: 50,
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 5),
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: white,
+                                          ),
+                                          child: TextField(
+                                            onChanged: (value) {
+                                              if (item.title == 'Хар тоо') {
+                                                controller.paymentItem[i]
+                                                        .quantity =
+                                                    int.parse(value);
+                                              }
+                                            },
+                                            keyboardType: TextInputType.number,
+                                            decoration: InputDecoration(
+                                              contentPadding: EdgeInsets.only(
+                                                left: 10,
+                                              ),
+                                              border: InputBorder.none,
+                                              hintStyle: FontStyles.labelMedium,
+                                              hintText: item.title ?? '',
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  );
-                                }).toList() ??
-                                []),
-                        space24
-                      ],
+                                      ],
+                                    );
+                                  }).toList() ??
+                                  []),
+                          space24
+                        ],
+                      ),
                     );
                   }).toList()),
               Positioned(
@@ -89,6 +100,7 @@ class CalculatorAddWidget extends StatelessWidget {
                   bottom: 50,
                   child: MainButton(
                     text: 'Баталгаажуулах',
+                    color: darkBlue,
                     child: const SizedBox(),
                     onPressed: () async {
                       bool res = await controller.sendPayment();

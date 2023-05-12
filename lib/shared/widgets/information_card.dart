@@ -22,6 +22,7 @@ class _InformationCardState extends State<InformationCard> {
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: const Text(
             'Бусад хөтөлбөрүүд',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
@@ -30,6 +31,13 @@ class _InformationCardState extends State<InformationCard> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: white,
+            boxShadow: [
+              BoxShadow(
+                color: whiteBlue,
+                blurRadius: 3, // soften the shadow
+                spreadRadius: 1, //extend the shadow
+              )
+            ],
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

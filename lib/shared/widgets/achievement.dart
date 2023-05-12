@@ -12,6 +12,13 @@ class AchievementWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           color: bgGray,
+          boxShadow: [
+            BoxShadow(
+              color: lightGray,
+              blurRadius: 1, // soften the shadow
+              spreadRadius: 1, //extend the shadow
+            )
+          ],
         ),
         child: Center(
             child: Column(

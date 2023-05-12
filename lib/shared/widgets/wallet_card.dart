@@ -22,7 +22,7 @@ class WaterCard extends StatelessWidget {
               tileMode: TileMode.mirror),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
+              color: skyBlue.withOpacity(0.5),
               spreadRadius: 3,
               blurRadius: 7,
               offset: const Offset(0, 3), // changes position of shadow
@@ -44,10 +44,7 @@ class WaterCard extends StatelessWidget {
             RichText(
                 text: TextSpan(
                     text: "33,123 ",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge!
-                        .copyWith(color: white),
+                    style: FontStyles.bodyLarge,
                     children: [
                   TextSpan(
                       text: "м.куб",

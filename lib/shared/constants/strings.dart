@@ -7,6 +7,11 @@ const mainNavbar = [
     'label': 'Нүүр',
   },
   {
+    'icon': 'assets/images/icons/navigationBar/news.png',
+    'activeIcon': 'assets/images/icons/navigationBar/news.gif',
+    'label': 'Мэдээлэл',
+  },
+  {
     'icon': 'assets/images/icons/navigationBar/calculate.png',
     'activeIcon': 'assets/images/icons/navigationBar/calculate.gif',
     'label': 'Тоолуур',
@@ -15,11 +20,6 @@ const mainNavbar = [
     'icon': 'assets/images/icons/navigationBar/event.png',
     'activeIcon': 'assets/images/icons/navigationBar/event.gif',
     'label': 'Хөтөлбөр',
-  },
-  {
-    'icon': 'assets/images/icons/navigationBar/news.png',
-    'activeIcon': 'assets/images/icons/navigationBar/news.gif',
-    'label': 'Мэдээлэл',
   },
   {
     'icon': 'assets/images/icons/navigationBar/notification.png',

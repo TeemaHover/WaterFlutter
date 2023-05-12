@@ -1,7 +1,6 @@
 import 'package:app/data/data.dart';
 import 'package:app/modules/calculator/calculator.dart';
 import 'package:app/shared/index.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,8 +18,20 @@ class _CalculatorViewState extends State<CalculatorView> {
   Widget build(BuildContext context) {
     final controller = Get.put(CalculatorController());
     return Scaffold(
+      backgroundColor: bgLightBlue,
       appBar: AppBar(
-        title: const Text("Тооцоолуур"),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          child: Text(
+            "Тооцоолуур",
+            style: FontStyles.bodyMedium.copyWith(
+              fontSize: 26,
+              color: Colors.black,
+            ),
+          ),
+        ),
+        elevation: 0,
+        backgroundColor: bgGray,
       ),
       body: Container(
         margin: EdgeInsets.all(MediaQuery.of(context).size.width / 20),
@@ -35,6 +46,14 @@ class _CalculatorViewState extends State<CalculatorView> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: darkgray,
+                  boxShadow: [
+                    BoxShadow(
+                      color: skyBlue.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 7,
+                      offset: const Offset(0, 2), // changes position of shadow
+                    ),
+                  ],
                 ),
                 child: const SizedBox(),
               ),
@@ -53,6 +72,22 @@ class _CalculatorViewState extends State<CalculatorView> {
 
                             return Expanded(
                               child: Container(
+                                decoration: const BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  color: Color(0xFFffffff),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: lightGray,
+                                      blurRadius: 3.0, // soften the shadow
+                                      spreadRadius: 2.0, //extend the shadow
+                                      offset: Offset(
+                                        1.0, // Move to right 5  horizontally
+                                        1.0, // Move to bottom 5 Vertically
+                                      ),
+                                    )
+                                  ],
+                                ),
                                 margin: EdgeInsets.only(
                                     left: i! % 2 != 0 ? small : 0,
                                     right: i % 2 == 0 ? small : 0),

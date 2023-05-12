@@ -17,39 +17,54 @@ class _InfoViewState extends State<InfoView> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+          backgroundColor: bgLightBlue,
           appBar: AppBar(
             backgroundColor: bgGray,
             bottom: const PreferredSize(
               preferredSize: Size.fromHeight(40),
               child: Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: TabBar(
-                    labelColor: black,
-                    tabs: [
-                      Tab(
-                        text: 'Дэлхийд',
-                      ),
-                      Tab(
-                        text: 'Монголд',
-                      ),
-                    ],
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    isScrollable: true,
-                    labelPadding: EdgeInsets.symmetric(horizontal: 40),
-                    indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(width: 2.0, color: blue),
-                        insets: EdgeInsets.symmetric(horizontal: 0.0))),
+                  labelColor: darkBlue,
+                  unselectedLabelColor: gray,
+                  tabs: [
+                    Tab(
+                      text: 'Дэлхийд',
+                    ),
+                    Tab(
+                      text: 'Монголд',
+                    ),
+                  ],
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  isScrollable: true,
+                  labelPadding: EdgeInsets.symmetric(horizontal: 40),
+                  indicator: UnderlineTabIndicator(
+                    borderSide: BorderSide(
+                      width: 3.0,
+                      color: blue,
+                    ),
+                    insets: EdgeInsets.symmetric(horizontal: 20.0),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
+                ),
               ),
             ),
-            title: const Text('Мэдээлэл', style: TextStyle(color: Colors.black)
+            title: const Text('Мэдээлэл',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600,
+                )
                 // style: FontStyles.asd,
                 ),
+            elevation: 1,
+            shadowColor: gray,
           ),
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
               Container(
-                color: bgGray,
+                color: bgLightBlue,
                 child: Column(
                   children: const [
                     Timer(),

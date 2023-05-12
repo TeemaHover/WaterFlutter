@@ -1,11 +1,6 @@
-import 'package:app/shared/constants/colors.dart';
 import 'package:app/shared/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 
 class GraphicWidget extends StatelessWidget {
   const GraphicWidget(
@@ -34,6 +29,13 @@ class GraphicWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           color: bgGray,
+          boxShadow: [
+            BoxShadow(
+              color: lightGray,
+              blurRadius: 1, // soften the shadow
+              spreadRadius: 1, //extend the shadow
+            )
+          ],
         ),
         child: InkWell(
           onTap: () {},
@@ -66,6 +68,7 @@ class GraphicWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.green,
+                  
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,

@@ -19,6 +19,13 @@ class _NotificationCardState extends State<NotificationCard> {
       decoration: BoxDecoration(
         color: darkgray,
         borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: whiteBlue,
+            blurRadius: 3, // soften the shadow
+            spreadRadius: 1, //extend the shadow
+          )
+        ],
       ),
       child: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

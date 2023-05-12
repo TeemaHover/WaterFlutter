@@ -13,10 +13,12 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgLightBlue,
       appBar: AppBar(
         title: Text(
           "Нүүр",
           style: FontStyles.bodyLarge.copyWith(
+            fontSize: 28,
             color: Colors.black,
           ),
         ),
@@ -38,10 +40,12 @@ class _MainViewState extends State<MainView> {
               space24,
               Container(
                 decoration: const BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(25),
-                        topRight: Radius.circular(25))),
+                  color: white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25),
+                  ),
+                ),
                 padding: const EdgeInsets.symmetric(
                     horizontal: 20, vertical: origin),
                 child: Column(

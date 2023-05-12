@@ -23,7 +23,7 @@ class SecondAppBar extends StatelessWidget with PreferredSizeWidget {
       ),
       title: Text(
         title,
-        style: FontStyles.bodyMedium.copyWith(color: color),
+        style: FontStyles.bodySmall.copyWith(color: color),
       ),
       shadowColor: Colors.transparent,
       backgroundColor: Colors.transparent,

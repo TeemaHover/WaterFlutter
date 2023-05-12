@@ -15,6 +15,14 @@ class _TimerState extends State<Timer> {
         margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: skyBlue.withOpacity(0.5),
+              spreadRadius: 3,
+              blurRadius: 7,
+              offset: const Offset(0, 2), // changes position of shadow
+            ),
+          ],
           borderRadius: BorderRadius.circular(20),
           gradient: const LinearGradient(
               begin: Alignment.topRight,
@@ -32,7 +40,8 @@ class _TimerState extends State<Timer> {
               margin: const EdgeInsets.only(bottom: 10),
               child: const Text(
                 "Цэвэр усны нөөц дуусах өдөр",
-                style: TextStyle(fontSize: 20, color: white),
+                style: TextStyle(
+                    fontSize: 17, fontWeight: FontWeight.w600, color: white),
               ),
             ),
             Row(
@@ -43,19 +52,22 @@ class _TimerState extends State<Timer> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 2),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
+                          horizontal: 9, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: white,
                       ),
                       child: const Text(
                         "00",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 22),
                       ),
                     ),
                     const Text(
                       "Жил",
-                      style: TextStyle(fontSize: 14, color: white),
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: white),
                     ),
                   ],
                 ),
@@ -64,19 +76,22 @@ class _TimerState extends State<Timer> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 2),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
+                          horizontal: 9, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: white,
                       ),
                       child: const Text(
                         "00",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 22),
                       ),
                     ),
                     const Text(
                       "Сар",
-                      style: TextStyle(fontSize: 14, color: white),
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: white),
                     ),
                   ],
                 ),
@@ -85,19 +100,22 @@ class _TimerState extends State<Timer> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 2),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
+                          horizontal: 9, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: white,
                       ),
                       child: const Text(
                         "00",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 22),
                       ),
                     ),
                     const Text(
                       "Өдөр",
-                      style: TextStyle(fontSize: 14, color: white),
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: white),
                     ),
                   ],
                 ),
@@ -106,19 +124,22 @@ class _TimerState extends State<Timer> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 2),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
+                          horizontal: 9, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: white,
                       ),
                       child: const Text(
                         "00",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 22),
                       ),
                     ),
                     const Text(
                       "Цаг",
-                      style: TextStyle(fontSize: 14, color: white),
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: white),
                     ),
                   ],
                 ),
@@ -127,19 +148,22 @@ class _TimerState extends State<Timer> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 2),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
+                          horizontal: 9, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: white,
                       ),
                       child: const Text(
                         "00",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 22),
                       ),
                     ),
                     const Text(
                       "Минут",
-                      style: TextStyle(fontSize: 14, color: white),
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: white),
                     ),
                   ],
                 ),
@@ -148,19 +172,22 @@ class _TimerState extends State<Timer> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 2),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 18),
+                          horizontal: 9, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: white,
                       ),
                       child: const Text(
                         "00",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 22),
                       ),
                     ),
                     const Text(
                       "Секунд",
-                      style: TextStyle(fontSize: 14, color: white),
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: white),
                     ),
                   ],
                 ),

@@ -19,39 +19,56 @@ class _EventViewState extends State<EventView> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+          backgroundColor: bgLightBlue,
           appBar: AppBar(
             backgroundColor: bgGray,
             bottom: const PreferredSize(
               preferredSize: Size.fromHeight(40),
               child: Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: TabBar(
-                    labelColor: black,
-                    tabs: [
-                      Tab(
-                        text: 'Улс',
-                      ),
-                      Tab(
-                        text: 'Байгууллага',
-                      ),
-                    ],
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    isScrollable: true,
-                    labelPadding: EdgeInsets.symmetric(horizontal: 40),
-                    indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(width: 2.0, color: blue),
-                        insets: EdgeInsets.symmetric(horizontal: 0.0))),
+                  labelColor: darkBlue,
+                  unselectedLabelColor: gray,
+                  tabs: [
+                    Tab(
+                      text: 'Улс',
+                    ),
+                    Tab(
+                      text: 'Байгууллага',
+                    ),
+                  ],
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  isScrollable: true,
+                  labelPadding: EdgeInsets.symmetric(horizontal: 40),
+                  indicator: UnderlineTabIndicator(
+                    borderSide: BorderSide(
+                      width: 3.0,
+                      color: blue,
+                    ),
+                    insets: EdgeInsets.symmetric(horizontal: 20.0),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                ),
               ),
             ),
             title: const Text(
               'Хөтөлбөр',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 26,
+                fontWeight: FontWeight.w600,
+              ),
             ),
+            // shape: Border(bottom: BorderSide(color: gray, width: 2)),
+            elevation: 1,
+            shadowColor: gray,
           ),
           body: TabBarView(
             children: [
               Container(
-                color: bgGray,
+                color: bgLightBlue,
                 height: defaultHeight(context),
                 child: SingleChildScrollView(
                   child: Column(
@@ -70,6 +87,8 @@ class _EventViewState extends State<EventView> {
                             horizontal: 20, vertical: 10),
                         child: const Text(
                           'Бусад хөтөлбөрүүд',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
                         ),
                       ),
                       Obx(() => controller.loading.value
@@ -85,7 +104,7 @@ class _EventViewState extends State<EventView> {
                 ),
               ),
               Container(
-                color: bgGray,
+                color: bgLightBlue,
                 height: defaultHeight(context),
                 child: SingleChildScrollView(
                   child: Column(
@@ -104,6 +123,8 @@ class _EventViewState extends State<EventView> {
                             horizontal: 20, vertical: 10),
                         child: const Text(
                           'Бусад хөтөлбөрүүд',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
                         ),
                       ),
                       Obx(() => controller.loading.value

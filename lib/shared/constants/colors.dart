@@ -39,6 +39,7 @@ const bgBlue = Color(0xFFF5F5F5);
 
 // Blue pallete
 const mainBlue = Color(0xFF1D8BE2);
+const darkBlue = Color(0xFF1D6CE2);
 
 // Color hexToColor(String hex) {
 //   assert(RegExp(r'^#([0-9a-fA-F]{6})|([0-9a-fA-F]{8})$').hasMatch(hex),

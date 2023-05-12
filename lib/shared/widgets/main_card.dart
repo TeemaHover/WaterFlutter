@@ -30,6 +30,14 @@ class CardMain extends StatelessWidget {
                   topLeft: Radius.circular(25.0),
                   topRight: Radius.circular(25.0),
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: whiteBlue,
+                    blurRadius: 3, // soften the shadow
+                    spreadRadius: 1, //extend the shadow
+                  )
+                ],
+                // boxShadow: [BoxShadow()],
               ),
               child: SingleChildScrollView(
                 child: Column(
