@@ -1,9 +1,10 @@
+import 'package:app/data/data.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
 
 class AchievementWidget extends StatelessWidget {
-  const AchievementWidget({super.key});
-
+  const AchievementWidget({super.key, required this.user});
+  final User user;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +27,7 @@ class AchievementWidget extends StatelessWidget {
                       .labelMedium!
                       .copyWith(color: textGray)),
               space8,
-              Text("Цол 1",
+              Text("Цол ${user.xp}",
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!

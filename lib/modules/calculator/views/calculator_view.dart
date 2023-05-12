@@ -1,5 +1,6 @@
 import 'package:app/data/data.dart';
 import 'package:app/modules/calculator/calculator.dart';
+import 'package:app/modules/calculator/views/calculator_payment_view.dart';
 import 'package:app/shared/index.dart';
 
 import 'package:flutter/material.dart';
@@ -110,7 +111,13 @@ class _CalculatorViewState extends State<CalculatorView> {
               Obx(() => controller.payments.isNotEmpty &&
                       controller.payments.first.price != null
                   ? MainButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CalculatorPaymentView(payment: controller.payments.first,),
+                            ));
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [

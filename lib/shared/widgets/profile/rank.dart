@@ -1,5 +1,9 @@
+import 'package:app/modules/modules.dart';
+import 'package:app/shared/index.dart';
 import 'package:app/shared/widgets/main_button.dart';
+import 'package:app/theme/text_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/colors.dart';
 
@@ -13,8 +17,8 @@ class Rank extends StatefulWidget {
 class _RankState extends State<Rank> {
   @override
   Widget build(BuildContext context) {
+    final auth = Get.put(AuthController(apiRepository: Get.find()));
     return Container(
-        height: MediaQuery.of(context).size.height / 2,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -27,16 +31,31 @@ class _RankState extends State<Rank> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/rank.png'),
-            const Text("Таны одоогийн цол"),
-            const Text("aaaa"),
+            const Text(
+              "Таны одоогийн цол",
+              style: FontStyles.bodyMedium,
+            ),
+            space8,
+            Text(
+              "Та цолоо нэмснээр шагнал урамшуулал цаашлаад хариуцлагатай иргэний шагнал авах боломжтой.",
+              textAlign: TextAlign.center,
+            ),
+            space24,
             MainButton(
-              onPressed: () {},
+              onPressed: () {
+                auth.logout();
+              },
+              padding: EdgeInsets.symmetric(horizontal: 40),
               color: white,
               contentColor: black,
               shadow: true,
               borderRadius: 50,
-              text: "Цол хэрхэн нэмэх вэ?",
-              child: const SizedBox(),
+              child: Text(
+                'Гарах',
+                // 'Цол хэрхэн нэмэх вэ?',
+                style:
+                    FontStyles.labelMedium.copyWith(color: Color(0xff353A48)),
+              ),
             )
           ],
         ));

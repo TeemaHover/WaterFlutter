@@ -1,4 +1,5 @@
 import 'package:app/modules/main/controllers/controllers.dart';
+import 'package:app/modules/modules.dart';
 import 'package:app/shared/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(MainController());
-
+    final homeController = Get.put(HomeController());
     return Scaffold(
       appBar: MainAppBar(
         title: "НҮҮР",
@@ -99,8 +100,10 @@ class _MainViewState extends State<MainView> {
                           Flexible(
                               child: SingleChildScrollView(
                             child: Column(
-                              children: const [
-                                AchievementWidget(),
+                              children: [
+                                AchievementWidget(
+                                  user: homeController.user!,
+                                ),
                               ],
                             ),
                           )),
