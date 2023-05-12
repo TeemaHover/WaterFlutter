@@ -1,3 +1,4 @@
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 
 class SelectionTile extends StatefulWidget {
@@ -21,7 +22,11 @@ class _SelectionTileState extends State<SelectionTile> {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: const BoxDecoration(
                     border: Border(bottom: BorderSide(color: Colors.grey))),
-                child: Text(widget.txt))),
+                child: Text(
+                  widget.txt,
+                  style: FontStyles.titleMedium
+                      .copyWith(fontWeight: FontWeight.normal),
+                ))),
       ],
     );
   }
