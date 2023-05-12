@@ -1,5 +1,7 @@
+import 'package:app/modules/modules.dart';
 import 'package:app/shared/constants/index.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../shared/widgets/information_card.dart';
 import '../../../shared/widgets/timer.dart';
@@ -14,6 +16,7 @@ class InfoView extends StatefulWidget {
 class _InfoViewState extends State<InfoView> {
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(InfoController());
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -66,11 +69,13 @@ class _InfoViewState extends State<InfoView> {
               Container(
                 color: bgLightBlue,
                 child: Column(
-                  children: const [
-                    Timer(),
+                  children: [
+                    Timer(
+                      time:
+                          2537712000000 - DateTime.now().millisecondsSinceEpoch,
+                    ),
                     Expanded(
-                      child: InformationCard(
-                          title: "Байгууллагын нэр", time: "2023/05/12"),
+                      child: InformationCard(info: controller.worldInfo),
                     )
                   ],
                 ),
@@ -78,11 +83,13 @@ class _InfoViewState extends State<InfoView> {
               Container(
                 color: bgGray,
                 child: Column(
-                  children: const [
-                    Timer(),
+                  children: [
+                    Timer(
+                      time:
+                          2208873600000 - DateTime.now().millisecondsSinceEpoch,
+                    ),
                     Expanded(
-                      child: InformationCard(
-                          title: "Байгууллагын нэр", time: "2023/05/12"),
+                      child: InformationCard(info: controller.mongolInfo),
                     )
                   ],
                 ),

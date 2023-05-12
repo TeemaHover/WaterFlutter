@@ -1,18 +1,12 @@
-import 'package:app/shared/constants/colors.dart';
+import 'package:app/data/models/info.dart';
+import 'package:app/shared/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-class InformationCard extends StatefulWidget {
-  final String title;
-  final String time;
-
-  const InformationCard({super.key, required this.title, required this.time});
-
-  @override
-  State<InformationCard> createState() => _InformationCardState();
-}
-
-class _InformationCardState extends State<InformationCard> {
+class InformationCard extends StatelessWidget {
+  const InformationCard({super.key, required this.info});
+  final List<Info> info;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,62 +19,65 @@ class _InformationCardState extends State<InformationCard> {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
         ),
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: white,
-            boxShadow: [
-              BoxShadow(
-                color: whiteBlue,
-                blurRadius: 3, // soften the shadow
-                spreadRadius: 1, //extend the shadow
-              )
-            ],
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: darkgray,
-                  ),
-                  width: 50,
-                  height: 50,
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              SizedBox(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.title,
-                      style: FontStyles.titleSmall,
-                    ),
-                    Row(
-                      children: const [
-                        Text("Асуудлын зэрэг: "),
-                        Icon(Icons.star),
-                        Icon(Icons.star),
-                        Icon(Icons.star),
+        Column(
+            children: info
+                .map(
+                  (e) => Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: whiteBlue,
+                          blurRadius: 3, // soften the shadow
+                          spreadRadius: 1, //extend the shadow
+                        )
                       ],
                     ),
-                    Text(
-                      'Нийтлэгдсэн огноо: ${widget.time}',
-                      style: FontStyles.labelLarge,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: darkgray,
+                            ),
+                            width: 50,
+                            height: 50,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        SizedBox(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                e.name ?? '',
+                                style: FontStyles.titleSmall,
+                              ),
+                              Row(
+                                children: [
+                                  Text("Асуудлын зэрэг: "),
+                                  Icon(Icons.star),
+                                ],
+                              ),
+                              Text(
+                                'Нийтлэгдсэн огноо: ${DateFormat('yyyy/MM/dd').format(DateTime.fromMillisecondsSinceEpoch(e.date!))}',
+                                style: FontStyles.labelLarge,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+                  ),
+                )
+                .toList())
       ],
     );
   }

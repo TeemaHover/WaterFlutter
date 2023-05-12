@@ -1,25 +1,31 @@
+import 'package:app/data/data.dart';
+import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class MontlyTile extends StatelessWidget {
-  const MontlyTile(
-      {super.key,
-      required this.date,
-      required this.month,
-      required this.waterConsumption});
-  final String month;
-  final String date;
-  final String waterConsumption;
+  const MontlyTile({super.key, required this.payment});
+  final Payment payment;
   @override
   Widget build(BuildContext context) {
+    double quantity = 0.0;
+    DateTime date = DateTime.fromMillisecondsSinceEpoch(payment.date!);
+    payment.items?.forEach(
+      (element) {
+        quantity += element.quantity!;
+      },
+    );
     return Container(
       margin: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width / 15, vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(month),
+          Text(
+            '${date.month} сар',
+            style: FontStyles.bodyMedium,
+          ),
           const SizedBox(
             height: 10,
           ),
@@ -33,8 +39,11 @@ class MontlyTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(waterConsumption),
-                    Text(date),
+                    Text(
+                      '$quantity ${payment.items?.first.symbol}',
+                      style: FontStyles.titleMedium,
+                    ),
+                    Text('${date.year} он ${date.month} сар '),
                   ],
                 ),
               ),
@@ -42,12 +51,18 @@ class MontlyTile extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(waterConsumption),
+                      Text(
+                        '$quantity',
+                        style: FontStyles.titleMedium,
+                      ),
                       const Icon(Icons.water_drop)
                     ],
                   ),
                   Row(
-                    children: [Text(waterConsumption), const Icon(Icons.money)],
+                    children: [
+                      Text('${payment.price}'),
+                      const Icon(Icons.money)
+                    ],
                   )
                 ],
               )

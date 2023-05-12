@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 class BarChartWidget extends StatelessWidget {
-  const BarChartWidget({super.key, required this.cl});
+  const BarChartWidget({super.key, required this.cl, required this.max});
   final Color cl;
+  final int max;
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +121,8 @@ class BarChartWidget extends StatelessWidget {
           x: 0,
           barRods: [
             BarChartRodData(
-              toY: 8,
+              //end bn shuu
+              toY: max.toDouble(),
               gradient: _barsGradient,
               borderRadius: const BorderRadius.all(Radius.circular(2)),
               width: 15,

@@ -1,3 +1,4 @@
+import 'package:app/data/data.dart';
 import 'package:app/shared/index.dart';
 import 'package:app/theme/index.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class GraphicWidget extends StatelessWidget {
       required this.icon,
       required this.value,
       this.color = blue,
+      required this.payments,
       required this.symbol});
   final String title;
   final double percent;
@@ -17,6 +19,7 @@ class GraphicWidget extends StatelessWidget {
   final double value;
   final String symbol;
   final Color color;
+  final List<Payment> payments;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -68,7 +71,6 @@ class GraphicWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.green,
-                  
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -93,6 +95,7 @@ class GraphicWidget extends StatelessWidget {
                 width: 150,
                 child: BarChartWidget(
                   cl: color,
+                  max: 5,
                 ),
               )
             ],

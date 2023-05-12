@@ -25,11 +25,7 @@ class AchievementWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-              const Icon(
-                Icons.emoji_events,
-                color: Colors.yellow,
-                size: 100,
-              ),
+              Image.asset('assets/images/rank.png'),
               space24,
               Text("Одоо байгаа цол",
                   style: Theme.of(context)
